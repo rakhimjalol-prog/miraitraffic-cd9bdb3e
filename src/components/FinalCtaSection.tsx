@@ -1,27 +1,31 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FinalCtaSection = () => {
+  const { t } = useLanguage();
+
   return (
-    <section id="start-course" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="start-course" className="py-20 bg-gradient-to-br from-primary/5 to-purple/5">
+      <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 leading-tight">
-            Join thousands of Japanese-speaking drivers who passed with 
-            <span className="text-success"> Mirai Traffic School</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            {t('finalCtaTitle')}
           </h2>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Don't let language barriers slow you down. Complete your California traffic school requirement 
-            in Japanese with full DMV approval and court acceptance.
+            {t('language') === 'en' 
+              ? "Don't let language barriers slow you down. Complete your California traffic school requirement in Japanese with full DMV approval and court acceptance."
+              : "言語の壁があなたを遅らせないでください。DMVの完全承認と裁判所の受諾により、日本語でカリフォルニア州のトラフィックスクール要件を満たしてください。"
+            }
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <Button 
-              variant="hero" 
-              size="xl"
-              className="group min-w-[250px]"
+              variant="default" 
+              size="lg"
+              className="group min-w-[250px] bg-primary hover:bg-primary/90 text-primary-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              Start Course Now
+              {t('startCourse')}
               <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -29,10 +33,10 @@ const FinalCtaSection = () => {
             
             <Button 
               variant="outline" 
-              size="xl"
-              className="min-w-[200px]"
+              size="lg"
+              className="min-w-[200px] border-primary/20 hover:border-primary/40 hover:bg-primary/5"
             >
-              View Sample Lesson
+              {t('language') === 'en' ? 'View Sample Lesson' : 'サンプルレッスンを見る'}
             </Button>
           </div>
 

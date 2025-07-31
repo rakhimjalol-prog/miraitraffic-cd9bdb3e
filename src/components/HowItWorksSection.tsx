@@ -57,9 +57,6 @@ const HowItWorksSection = () => {
                   <h3 className="text-xl font-semibold text-primary mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
                 </CardContent>
               </Card>
 
