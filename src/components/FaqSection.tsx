@@ -72,3 +72,10 @@ const FaqSection = () => {
               View All FAQs
             </Button>
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FaqSection;
