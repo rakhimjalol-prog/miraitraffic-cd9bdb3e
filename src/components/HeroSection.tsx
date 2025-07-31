@@ -64,13 +64,14 @@ const HeroSection = () => {
             <div className="relative animate-fade-in-up">
               <div className="bg-gradient-soft rounded-2xl p-8 shadow-large">
                 <div className="aspect-square bg-white/50 rounded-xl flex items-center justify-center">
-<div className="flex justify-center items-center w-full">
+<div className="bg-white/50 rounded-xl flex items-center justify-center p-4">
   <img 
-    src="/lovable-uploads/699eb859-ac44-476c-86bb-f5fcf60421dc.png" 
+    src="/lovable-uploads/699eb859-ac44-476c-86bb-f5fcf60421dc.png"
     alt="Driving school illustration with instructors and car"
-    className="w-[420px] max-w-full h-auto object-contain"
+    className="w-[640px] max-w-full h-auto object-contain"
   />
 </div>
+
 
                 </div>
               </div>
