@@ -19,36 +19,40 @@ const CourseFeatureSection = () => {
           {/* Left - Syllabus List */}
           <div className="space-y-6 animate-slide-in-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-              Mirai Traffic School — Offensive Driving Course Syllabus
+              Mirai Traffic School <br className="block md:hidden" />
+              <span className="text-blue-700">— Offensive Driving Course Syllabus</span>
             </h2>
             <ul className="space-y-3 mt-6">
               {syllabus.map((title, index) => (
                 <li
                   key={index}
                   className="flex items-center space-x-4 bg-white rounded-xl px-5 py-3 shadow transition hover:shadow-md animate-fade-in"
-                  style={{ animationDelay: `${index * 0.15}s` }}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center font-semibold text-gray-700">
+                  <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-800">
                     {index + 1}
                   </div>
-                  <span className="text-gray-800 text-sm md:text-base">{title}</span>
+                  <span className="text-gray-800 text-sm md:text-base font-medium">
+                    Chapter {index + 1}: {title}
+                  </span>
                 </li>
               ))}
             </ul>
+
+            {/* CTA Button */}
+            <div className="pt-8">
+              <Button variant="success" size="lg" className="group">
+                Start the Course
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
 
           {/* Right - Illustration Only */}
           <div className="animate-slide-in-right">
             <img
-              src="/lovable-uploads/ChatGPT Image Jul 31, 2025, 03_46_18 PM.png"
+              src="/lovable-uploads/3d8cc68f-b44e-4f5c-adce-19bd47c4aa94.png"
               alt="Certificate and Safety Illustration"
               className="mx-auto object-contain w-[480px] h-auto"
             />
           </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default CourseFeatureSection;
