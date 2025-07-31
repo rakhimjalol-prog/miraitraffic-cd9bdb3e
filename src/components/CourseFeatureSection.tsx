@@ -21,7 +21,7 @@ const CourseFeatureSection = () => {
           <div className="space-y-6 animate-slide-in-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               <span className="block">Mirai Traffic School</span>
-              <span className="block text-blue-700 text-2xl md:text-3xl font-bold animate-typewriter">
+              <span className="block text-blue-700 text-2xl md:text-3xl font-bold animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700">
                 Offensive Driving Course Syllabus
               </span>
             </h2>
@@ -47,7 +47,7 @@ const CourseFeatureSection = () => {
               <Button
                 variant="success"
                 size="xl"
-                className="group text-lg px-6 py-3 animate-pulse rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105"
+                className="group text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 animate-glow-slow"
               >
                 Start the Course
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
