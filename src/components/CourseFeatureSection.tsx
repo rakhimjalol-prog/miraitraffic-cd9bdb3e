@@ -18,10 +18,10 @@ const CourseFeatureSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Syllabus List */}
-          <div className="space-y-6 animate-slide-in-left">
+          <div className="space-y-6 animate-slide-in-left-slow">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               <span className="block">Mirai Traffic School</span>
-              <span className="block text-blue-700 text-2xl md:text-3xl font-bold animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700">
+              <span className="block text-blue-700 text-2xl md:text-3xl font-bold animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700 [animation-duration:4s]">
                 Offensive Driving Course Syllabus
               </span>
             </h2>
@@ -47,7 +47,7 @@ const CourseFeatureSection = () => {
               <Button
                 variant="success"
                 size="xl"
-                className="group text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 animate-glow-slow"
+                className="group text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 animate-glow-pulse"
               >
                 Start the Course
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -56,7 +56,7 @@ const CourseFeatureSection = () => {
           </div>
 
           {/* Right - Illustration Only */}
-          <div className="animate-slide-in-right">
+          <div className="animate-slide-in-right-slow">
             <img
               src="/lovable-uploads/9f5415f5-1d9e-4b54-952c-05cfdea3f1c0.png"
               alt="Certificate and Safety Illustration"
