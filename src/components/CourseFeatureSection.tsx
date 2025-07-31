@@ -1,7 +1,7 @@
-import { CheckCircle, Clock, Monitor } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const CourseSyllabusSection = () => {
+const CourseFeatureSection = () => {
   const syllabus = [
     'Basic Traffic Laws',
     'Safe Driving',
@@ -37,45 +37,13 @@ const CourseSyllabusSection = () => {
             </ul>
           </div>
 
-          {/* Right - Illustration + Features */}
-          <div className="space-y-8 animate-slide-in-right">
-            <Image
-              src="/lovable-uploads/99e73d3c-6ecd-41df-94fd-8b54e29e30d8.png"
-              alt="Offensive Driving Illustration"
-              width={480}
-              height={480}
-              className="mx-auto object-contain"
+          {/* Right - Illustration Only */}
+          <div className="animate-slide-in-right">
+            <img
+              src="/lovable-uploads/ChatGPT Image Jul 31, 2025, 03_46_18 PM.png"
+              alt="Certificate and Safety Illustration"
+              className="mx-auto object-contain w-[480px] h-auto"
             />
-
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-green-100 text-green-700 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-base">Complete Course in Japanese</h4>
-                  <p className="text-gray-600 text-sm">All content, quizzes, and exams in Japanese</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-green-100 text-green-700 rounded-full flex items-center justify-center">
-                  <Clock className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-base">Study at Your Own Pace</h4>
-                  <p className="text-gray-600 text-sm">No time limits, pause and resume anytime</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-green-100 text-green-700 rounded-full flex items-center justify-center">
-                  <Monitor className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-base">Mobile-Friendly</h4>
-                  <p className="text-gray-600 text-sm">Works on phones, tablets, and computers</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -83,4 +51,4 @@ const CourseSyllabusSection = () => {
   );
 };
 
-export default CourseSyllabusSection;
+export default CourseFeatureSection;
