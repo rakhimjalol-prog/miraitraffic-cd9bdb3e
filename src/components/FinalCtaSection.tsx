@@ -13,15 +13,15 @@ const FinalCtaSection = () => {
           </h2>
 
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            {t('language') === 'en' 
+            {t('language') === 'en'
               ? "Don't let language barriers slow you down. Complete your California traffic school requirement in Japanese with full DMV approval and court acceptance."
               : "言語の壁があなたを遅らせないでください。DMVの完全承認と裁判所の受諾により、日本語でカリフォルニア州のトラフィックスクール要件を満たしてください。"
             }
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            <Button 
-              variant="default" 
+            <Button
+              variant="default"
               size="lg"
               className="group min-w-[250px] bg-primary hover:bg-primary/90 text-primary-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
@@ -30,9 +30,9 @@ const FinalCtaSection = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Button>
-            
-            <Button 
-              variant="outline" 
+
+            <Button
+              variant="outline"
               size="lg"
               className="min-w-[200px] border-primary/20 hover:border-primary/40 hover:bg-primary/5"
             >
@@ -40,30 +40,45 @@ const FinalCtaSection = () => {
             </Button>
           </div>
 
-          {/* 🚀 New Icon Feature Strip */}
+          {/* 🚀 Icon Feature Strip (Inline SVGs) */}
           <div className="py-16 bg-gradient-to-r from-blue-50 via-green-50 to-purple-50 rounded-xl my-12">
             <div className="flex flex-wrap justify-center gap-12 text-center">
+              {/* 1. Support */}
               <div className="flex flex-col items-center space-y-3">
                 <div className="bg-white rounded-full shadow-md p-4">
-                  <img src="/icons/support.svg" alt="Support" className="w-8 h-8" />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636A9 9 0 105.636 18.364 9 9 0 0018.364 5.636zM9 12h6" />
+                  </svg>
                 </div>
                 <h4 className="text-base font-medium text-foreground">Online Support</h4>
               </div>
+
+              {/* 2. Easy to Use */}
               <div className="flex flex-col items-center space-y-3">
                 <div className="bg-white rounded-full shadow-md p-4">
-                  <img src="/icons/easy.svg" alt="Easy to Use" className="w-8 h-8" />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
                 </div>
                 <h4 className="text-base font-medium text-foreground">Easy to Use</h4>
               </div>
+
+              {/* 3. Trusted */}
               <div className="flex flex-col items-center space-y-3">
                 <div className="bg-white rounded-full shadow-md p-4">
-                  <img src="/icons/trusted.svg" alt="Trusted" className="w-8 h-8" />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
                 <h4 className="text-base font-medium text-foreground">Trusted by Customers</h4>
               </div>
+
+              {/* 4. Any Device */}
               <div className="flex flex-col items-center space-y-3">
                 <div className="bg-white rounded-full shadow-md p-4">
-                  <img src="/icons/device.svg" alt="Any Device" className="w-8 h-8" />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2a2 2 0 012-2h2a2 2 0 012 2v2m-6 0h6m-3-6v6m0-6v-6" />
+                  </svg>
                 </div>
                 <h4 className="text-base font-medium text-foreground">Any Device, Any Time</h4>
               </div>
