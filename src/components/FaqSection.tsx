@@ -5,6 +5,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
 const FaqSection = () => {
   const faqs = [
     {
@@ -31,84 +34,6 @@ const FaqSection = () => {
       answer:
         "As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course.",
     },
-    {
-      category: "About the Course",
-      question: "Will there be videos in the course?",
-      answer:
-        "Yes! The course includes 14 short, animated videos to help you understand California traffic laws in an easy and engaging way.",
-    },
-    {
-      category: "Registration & Access",
-      question: "How do I sign up for the course?",
-      answer:
-        "Click the “Enroll Now” button on our website, enter your information, and complete payment. You’ll receive login instructions by email.",
-    },
-    {
-      category: "Registration & Access",
-      question: "How long do I have to complete the course?",
-      answer:
-        "You have 60 days from your date of purchase to complete the course. After completion, your course remains accessible for another 30 days.",
-    },
-    {
-      category: "Quizzes, Final Exam & Certificate",
-      question: "Are there quizzes in the course?",
-      answer:
-        "Yes. You’ll take a short quiz after each section. You must score at least 70% to pass each quiz.",
-    },
-    {
-      category: "Quizzes, Final Exam & Certificate",
-      question: "Is there a final exam?",
-      answer:
-        "Yes. At the end of the course, you must pass a final exam with a score of 70% or higher. You may attempt the final exam up to two times.",
-    },
-    {
-      category: "Quizzes, Final Exam & Certificate",
-      question: "What happens if I fail a quiz?",
-      answer:
-        "You can retake each quiz as many times as needed until you pass.",
-    },
-    {
-      category: "Quizzes, Final Exam & Certificate",
-      question: "When is my certificate sent to the DMV?",
-      answer:
-        "As soon as you pass the final exam, your completion certificate is submitted electronically to the DMV. You’ll also receive a copy for your records.",
-    },
-    {
-      category: "Payments & Refunds",
-      question: "What payment methods do you accept?",
-      answer:
-        "We accept all major credit and debit cards through our secure payment partner, Stripe. You may also see options like PayPal, Apple Pay, or Google Pay depending on your device.",
-    },
-    {
-      category: "Payments & Refunds",
-      question: "Is there a refund policy?",
-      answer:
-        "Yes. Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available.",
-    },
-    {
-      category: "Technical Support",
-      question: "Can I switch devices during the course?",
-      answer:
-        "Yes. Your progress is automatically saved. You can log in from any device and continue right where you left off.",
-    },
-    {
-      category: "Technical Support",
-      question: "What if I forget my login details?",
-      answer:
-        "Click “Forgot Password” on the login page or contact us at support@miraitraffic.com for help.",
-    },
-    {
-      category: "Language Options",
-      question: "Is the course available in Japanese?",
-      answer:
-        "Yes. The full course is presented in Japanese, with English translation available where needed.",
-    },
-    {
-      category: "Still have questions?",
-      question: "Didn’t find what you were looking for?",
-      answer:
-        "Contact our support team anytime at support@miraitraffic.com and we’ll be happy to assist you.",
-    },
   ];
 
   return (
@@ -123,11 +48,10 @@ const FaqSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {faqs.map((faq, index) => (
+            <Accordion type="single" collapsible key={index}>
               <AccordionItem
-                key={index}
                 value={`item-${index}`}
                 className="bg-white rounded-2xl border-0 shadow-soft hover:shadow-hover transition-all duration-300"
               >
@@ -138,8 +62,16 @@ const FaqSection = () => {
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
-            ))}
-          </Accordion>
+            </Accordion>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link href="/faq">
+            <Button className="text-lg px-6 py-3 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white transition-all">
+              View All FAQs
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
