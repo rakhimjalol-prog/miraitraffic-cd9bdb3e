@@ -4,41 +4,93 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const FaqSection = () => {
-  const { t } = useLanguage();
-
   const faqs = [
     {
-      question: "Is this DMV-approved?",
-      answer: "Yes, Mirai Traffic School is officially licensed by the California DMV with license #E2067 and accepted by all California courts.",
-      questionJp: "DMV認定ですか？",
-      answerJp: "はい、未来トラフィックスクールはカリフォルニア州DMVの公式ライセンス#E2067を取得しており、カリフォルニア州の全ての裁判所で承認されています。"
+      category: "About the Course",
+      question: "What is Mirai Traffic School?",
+      answer: "Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record."
     },
     {
-      question: "Is everything really in Japanese?",
-      answer: "Absolutely! The entire course, including lessons, quizzes, and final exam, is conducted in Japanese. Our interface is designed specifically for Japanese speakers.",
-      questionJp: "本当にすべて日本語ですか？",
-      answerJp: "はい、絶対です！レッスン、クイズ、最終試験を含む全てのコースが日本語で行われます。インターフェースは日本語話者向けに特別に設計されています。"
+      category: "About the Course",
+      question: "Is the course approved by the California DMV?",
+      answer: "Yes. Our course is licensed by the California DMV. However, DMV approval does not imply endorsement."
     },
     {
-      question: "Can I use my phone or tablet?",
-      answer: "Yes! Our course works perfectly on all devices - smartphone, tablet, or computer. You can switch between devices and your progress is automatically saved.",
-      questionJp: "スマホやタブレットでも受講できますか？",
-      answerJp: "はい！私たちのコースはスマートフォン、タブレット、パソコンなど全ての端末で完璧に動作します。端末を切り替えても進捗は自動的に保存されます。"
+      category: "About the Course",
+      question: "How long is the course?",
+      answer: "The California DMV requires that online traffic school courses take a minimum of 340 minutes (about 5.5 hours). You can complete the course at your own pace, and your progress is saved automatically."
     },
     {
-      question: "How fast can I finish?",
-      answer: "Most students complete the course in 4-6 hours. You can work at your own pace and don't need to finish in one sitting. Take breaks whenever you need!",
-      questionJp: "どのくらいで修了できますか？",
-      answerJp: "ほとんどの生徒は4〜6時間でコースを修了します。自分のペースで進められ、一度に終わらせる必要はありません。いつでも休憩を取ることができます！"
+      category: "About the Course",
+      question: "How does identity verification work during the course?",
+      answer: "As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course."
     },
     {
-      question: "How do courts receive my certificate?",
-      answer: "Once you complete the course, your certificate is automatically sent to both the DMV and your court electronically. No paperwork required!",
-      questionJp: "修了証は裁判所にどのように送られますか？",
-      answerJp: "コースを修了すると、修了証が自動的にDMVと裁判所の両方に電子的に送信されます。書類作業は一切不要です！"
+      category: "About the Course",
+      question: "Will there be videos in the course?",
+      answer: "Yes! The course includes 14 short, animated videos to help you understand California traffic laws in an easy and engaging way."
+    },
+    {
+      category: "Registration & Access",
+      question: "How do I sign up for the course?",
+      answer: "Click the “Enroll Now” button on our website, enter your information, and complete payment. You’ll receive login instructions by email."
+    },
+    {
+      category: "Registration & Access",
+      question: "How long do I have to complete the course?",
+      answer: "You have 60 days from your date of purchase to complete the course. After completion, your course remains accessible for another 30 days."
+    },
+    {
+      category: "Quizzes, Final Exam & Certificate",
+      question: "Are there quizzes in the course?",
+      answer: "Yes. You’ll take a short quiz after each section. You must score at least 70% to pass each quiz."
+    },
+    {
+      category: "Quizzes, Final Exam & Certificate",
+      question: "Is there a final exam?",
+      answer: "Yes. At the end of the course, you must pass a final exam with a score of 70% or higher. You may attempt the final exam up to two times."
+    },
+    {
+      category: "Quizzes, Final Exam & Certificate",
+      question: "What happens if I fail a quiz?",
+      answer: "You can retake each quiz as many times as needed until you pass."
+    },
+    {
+      category: "Quizzes, Final Exam & Certificate",
+      question: "When is my certificate sent to the DMV?",
+      answer: "As soon as you pass the final exam, your completion certificate is submitted electronically to the DMV. You’ll also receive a copy for your records."
+    },
+    {
+      category: "Payments & Refunds",
+      question: "What payment methods do you accept?",
+      answer: "We accept all major credit and debit cards through our secure payment partner, Stripe. You may also see options like PayPal, Apple Pay, or Google Pay depending on your device."
+    },
+    {
+      category: "Payments & Refunds",
+      question: "Is there a refund policy?",
+      answer: "Yes. Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available."
+    },
+    {
+      category: "Technical Support",
+      question: "Can I switch devices during the course?",
+      answer: "Yes. Your progress is automatically saved. You can log in from any device and continue right where you left off."
+    },
+    {
+      category: "Technical Support",
+      question: "What if I forget my login details?",
+      answer: "Click “Forgot Password” on the login page or contact us at support@miraitraffic.com for help."
+    },
+    {
+      category: "Language Options",
+      question: "Is the course available in Japanese?",
+      answer: "Yes. The full course is presented in Japanese, with English translation available where needed."
+    },
+    {
+      category: "Still have questions?",
+      question: "Didn’t find what you were looking for?",
+      answer: "Contact our support team anytime at support@miraitraffic.com and we’ll be happy to assist you."
     }
   ];
 
@@ -46,43 +98,5 @@ const FaqSection = () => {
     <section className="py-20 bg-gradient-to-br from-purple-50/30 to-blue-50/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
-            <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {t('faq.title')}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('language') === 'en' 
-              ? 'Everything you need to know about completing your traffic school in Japanese'
-              : '日本語でトラフィックスクールを修了するために知っておくべきすべてのこと'
-            }
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="bg-white rounded-2xl border-0 shadow-soft hover:shadow-hover transition-all duration-300"
-              >
-                <AccordionTrigger className="px-8 py-6 text-left text-lg font-semibold text-foreground hover:no-underline">
-                  {t('language') === 'en' ? faq.question : faq.questionJp}
-                </AccordionTrigger>
-                <AccordionContent className="px-8 pb-6 text-muted-foreground leading-relaxed">
-                  {t('language') === 'en' ? faq.answer : faq.answerJp}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default FaqSection;
+            Frequently Asked Questions
