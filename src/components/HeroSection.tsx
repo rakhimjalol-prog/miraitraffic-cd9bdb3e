@@ -32,11 +32,11 @@ const HeroSection = () => {
             {/* Left Content */}
             <div className="space-y-8 animate-fade-in-up">
               <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-                {t('heroHeadline')}
+                {t('hero.title')}
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                {t('heroSubheadline')}
+                {t('hero.subtitle')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 items-start">
@@ -45,7 +45,7 @@ const HeroSection = () => {
                   size="lg"
                   className="group bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  {t('startCourse')}
+                  {t('hero.startCourse')}
                   <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -55,7 +55,7 @@ const HeroSection = () => {
                   <svg className="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>{t('dmvLicense')}</span>
+                  <span>{t('footer.dmvLicense')}</span>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-arrow">
         <div className="flex flex-col items-center text-muted-foreground">
-          <span className="text-sm mb-2">{t('scrollToLearnMore')}</span>
+          <span className="text-sm mb-2">Scroll to learn more</span>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>

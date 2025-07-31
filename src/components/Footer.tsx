@@ -19,7 +19,7 @@ const Footer = () => {
               }
             </p>
             <p className="text-xs text-muted-foreground">
-              {t('dmvLicense')}
+              {t('footer.dmvLicense')}
             </p>
           </div>
 

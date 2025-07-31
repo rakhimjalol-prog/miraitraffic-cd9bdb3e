@@ -52,7 +52,7 @@ const FaqSection = () => {
             </svg>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {t('language') === 'en' ? 'Frequently Asked Questions' : 'よくある質問'}
+            {t('faq.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t('language') === 'en' 

@@ -9,22 +9,22 @@ const HowItWorksSection = () => {
     {
       icon: UserPlus,
       number: "01",
-      title: t('step1'),
+      title: t('howItWorks.step1'),
     },
     {
       icon: BookOpen,
       number: "02", 
-      title: t('step2'),
+      title: t('howItWorks.step2'),
     },
     {
       icon: CheckCircle,
       number: "03",
-      title: t('step3'),
+      title: t('howItWorks.step3'),
     },
     {
       icon: Award,
       number: "04",
-      title: t('step4'),
+      title: t('howItWorks.step4'),
     },
   ];
 
@@ -33,7 +33,7 @@ const HowItWorksSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {t('howItWorks')}
+            {t('howItWorks.title')}
           </h2>
         </div>
 
