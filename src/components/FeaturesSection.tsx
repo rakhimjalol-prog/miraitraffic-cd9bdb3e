@@ -87,37 +87,4 @@ const FeaturesSection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Horizontal Icon Strip */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 via-green-50 to-purple-50">
-        <div className="container mx-auto px-6 flex flex-wrap justify-center gap-12 text-center animate-fade-in-up">
-          {quickIcons.map((item, index) => (
-            <div key={index} className="flex flex-col items-center space-y-3">
-              <div className="bg-white rounded-full shadow-md p-4">
-                <item.icon className="w-8 h-8 text-primary" />
-              </div>
-              <h4 className="text-base font-medium text-foreground">{item.text}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default FeaturesSection;
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-xl flex items-c
