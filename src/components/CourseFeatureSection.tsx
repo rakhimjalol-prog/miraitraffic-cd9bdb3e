@@ -20,8 +20,11 @@ const CourseFeatureSection = () => {
           {/* Left - Syllabus List */}
           <div className="space-y-6 animate-slide-in-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-              Mirai Traffic School <br className="block md:hidden" />
-              <span className="text-blue-700">— Offensive Driving Course Syllabus</span>
+              Mirai Traffic School
+              <br className="hidden md:block" />
+              <span className="block text-blue-700 text-4xl md:text-5xl font-extrabold animate-typing overflow-hidden whitespace-nowrap border-r-4 border-blue-700 pr-2">
+                Offensive Driving Course Syllabus
+              </span>
             </h2>
             <ul className="space-y-3 mt-6">
               {syllabus.map((title, index) => (
@@ -42,9 +45,9 @@ const CourseFeatureSection = () => {
 
             {/* CTA Button */}
             <div className="pt-8">
-              <Button variant="success" size="lg" className="group">
+              <Button variant="success" size="xl" className="group text-lg px-6 py-3">
                 Start the Course
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
