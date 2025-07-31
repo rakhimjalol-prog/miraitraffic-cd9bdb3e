@@ -1,15 +1,16 @@
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const CourseFeatureSection = () => {
   const syllabus = [
-    'Basic Traffic Laws',
-    'Safe Driving',
-    'Road Signs',
-    'Driving Under the Influence (DUI)',
-    'Defensive Driving & Emergency Situations',
-    'Sharing the Road & Special Vehicles',
-    'Final Review & Certificate',
+    'Foundations of Traffic Safety and Awareness',
+    'Understanding Traffic Laws and Right-of-Way Protocols',
+    'Mastering Speed Limits and Defensive Driving',
+    'Managing Road Rage and Aggressive Driving Behaviors',
+    'Collision Avoidance and Safety Techniques',
+    'Handling Road Rage and Driving Distractions',
+    'Vehicle and Road Safety',
   ];
 
   return (
@@ -51,8 +52,15 @@ const CourseFeatureSection = () => {
           {/* Right - Illustration Only */}
           <div className="animate-slide-in-right">
             <img
-              src="/lovable-uploads/3d8cc68f-b44e-4f5c-adce-19bd47c4aa94.png"
+              src="/lovable-uploads/9f5415f5-1d9e-4b54-952c-05cfdea3f1c0.png"
               alt="Certificate and Safety Illustration"
               className="mx-auto object-contain w-[480px] h-auto"
             />
           </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CourseFeatureSection;
