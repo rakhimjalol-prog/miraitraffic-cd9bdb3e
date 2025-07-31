@@ -11,7 +11,7 @@ const FinalCtaSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             {t('finalCtaTitle')}
           </h2>
-          
+
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             {t('language') === 'en' 
               ? "Don't let language barriers slow you down. Complete your California traffic school requirement in Japanese with full DMV approval and court acceptance."
@@ -40,7 +40,37 @@ const FinalCtaSection = () => {
             </Button>
           </div>
 
-          {/* Trust Badges */}
+          {/* 🚀 New Icon Feature Strip */}
+          <div className="py-16 bg-gradient-to-r from-blue-50 via-green-50 to-purple-50 rounded-xl my-12">
+            <div className="flex flex-wrap justify-center gap-12 text-center">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-white rounded-full shadow-md p-4">
+                  <img src="/icons/support.svg" alt="Support" className="w-8 h-8" />
+                </div>
+                <h4 className="text-base font-medium text-foreground">Online Support</h4>
+              </div>
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-white rounded-full shadow-md p-4">
+                  <img src="/icons/easy.svg" alt="Easy to Use" className="w-8 h-8" />
+                </div>
+                <h4 className="text-base font-medium text-foreground">Easy to Use</h4>
+              </div>
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-white rounded-full shadow-md p-4">
+                  <img src="/icons/trusted.svg" alt="Trusted" className="w-8 h-8" />
+                </div>
+                <h4 className="text-base font-medium text-foreground">Trusted by Customers</h4>
+              </div>
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-white rounded-full shadow-md p-4">
+                  <img src="/icons/device.svg" alt="Any Device" className="w-8 h-8" />
+                </div>
+                <h4 className="text-base font-medium text-foreground">Any Device, Any Time</h4>
+              </div>
+            </div>
+          </div>
+
+          {/* ✅ Trust Badges */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <svg className="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
