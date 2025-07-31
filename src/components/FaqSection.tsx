@@ -5,8 +5,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const FaqSection = () => {
   const faqs = [
@@ -48,7 +48,7 @@ const FaqSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {faqs.map((faq, index) => (
             <Accordion type="single" collapsible key={index}>
               <AccordionItem
@@ -67,15 +67,8 @@ const FaqSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/faq">
+          <Link to="/faq">
             <Button className="text-lg px-6 py-3 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white transition-all">
               View All FAQs
             </Button>
           </Link>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default FaqSection;
