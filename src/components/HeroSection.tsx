@@ -1,94 +1,94 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 overflow-hidden">
       {/* Navigation Header */}
       <nav className="absolute top-0 left-0 right-0 z-20 p-6">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-soft">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
             <div>
-              <div className="font-bold text-lg text-foreground">MIRAI</div>
+              <div className="font-bold text-xl text-foreground">MIRAI</div>
               <div className="text-sm text-muted-foreground -mt-1">Traffic School</div>
             </div>
           </div>
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <span className="hidden sm:inline">🇯🇵 Japanese</span>
-            <span className="hidden sm:inline">|</span>
-            <span className="hidden sm:inline">🇺🇸 English</span>
-          </div>
+          <LanguageToggle />
         </div>
       </nav>
 
-      {/* Three.js Animation Space - Reserved */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-accent/10"></div>
-        {/* Placeholder for GSAP/Three.js animation */}
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center pt-20">
-        <div className="max-w-5xl mx-auto animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight tracking-tight">
-            California DMV-Approved
-            <br />
-            <span className="text-gradient">Online Traffic School</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto font-medium">
-            100% Online · Fully in Japanese · Court Accepted
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button 
-              variant="hero" 
-              size="xl"
-              className="group relative overflow-hidden"
-              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <span className="relative z-10">Start Course Now</span>
-              <svg className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-            
-            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-1">
-                <svg className="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>DMV License #1234567</span>
+      {/* Main Content */}
+      <div className="flex items-center min-h-screen pt-24 pb-16">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8 animate-fade-in-up">
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                {t('heroHeadline')}
+              </h1>
+              
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+                {t('heroSubheadline')}
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <Button 
+                  variant="default" 
+                  size="lg"
+                  className="group bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  {t('startCourse')}
+                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Button>
+                
+                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                  <svg className="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>{t('dmvLicense')}</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-arrow">
-            <div className="flex flex-col items-center text-muted-foreground">
-              <span className="text-sm mb-2">Scroll to learn more</span>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
+            {/* Right Illustration */}
+            <div className="relative animate-fade-in-up">
+              <div className="bg-gradient-soft rounded-2xl p-8 shadow-large">
+                <div className="aspect-square bg-white/50 rounded-xl flex items-center justify-center">
+                  <svg className="w-32 h-32 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+              </div>
+              
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-success/20 rounded-full flex items-center justify-center animate-float">
+                <svg className="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Floating Road Elements */}
-      <div className="absolute top-32 left-16 w-20 h-20 opacity-30">
-        <svg viewBox="0 0 100 100" className="w-full h-full text-primary animate-float">
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10,5" />
-        </svg>
-      </div>
-      <div className="absolute bottom-40 right-20 w-16 h-16 opacity-20">
-        <svg viewBox="0 0 100 100" className="w-full h-full text-secondary animate-float" style={{ animationDelay: '1s' }}>
-          <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" strokeWidth="2" rx="8" />
-        </svg>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-arrow">
+        <div className="flex flex-col items-center text-muted-foreground">
+          <span className="text-sm mb-2">{t('scrollToLearnMore')}</span>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
       </div>
     </section>
   );

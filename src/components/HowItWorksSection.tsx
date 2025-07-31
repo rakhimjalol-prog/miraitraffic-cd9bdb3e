@@ -1,44 +1,40 @@
+import { UserPlus, BookOpen, CheckCircle, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { UserPlus, BookOpen, Trophy, Award } from "lucide-react";
-
-const steps = [
-  {
-    icon: UserPlus,
-    number: "01",
-    title: "Sign Up",
-    description: "Create your account and choose your course package. Quick 2-minute registration."
-  },
-  {
-    icon: BookOpen,
-    number: "02", 
-    title: "Complete Lessons & Quizzes",
-    description: "Study 7 comprehensive chapters with built-in Japanese quizzes and ID verification."
-  },
-  {
-    icon: Trophy,
-    number: "03",
-    title: "Pass Final Exam",
-    description: "Complete the final exam with our user-friendly interface designed for success."
-  },
-  {
-    icon: Award,
-    number: "04",
-    title: "Get DMV Certificate",
-    description: "Receive your completion certificate instantly and auto-submitted to court."
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HowItWorksSection = () => {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      icon: UserPlus,
+      number: "01",
+      title: t('step1'),
+    },
+    {
+      icon: BookOpen,
+      number: "02", 
+      title: t('step2'),
+    },
+    {
+      icon: CheckCircle,
+      number: "03",
+      title: t('step3'),
+    },
+    {
+      icon: Award,
+      number: "04",
+      title: t('step4'),
+    },
+  ];
+
   return (
-    <section className="py-20 gradient-secondary">
-      <div className="container mx-auto px-4">
+    <section className="py-20 gradient-soft">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            How It Works
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            {t('howItWorks')}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Complete your California traffic school in 4 simple steps
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
