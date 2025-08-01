@@ -41,12 +41,8 @@ const CourseFeatureSection = () => {
             <div className="bg-white rounded-2xl shadow-elegant p-8 max-w-2xl mx-auto">
               <img src="/lovable-uploads/ff32bea8-e760-4d2b-9859-549ffc990c1d.png" alt="Traffic Safety Course Completion Illustration" className="w-full h-auto rounded-lg shadow-lg scale-110" />
               <div className="mt-4 text-center">
-                <p className="text-sm text-gray-600 font-medium">
-                  Sample Certificate of Completion
-                </p>
-                <p className="text-xs text-gray-500 mt-1">
-                  Your official certificate will be issued upon course completion
-                </p>
+                
+                
               </div>
             </div>
           </div>
