@@ -55,13 +55,23 @@ const CourseFeatureSection = () => {
             </div>
           </div>
 
-          {/* Right - Illustration Only */}
+          {/* Right - Certificate Sample */}
           <div className="animate-slide-in-right-slow">
-            <img
-              src="/lovable-uploads/9f5415f5-1d9e-4b54-952c-05cfdea3f1c0.png"
-              alt="Certificate and Safety Illustration"
-              className="mx-auto object-contain w-[480px] h-auto"
-            />
+            <div className="bg-white rounded-2xl shadow-elegant p-6 max-w-lg mx-auto">
+              <img
+                src="/lovable-uploads/f8362481-ab07-4fae-8a3f-7c187c196dd4.png"
+                alt="Sample Certificate of Completion"
+                className="w-full h-auto rounded-lg shadow-sm"
+              />
+              <div className="mt-4 text-center">
+                <p className="text-sm text-gray-600 font-medium">
+                  Sample Certificate of Completion
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Your official certificate will be issued upon course completion
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
