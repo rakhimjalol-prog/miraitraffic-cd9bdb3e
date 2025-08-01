@@ -52,7 +52,7 @@ const CourseFeatureSection = () => {
           <div className="space-y-6 animate-slide-in-left-slow">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               <span className="block text-lg">
-                {lang === 'jp' ? 'Mirai Traffic School' : 'Mirai Traffic School'}
+                Mirai Traffic School
               </span>
               <span className="block text-blue-700 text-2xl animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700 [animation-duration:4s] font-bold md:text-3xl">
                 {lang === 'jp'
