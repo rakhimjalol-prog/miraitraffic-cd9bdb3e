@@ -63,7 +63,7 @@ const Header = () => {
                 {t('header.login')}
               </Button>
               <Button variant="default" size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
-                {t('header.signup')}
+                {t('.Signup')}
               </Button>
             </div>
 
