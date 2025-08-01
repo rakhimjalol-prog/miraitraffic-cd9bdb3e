@@ -57,11 +57,11 @@ const CourseFeatureSection = () => {
 
           {/* Right - Certificate Sample */}
           <div className="animate-slide-in-right-slow">
-            <div className="bg-white rounded-2xl shadow-elegant p-6 max-w-lg mx-auto">
+            <div className="bg-white rounded-2xl shadow-elegant p-8 max-w-2xl mx-auto">
               <img
                 src="/lovable-uploads/f8362481-ab07-4fae-8a3f-7c187c196dd4.png"
                 alt="Sample Certificate of Completion"
-                className="w-full h-auto rounded-lg shadow-sm"
+                className="w-full h-auto rounded-lg shadow-lg scale-110"
               />
               <div className="mt-4 text-center">
                 <p className="text-sm text-gray-600 font-medium">
