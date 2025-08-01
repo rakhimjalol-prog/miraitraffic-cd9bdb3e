@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-16 bg-[#71d4f6]/[0.56]">
+    <footer className="border-t border-border bg-[#71d4f6]/[0.56] pt-16 pb-6">
       <div className="container mx-auto px-6">
         {/* Top Footer Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12 text-sm">
@@ -65,10 +65,10 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <Separator className="bg-border mb-8" />
+        <Separator className="bg-border mb-4" />
 
         {/* Bottom Footer */}
-        <div className="text-sm text-muted-foreground text-center">
+        <div className="text-sm text-muted-foreground text-left">
           © 2025 Mirai Traffic School. All rights reserved. Licensed by the California DMV.
         </div>
       </div>
