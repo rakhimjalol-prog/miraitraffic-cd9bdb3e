@@ -45,7 +45,7 @@ const CourseFeatureSection = () => {
   ];
 
   return (
-   <section className="py-20 bg-[#71d4f6]/30 rounded-sm overflow-hidden">
+    <section className="py-20 bg-[#71d4f6]/30 overflow-hidden rounded-sm">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Syllabus List */}
