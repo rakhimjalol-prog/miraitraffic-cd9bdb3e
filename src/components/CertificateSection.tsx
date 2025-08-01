@@ -56,49 +56,20 @@ const CertificateSection = () => {
           {/* Right Side - Certificate Visual */}
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-elegant">
-              {/* Mock Certificate */}
-              <div className="bg-white rounded-xl p-6 border-4 border-primary/20 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-primary"></div>
-                
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto">
-                    <Award className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {t('certificate.certificateTitle')}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-2">
-                      {t('certificate.certificateSubtitle')}
-                    </p>
-                  </div>
-                  
-                  <div className="py-4">
-                    <div className="text-lg font-semibold text-gray-900">
-                      [Student Name]
-                    </div>
-                    <p className="text-sm text-gray-600 mt-1">
-                      {t('certificate.completedCourse')}
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4 text-xs text-gray-500">
-                    <div>
-                      <div className="font-semibold">{t('certificate.licenseNumber')}</div>
-                      <div>E2067</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold">{t('certificate.completionDate')}</div>
-                      <div>[Date]</div>
-                    </div>
-                  </div>
-                  
-                  <div className="border-t pt-3">
-                    <div className="text-xs text-gray-500">
-                      {t('certificate.officialSeal')}
-                    </div>
-                  </div>
+              {/* Certificate Image */}
+              <div className="bg-white rounded-xl p-4 shadow-lg">
+                <img
+                  src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png"
+                  alt="Sample Certificate of Completion"
+                  className="w-full h-auto rounded-lg"
+                />
+                <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-600 font-medium">
+                    {t('certificate.certificateTitle')}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    {t('certificate.certificateSubtitle')}
+                  </p>
                 </div>
               </div>
             </div>
