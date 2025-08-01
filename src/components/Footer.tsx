@@ -1,7 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import LanguageToggle from "@/components/LanguageToggle";
 const Footer = () => {
-  return <footer className="bg-white border-t border-border py-16">
+  return <footer className="border-t border-border py-16 bg-[#71d4f6]/[0.56]">
       <div className="container mx-auto px-6">
         {/* Top Footer Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12 text-sm">

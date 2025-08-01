@@ -1,20 +1,9 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const CourseFeatureSection = () => {
-  const syllabus = [
-    'Foundations of Traffic Safety and Awareness',
-    'Understanding Traffic Laws and Right-of-Way Protocols',
-    'Mastering Speed Limits and Defensive Driving',
-    'Managing Road Rage and Aggressive Driving Behaviors',
-    'Collision Avoidance and Safety Techniques',
-    'Handling Road Rage and Driving Distractions',
-    'Vehicle and Road Safety',
-  ];
-
-  return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50 overflow-hidden">
+  const syllabus = ['Foundations of Traffic Safety and Awareness', 'Understanding Traffic Laws and Right-of-Way Protocols', 'Mastering Speed Limits and Defensive Driving', 'Managing Road Rage and Aggressive Driving Behaviors', 'Collision Avoidance and Safety Techniques', 'Handling Road Rage and Driving Distractions', 'Vehicle and Road Safety'];
+  return <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50 overflow-hidden bg-[#71d4f6]/[0.56] rounded-sm">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Syllabus List */}
@@ -26,29 +15,21 @@ const CourseFeatureSection = () => {
               </span>
             </h2>
             <ul className="space-y-3 mt-6">
-              {syllabus.map((title, index) => (
-                <li
-                  key={index}
-                  className="flex items-center space-x-4 bg-white rounded-xl px-5 py-3 shadow transition hover:shadow-md animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+              {syllabus.map((title, index) => <li key={index} className="flex items-center space-x-4 bg-white rounded-xl px-5 py-3 shadow transition hover:shadow-md animate-fade-in" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-800">
                     {index + 1}
                   </div>
                   <span className="text-gray-800 text-sm md:text-base font-medium">
                     Chapter {index + 1}: {title}
                   </span>
-                </li>
-              ))}
+                </li>)}
             </ul>
 
             {/* CTA Button */}
             <div className="pt-8">
-              <Button
-                variant="success"
-                size="xl"
-                className="group text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 animate-glow-pulse"
-              >
+              <Button variant="success" size="xl" className="group text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 animate-glow-pulse">
                 Start the Course
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -58,11 +39,7 @@ const CourseFeatureSection = () => {
           {/* Right - Certificate Sample */}
           <div className="animate-slide-in-right-slow">
             <div className="bg-white rounded-2xl shadow-elegant p-8 max-w-2xl mx-auto">
-              <img
-                src="/lovable-uploads/ff32bea8-e760-4d2b-9859-549ffc990c1d.png"
-                alt="Traffic Safety Course Completion Illustration"
-                className="w-full h-auto rounded-lg shadow-lg scale-110"
-              />
+              <img src="/lovable-uploads/ff32bea8-e760-4d2b-9859-549ffc990c1d.png" alt="Traffic Safety Course Completion Illustration" className="w-full h-auto rounded-lg shadow-lg scale-110" />
               <div className="mt-4 text-center">
                 <p className="text-sm text-gray-600 font-medium">
                   Sample Certificate of Completion
@@ -75,8 +52,6 @@ const CourseFeatureSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CourseFeatureSection;
