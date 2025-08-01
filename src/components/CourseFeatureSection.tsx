@@ -9,10 +9,8 @@ const CourseFeatureSection = () => {
           {/* Left - Syllabus List */}
           <div className="space-y-6 animate-slide-in-left-slow">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-              <span className="block">Mirai Traffic School</span>
-              <span className="block text-blue-700 text-2xl md:text-3xl font-bold animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700 [animation-duration:4s]">
-                Offensive Driving Course Syllabus
-              </span>
+              <span className="block text-lg">Mirai Traffic School</span>
+              <span className="block text-blue-700 text-2xl animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700 [animation-duration:4s] font-bold md:text-3xl">Offensive Driving Course Syllabus</span>
             </h2>
             <ul className="space-y-3 mt-6">
               {syllabus.map((title, index) => <li key={index} className="flex items-center space-x-4 bg-white rounded-xl px-5 py-3 shadow transition hover:shadow-md animate-fade-in" style={{

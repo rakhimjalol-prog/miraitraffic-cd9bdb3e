@@ -22,7 +22,7 @@ const HowItWorksSection = () => {
     number: "04",
     title: t('howItWorks.step4')
   }];
-  return <section className="py-20 gradient-soft bg-[#71d4f6]/30">
+  return <section className="py-20 gradient-soft rounded-md bg-slate-400">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
