@@ -4,7 +4,7 @@ const CertificateSection = () => {
   const {
     t
   } = useLanguage();
-  return <section className="py-20 bg-[#71d4f6]/30">
+  return <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
@@ -54,9 +54,9 @@ const CertificateSection = () => {
 
           {/* Right Side - Certificate Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-elegant bg-[#71d4f6]/[0.37]">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-elegant">
               {/* Certificate Image */}
-              <div className="bg-white rounded-xl p-4 shadow-lg">
+              <div className="bg-white rounded-xl gap-4 gap-x-40 ">
                 <img src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png" alt="Sample Certificate of Completion" className="w-full h-auto rounded-lg" />
                 <div className="mt-4 text-center">
                   <p className="text-sm text-gray-600 font-medium">
