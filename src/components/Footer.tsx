@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png" alt="Mirai Traffic School Logo" className="w-14 h-10 object-contain" />
+              <img src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png" alt="Mirai Traffic School Logo" className="-bottom-1/3 brightness-100 max-h-10 " />
               <h3 className="text-lg font-semibold text-foreground">
                 Mirai Traffic School
               </h3>
