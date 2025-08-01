@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
-
 const HeroSection = () => {
-  const { t, language } = useLanguage();
+  const {
+    t,
+    language
+  } = useLanguage();
   const isJP = language === "jp";
-
-  return (
-    <section className="relative min-h-screen bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 overflow-hidden">
+  return <section className="relative min-h-screen bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 overflow-hidden">
       {/* Navigation Header */}
       <nav className="absolute top-0 left-0 right-0 z-20 p-6">
         <div className="container mx-auto flex items-center justify-between">
@@ -27,7 +27,7 @@ const HeroSection = () => {
       </nav>
 
       {/* Main Content */}
-      <div className="flex items-center min-h-screen pt-24 pb-16">
+      <div className="flex items-center min-h-screen pt-24 pb-16 bg-[#71d4f6]/30">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Section */}
@@ -50,11 +50,7 @@ const HeroSection = () => {
                 <li>{isJP ? "100％日本語対応" : "100% in Japanese."}</li>
               </ul>
 
-              <Button
-                variant="default"
-                size="lg"
-                className="group bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105 text-2xl font-bold px-8 py-5"
-              >
+              <Button variant="default" size="lg" className="group bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105 text-2xl font-bold px-8 py-5">
                 {isJP ? "今すぐコースを始める" : "Start Course Now"}
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -67,11 +63,7 @@ const HeroSection = () => {
               <div className="bg-gradient-soft rounded-2xl p-8 shadow-large bg-[#71d4f6]/0">
                 <div className="aspect-square bg-white/50 rounded-xl flex items-center justify-center">
                   <div className="rounded-xl flex items-center justify-center p-4 bg-[#71d4f6]/10">
-                    <img
-                      src="/lovable-uploads/699eb859-ac44-476c-86bb-f5fcf60421dc.png"
-                      alt="Driving school illustration"
-                      className="w-[640px] max-w-full h-auto object-contain"
-                    />
+                    <img src="/lovable-uploads/699eb859-ac44-476c-86bb-f5fcf60421dc.png" alt="Driving school illustration" className="w-[640px] max-w-full h-auto object-contain" />
                   </div>
                 </div>
               </div>
@@ -94,8 +86,6 @@ const HeroSection = () => {
           </svg>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;

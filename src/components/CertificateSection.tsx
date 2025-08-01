@@ -1,11 +1,10 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Award, CheckCircle, Send } from 'lucide-react';
-
 const CertificateSection = () => {
-  const { t } = useLanguage();
-
-  return (
-    <section className="py-20 bg-white">
+  const {
+    t
+  } = useLanguage();
+  return <section className="py-20 bg-[#71d4f6]/30">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
@@ -55,14 +54,10 @@ const CertificateSection = () => {
 
           {/* Right Side - Certificate Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-elegant">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-elegant bg-[#71d4f6]/[0.37]">
               {/* Certificate Image */}
               <div className="bg-white rounded-xl p-4 shadow-lg">
-                <img
-                  src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png"
-                  alt="Sample Certificate of Completion"
-                  className="w-full h-auto rounded-lg"
-                />
+                <img src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png" alt="Sample Certificate of Completion" className="w-full h-auto rounded-lg" />
                 <div className="mt-4 text-center">
                   <p className="text-sm text-gray-600 font-medium">
                     {t('certificate.certificateTitle')}
@@ -78,14 +73,14 @@ const CertificateSection = () => {
             <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center animate-float shadow-lg">
               <Award className="w-6 h-6 text-white" />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-success rounded-full flex items-center justify-center animate-float shadow-lg" style={{ animationDelay: '1.5s' }}>
+            <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-success rounded-full flex items-center justify-center animate-float shadow-lg" style={{
+            animationDelay: '1.5s'
+          }}>
               <CheckCircle className="w-5 h-5 text-white" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CertificateSection;
