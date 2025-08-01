@@ -16,7 +16,7 @@ const Header = () => {
           
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2">
-            <img src="/logo.png" alt="Mirai Logo" className="w-10 h-10 object-contain" />
+            <img src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png" alt="Mirai Traffic School Logo" className="w-12 h-8 object-contain" />
           </a>
 
           {/* Desktop Navigation */}

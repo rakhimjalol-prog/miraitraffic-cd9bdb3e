@@ -7,9 +7,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12 text-sm">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">
-              Mirai Traffic School
-            </h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png" alt="Mirai Traffic School Logo" className="w-10 h-7 object-contain" />
+              <h3 className="text-lg font-semibold text-foreground">
+                Mirai Traffic School
+              </h3>
+            </div>
             <p className="text-muted-foreground mb-2 leading-relaxed">© 2025 Mirai Traffic School
 DMV License #XXXX
 California DMV-Licensed Traffic Violator School</p>
