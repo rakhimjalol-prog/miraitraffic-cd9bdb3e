@@ -19,7 +19,7 @@ const Header = () => {
             <span className="text-xl font-bold text-gray-900">Mirai Traffic School</span>
           </div>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">
               {t('header.home')}
@@ -43,7 +43,6 @@ const Header = () => {
                   >
                     {t('header.offensiveDriving')}
                   </a>
-                  {/* Add more course options here if needed */}
                 </div>
               )}
             </div>
@@ -55,15 +54,16 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Right side */}
+          {/* Right Side: Language Toggle + Sign Up */}
           <div className="flex items-center space-x-4">
             <LanguageToggle />
-            <div className="hidden lg:flex items-center space-x-2">
-              <Button variant="ghost" size="sm">
-                {t('header.login')}
-              </Button>
-              <Button variant="default" size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
-                {t('.Signup')}
+            <div className="hidden lg:flex">
+              <Button
+                variant="default"
+                size="sm"
+                className="bg-blue-500 hover:bg-blue-600 text-white"
+              >
+                {t('header.signup')}
               </Button>
             </div>
 
@@ -77,7 +77,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-100">
             <nav className="flex flex-col space-y-4 pt-4">
@@ -96,11 +96,12 @@ const Header = () => {
               <a href="#court-lookup" className="text-gray-700 hover:text-blue-600 transition-colors">
                 {t('header.courtLookup')}
               </a>
-              <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="ghost" size="sm">
-                  {t('header.login')}
-                </Button>
-                <Button variant="default" size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
+              <div className="pt-4">
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="bg-blue-500 hover:bg-blue-600 text-white w-full"
+                >
                   {t('header.signup')}
                 </Button>
               </div>
