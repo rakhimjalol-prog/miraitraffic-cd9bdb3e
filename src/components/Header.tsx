@@ -53,7 +53,7 @@ const Header = () => {
             <LanguageToggle />
             <div className="hidden lg:flex items-center space-x-2">
               <Button variant="success" size="sm" className="px-6 font-semibold">
-                {t('header.signup')}
+                {t('Signup')}
               </Button>
               <Button variant="ghost" size="sm" className="px-6 text-blue-500 font-medium">
                 {t('header.login')}
@@ -76,7 +76,7 @@ const Header = () => {
               <a href="#course" className="text-gray-700 hover:text-primary transition-colors">{t('header.offensiveDriving')}</a>
               <a href="#court-lookup" className="text-gray-700 hover:text-primary transition-colors">CA Courts</a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="success" size="sm">{t('header.signup')}</Button>
+                <Button variant="success" size="sm">{t('Signup')}</Button>
                 <Button variant="ghost" size="sm" className="text-blue-500">{t('header.login')}</Button>
               </div>
             </nav>
