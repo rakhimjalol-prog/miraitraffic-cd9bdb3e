@@ -1,27 +1,35 @@
 import { Separator } from "@/components/ui/separator";
-import LanguageToggle from "@/components/LanguageToggle";
+
 const Footer = () => {
-  return <footer className="border-t border-border py-16 bg-[#71d4f6]/[0.56]">
+  return (
+    <footer className="border-t border-border py-16 bg-[#71d4f6]/[0.56]">
       <div className="container mx-auto px-6">
         {/* Top Footer Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12 text-sm">
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png" alt="Mirai Traffic School Logo" className="-bottom-1/3 brightness-100 max-h-10 " />
+              <img
+                src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
+                alt="Mirai Traffic School Logo"
+                className="-bottom-1/3 brightness-100 max-h-10"
+              />
               <h3 className="text-lg font-semibold text-foreground">
                 Mirai Traffic School
               </h3>
             </div>
-            <p className="text-muted-foreground mb-2 leading-relaxed">© 2025 Mirai Traffic School
-DMV License #XXXX
-California DMV-Licensed Traffic Violator School</p>
-            
+            <p className="text-muted-foreground mb-2 leading-relaxed">
+              © 2025 Mirai Traffic School<br />
+              DMV License #XXXX<br />
+              California DMV-Licensed Traffic Violator School
+            </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-2">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-2">
+              Quick Links
+            </h4>
             <ul className="space-y-1">
               <li><a href="/start-course" className="hover:underline text-muted-foreground">Start Course</a></li>
               <li><a href="/sample-lesson" className="hover:underline text-muted-foreground">Sample Lesson</a></li>
@@ -60,14 +68,12 @@ California DMV-Licensed Traffic Violator School</p>
         <Separator className="bg-border mb-8" />
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-muted-foreground">© 2025 Mirai Traffic School. All rights reserved. Licensed by the California DMV.</div>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">Language:</span>
-            <LanguageToggle />
-          </div>
+        <div className="text-sm text-muted-foreground text-center">
+          © 2025 Mirai Traffic School. All rights reserved. Licensed by the California DMV.
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
