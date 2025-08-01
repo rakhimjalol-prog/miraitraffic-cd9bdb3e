@@ -1,9 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import LanguageToggle from "@/components/LanguageToggle";
-
 const Footer = () => {
-  return (
-    <footer className="bg-white border-t border-border py-16">
+  return <footer className="bg-white border-t border-border py-16">
       <div className="container mx-auto px-6">
         {/* Top Footer Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12 text-sm">
@@ -12,12 +10,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-foreground mb-2">
               Mirai Traffic School
             </h3>
-            <p className="text-muted-foreground mb-2 leading-relaxed">
-              California's premier Japanese-language online traffic school. DMV-approved and court-accepted since 2020.
-            </p>
-            <p className="text-xs text-muted-foreground">
-              DMV License #E2067
-            </p>
+            <p className="text-muted-foreground mb-2 leading-relaxed">© 2025 Mirai Traffic School
+DMV License #XXXX
+California DMV-Licensed Traffic Violator School</p>
+            
           </div>
 
           {/* Quick Links */}
@@ -62,17 +58,13 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-muted-foreground">
-            © 2024 Mirai Traffic School. All rights reserved. Licensed by the California DMV.
-          </div>
+          <div className="text-sm text-muted-foreground">© 2025 Mirai Traffic School. All rights reserved. Licensed by the California DMV.</div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">Language:</span>
             <LanguageToggle />
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
