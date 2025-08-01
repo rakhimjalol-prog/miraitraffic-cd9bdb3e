@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 const CourseFeatureSection = () => {
   const [lang, setLang] = useState<'en' | 'jp'>('en');
 
+  // Detect language from localStorage
   useEffect(() => {
     const storedLang = localStorage.getItem('lang');
     if (storedLang === 'jp' || storedLang === 'en') {
@@ -44,20 +45,21 @@ const CourseFeatureSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#71d4f6]/30 rounded-sm overflow-hidden">
+    <section className="py-20 bg-[#71d4f6]/30 overflow-hidden rounded-sm">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Syllabus List */}
           <div className="space-y-6 animate-slide-in-left-slow">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-              <span className="block text-lg">Mirai Traffic School</span>
+              <span className="block text-lg">
+                {lang === 'jp' ? 'Mirai Traffic School' : 'Mirai Traffic School'}
+              </span>
               <span className="block text-blue-700 text-2xl animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700 [animation-duration:4s] font-bold md:text-3xl">
                 {lang === 'jp'
                   ? '安全運転コースのシラバス'
                   : 'Offensive Driving Course Syllabus'}
               </span>
             </h2>
-
             <ul className="space-y-3 mt-6">
               {syllabus.map((item, index) => (
                 <li
