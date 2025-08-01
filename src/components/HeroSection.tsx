@@ -30,13 +30,17 @@ const HeroSection = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-8 animate-fade-in-up">
+            <div className="space-y-6 animate-fade-in-up">
               <h1 className="text-4xl md:text-5xl font-extrabold text-[#111827] leading-tight">
-                {t('hero.title')}
+                California’s First Japanese Online Traffic School
               </h1>
-              <p className="text-xl md:text-2xl font-semibold text-[#4F46E5] mt-2 max-w-2xl">
-                {t('hero.subtitle')}
+              <p className="text-xl md:text-2xl font-semibold text-[#111827]">
+                DMV-approved. Court-accepted.
               </p>
+              <p className="text-xl md:text-2xl font-semibold text-[#4F46E5]">
+                Clear your ticket. Learn safer driving. 100% online, 100% in Japanese
+              </p>
+
               <div className="flex flex-col sm:flex-row gap-4 items-start">
                 <Button
                   variant="default"
@@ -48,11 +52,12 @@ const HeroSection = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Button>
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+
+                <div className="flex items-center space-x-2 text-sm text-muted-foreground mt-2">
                   <svg className="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>{t('footer.dmvLicense')}</span>
+                  <span>DMV License #E2067</span>
                 </div>
               </div>
             </div>
@@ -60,18 +65,16 @@ const HeroSection = () => {
             {/* Right Illustration */}
             <div className="relative animate-fade-in-up">
               <div className="bg-gradient-soft rounded-2xl p-8 shadow-large">
-                <div className="aspect-square bg-white/50 rounded-xl flex items-center justify-center">
-                  <div className="bg-white/50 rounded-xl flex items-center justify-center p-4">
-                    <img
-                      src="/lovable-uploads/699eb859-ac44-476c-86bb-f5fcf60421dc.png"
-                      alt="Driving school illustration with instructors and car"
-                      className="w-[640px] max-w-full h-auto object-contain"
-                    />
-                  </div>
+                <div className="aspect-square bg-white/50 rounded-xl flex items-center justify-center p-4">
+                  <img
+                    src="/lovable-uploads/699eb859-ac44-476c-86bb-f5fcf60421dc.png"
+                    alt="Driving school illustration with instructors and car"
+                    className="w-[640px] max-w-full h-auto object-contain"
+                  />
                 </div>
               </div>
 
-              {/* Floating Icon */}
+              {/* Floating check icon */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-success/20 rounded-full flex items-center justify-center animate-float">
                 <svg className="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
