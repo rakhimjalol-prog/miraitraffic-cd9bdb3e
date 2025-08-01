@@ -31,34 +31,31 @@ const HeroSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6 animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-[#111827] leading-tight">
-                California’s First Japanese Online Traffic School
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+                <span className="text-purple-600 font-semibold">California’s First Japanese</span>{" "}
+                <span className="text-[#111827]">Online Traffic School</span>
               </h1>
-              <p className="text-xl md:text-2xl font-semibold text-[#111827]">
-                DMV-approved. Court-accepted.
-              </p>
-              <p className="text-xl md:text-2xl font-semibold text-[#4F46E5]">
-                Clear your ticket. Learn safer driving. 100% online, 100% in Japanese
-              </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <ul className="space-y-1 text-muted-foreground text-base md:text-lg font-medium">
+                <li>• DMV-approved.</li>
+                <li>• Court-accepted.</li>
+                <li>• Clear your traffic ticket.</li>
+                <li>• Learn safer driving.</li>
+                <li>• 100% online,</li>
+                <li>• 100% in Japanese</li>
+              </ul>
+
+              <div className="pt-4">
                 <Button
                   variant="default"
                   size="lg"
-                  className="group bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105 text-3xl font-bold"
+                  className="text-3xl px-10 py-6 font-bold bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   {t('hero.startCourse')}
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Button>
-
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground mt-2">
-                  <svg className="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>DMV License #E2067</span>
-                </div>
               </div>
             </div>
 
@@ -74,7 +71,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating check icon */}
+              {/* Floating Icon */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-success/20 rounded-full flex items-center justify-center animate-float">
                 <svg className="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
