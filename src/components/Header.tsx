@@ -59,6 +59,7 @@ const Header = () => {
 
           {/* Right Controls */}
           <div className="flex items-center space-x-4">
+            <LanguageToggle />
             <div className="hidden lg:flex items-center space-x-2">
               <Button variant="success" size="sm" className="px-6 font-semibold">
                 {t('header.signup')}
@@ -67,7 +68,6 @@ const Header = () => {
                 {t('header.login')}
               </Button>
             </div>
-            <LanguageToggle />
 
             {/* Mobile Menu Toggle */}
             <button
