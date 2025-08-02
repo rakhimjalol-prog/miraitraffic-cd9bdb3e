@@ -42,12 +42,12 @@ const HeroSection = () => {
               </h1>
 
               <ul className="text-muted-foreground text-lg space-y-1 list-disc list-inside">
-                <li>{isJP ? "DMV認可済み" : "DMV-approved."}</li>
-                <li>{isJP ? "裁判所が受け入れ" : "Court-accepted."}</li>
-                <li>{isJP ? "違反チケットを解決" : "Clear your traffic ticket."}</li>
-                <li>{isJP ? "より安全な運転を学ぶ" : "Learn safer driving."}</li>
-                <li>{isJP ? "100％オンライン" : "100% online."}</li>
-                <li>{isJP ? "100％日本語対応" : "100% in Japanese."}</li>
+                <li>{isJP ? "DMV認可済み" : "DMV-approved"}</li>
+                <li>{isJP ? "裁判所が受け入れ" : "Court-accepted"}</li>
+                <li>{isJP ? "違反チケットを解決" : "Clear your traffic ticket"}</li>
+                <li>{isJP ? "より安全な運転を学ぶ" : "Learn safer driving"}</li>
+                <li>{isJP ? "100％オンライン" : "100% online"}</li>
+                <li>{isJP ? "100％日本語対応" : "100% in Japanese"}</li>
               </ul>
 
               <Button variant="default" size="lg" className="group bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105 text-2xl font-bold px-8 py-5">
