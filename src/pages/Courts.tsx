@@ -158,4 +158,139 @@ export const courtDataFull = {
   "Santa Barbara": { website: "#", lookup: "#", courts: [
       { name: "Santa Maria", code: "42050" },
       { name: "Lompoc", code: "42060" },
-      { name: "Santa Barbara", code: "42070"
+      { name: "Santa Barbara", code: "42070" }
+    ]
+  },
+  "Santa Clara": { website: "#", lookup: "#", courts: [
+      { name: "San Jose", code: "43050" },
+      { name: "Palo Alto", code: "43060" }
+    ]
+  },
+  "Santa Cruz": { website: "#", lookup: "#", courts: [{ name: "Santa Cruz", code: "44050" }] },
+  "Shasta": { website: "#", lookup: "#", courts: [{ name: "Redding", code: "45050" }] },
+  "Sierra": { website: "#", lookup: "#", courts: [{ name: "Downieville", code: "46050" }] },
+  "Siskiyou": { website: "#", lookup: "#", courts: [{ name: "Yreka", code: "47050" }] },
+  "Solano": { website: "#", lookup: "#", courts: [
+      { name: "Fairfield", code: "48050" },
+      { name: "Vallejo", code: "48060" }
+    ]
+  },
+  "Sonoma": { website: "#", lookup: "#", courts: [{ name: "Santa Rosa", code: "49050" }] },
+  "Stanislaus": { website: "#", lookup: "#", courts: [
+      { name: "Modesto", code: "50050" },
+      { name: "Turlock", code: "50060" }
+    ]
+  },
+  "Sutter": { website: "#", lookup: "#", courts: [{ name: "Yuba City", code: "51050" }] },
+  "Tehama": { website: "#", lookup: "#", courts: [{ name: "Red Bluff", code: "52050" }] },
+  "Trinity": { website: "#", lookup: "#", courts: [{ name: "Weaverville", code: "53050" }] },
+  "Tulare": { website: "#", lookup: "#", courts: [
+      { name: "Visalia", code: "54050" },
+      { name: "Porterville", code: "54060" }
+    ]
+  },
+  "Tuolumne": { website: "#", lookup: "#", courts: [{ name: "Sonora", code: "55050" }] },
+  "Ventura": { website: "#", lookup: "#", courts: [
+      { name: "Ventura", code: "56050" },
+      { name: "Oxnard", code: "56060" }
+    ]
+  },
+  "Yolo": { website: "#", lookup: "#", courts: [{ name: "Woodland", code: "57050" }] },
+  "Yuba": { website: "#", lookup: "#", courts: [{ name: "Marysville", code: "58050" }] }
+};
+
+const Courts = () => {
+  const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
+
+  const counties = Object.keys(courtDataFull).sort();
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-center mb-8">California Traffic Courts</h1>
+        
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* County List Section */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Select Your County</h2>
+            <div className="grid grid-cols-2 gap-2 max-h-96 overflow-y-auto">
+              {counties.map((county) => (
+                <Button
+                  key={county}
+                  variant="outline"
+                  className="justify-start text-left h-auto py-2"
+                  onClick={() => setSelectedCounty(county)}
+                >
+                  <MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
+                  {county}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {/* Selected County Info Section */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Court Information</h2>
+            {selectedCounty ? (
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-4">{selectedCounty} County</h3>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium mb-2 flex items-center">
+                        <Building className="w-4 h-4 mr-2" />
+                        Courts
+                      </h4>
+                      <div className="space-y-2">
+                        {courtDataFull[selectedCounty].courts.map((court, index) => (
+                          <div key={index} className="bg-muted p-3 rounded">
+                            <div className="font-medium">{court.name}</div>
+                            <div className="text-sm text-muted-foreground">Code: {court.code}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <Button asChild variant="default">
+                        <a 
+                          href={courtDataFull[selectedCounty].website} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Court Website
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline">
+                        <a 
+                          href={courtDataFull[selectedCounty].lookup} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <Clock className="w-4 h-4 mr-2" />
+                          Ticket Lookup
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ) : (
+              <Card>
+                <CardContent className="p-6 text-center text-muted-foreground">
+                  Select a county from the list to view court information
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Courts;
