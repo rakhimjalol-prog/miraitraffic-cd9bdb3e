@@ -57,7 +57,9 @@ Mail:
 MiraITraffic School
 1024 Iron Point Rd #1043
 Folsom, CA 95630`}
-];
+]; Cookies; Usage Data              Google Ads, Facebook Ads
+Payments          Name, Billing & Shipping Info    Stripe
+Analytics         Co
 
 // Privacy Policy sections
 const privacySections = [
@@ -65,9 +67,7 @@ const privacySections = [
     title: "Privacy Policy — Last Updated: [Insert Date]",
     body: `Policy Snapshot
 Purpose           Data Collected                    Third-Party Service
-Advertising       Cookies; Usage Data              Google Ads, Facebook Ads
-Payments          Name, Billing & Shipping Info    Stripe
-Analytics         Cookies; Usage Data              Google Analytics
+Advertising      okies; Usage Data              Google Analytics
 Hosting & Infra   IP Address; Usage Data           AWS
 Optimization      Cookies; Usage Data              Google Optimize
 
