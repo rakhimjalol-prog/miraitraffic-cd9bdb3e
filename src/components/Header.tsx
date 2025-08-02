@@ -53,7 +53,7 @@ const Header = () => {
             </div>
 
             <a href="#court-lookup" className="text-gray-700 hover:text-primary transition-colors">
-              {t('header.CACourts')}
+              {t('CACourts')}
             </a>
           </nav>
 
