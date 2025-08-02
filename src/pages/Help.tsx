@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MapPin, Building, Clock, HelpCircle, BookOpen, ExternalLink } from "lucide-react";
 
+// Court data unchanged
 export const courtDataFull = {
   /* ... existing courtDataFull object unchanged ... */
 };
@@ -25,6 +26,7 @@ export const Courts = () => {
   );
 };
 
+// FAQ definitions
 const faqs = [
   {
     category: "About the Course",
@@ -64,9 +66,74 @@ const faqs = [
       }
     ]
   },
-  /* ... other FAQ sections omitted for brevity ... */
+  {
+    category: "Quizzes, Final Exam & Certificate",
+    items: [
+      {
+        question: "Are there quizzes in the course?",
+        answer: "Yes. You’ll take a short quiz after each section. You must score at least 70% to pass each quiz."
+      },
+      {
+        question: "Is there a final exam?",
+        answer: "Yes. At the end of the course, you must pass a final exam with a score of 70% or higher. You may attempt the final exam up to two times."
+      },
+      {
+        question: "What happens if I fail a quiz?",
+        answer: "You can retake each quiz as many times as needed until you pass."
+      },
+      {
+        question: "When is my certificate sent to the DMV?",
+        answer: "As soon as you pass the final exam, your completion certificate is submitted electronically to the DMV. You’ll also receive a copy for your records."
+      }
+    ]
+  },
+  {
+    category: "Payments & Refunds",
+    items: [
+      {
+        question: "What payment methods do you accept?",
+        answer: "We accept all major credit and debit cards through our secure payment partner, Stripe. You may also see options like PayPal, Apple Pay, or Google Pay depending on your device."
+      },
+      {
+        question: "Is there a refund policy?",
+        answer: "Yes. Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available."
+      }
+    ]
+  },
+  {
+    category: "Technical Support",
+    items: [
+      {
+        question: "Can I switch devices during the course?",
+        answer: "Yes. Your progress is automatically saved. You can log in from any device and continue right where you left off."
+      },
+      {
+        question: "What if I forget my login details?",
+        answer: "Click “Forgot Password” on the login page or contact us at support@miraitraffic.com for help."
+      }
+    ]
+  },
+  {
+    category: "Language Options",
+    items: [
+      {
+        question: "Is the course available in Japanese?",
+        answer: "Yes. The full course is presented in Japanese, with English translation available where needed."
+      }
+    ]
+  },
+  {
+    category: "Still Have Questions?",
+    items: [
+      {
+        question: "Didn't find what you were looking for?",
+        answer: "Contact our support team anytime at support@miraitraffic.com and we’ll be happy to assist you."
+      }
+    ]
+  }
 ];
 
+// Help topics with DMV links
 const helpTopics = [
   {
     title: "DMV Requirements",
@@ -90,6 +157,7 @@ const helpTopics = [
   }
 ];
 
+// Help Center component
 export const Help = () => (
   <div className="min-h-screen bg-background">
     <Header />
@@ -120,7 +188,7 @@ export const Help = () => (
                     <h3 className="text-2xl font-semibold text-primary mb-4">{section.category}</h3>
                     <div className="space-y-4">
                       {section.items.map((faq, j) => (
-                        <div key={j} className="">
+                        <div key={j}>
                           <h4 className="font-medium text-foreground mb-1">Q: {faq.question}</h4>
                           <p className="text-muted-foreground">A: {faq.answer}</p>
                         </div>
@@ -134,27 +202,23 @@ export const Help = () => (
         </TabsContent>
 
         <TabsContent value="help-topics">
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {helpTopics.map((topic, idx) => (
-                <Card key={idx} className="border-0 shadow-soft hover:shadow-hover transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <span className="text-3xl">{topic.icon}</span>
-                      <div className="flex-1">
-                        <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {topic.title}
-                        </h4>
-                        <a href={topic.url} target="_blank" rel="noopener noreferrer" className="flex items-center text-primary underline">
-                          <span className="text-sm font-medium">Learn more</span>
-                          <ExternalLink className="w-4 h-4 ml-2" />
-                        </a>
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {helpTopics.map((topic, idx) => (
+              <Card key={idx} className="border-0 shadow-soft hover:shadow-hover transition-all duration-300 cursor-pointer">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <span className="text-3xl">{topic.icon}</span>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-semibold text-foreground mb-2">{topic.title}</h4>
+                      <a href={topic.url} target="_blank" rel="noopener noreferrer" className="flex items-center text-primary underline">
+                        <span className="text-sm font-medium">Learn more</span>
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </TabsContent>
       </Tabs>
