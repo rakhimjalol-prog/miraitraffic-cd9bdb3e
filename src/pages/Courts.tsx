@@ -3,28 +3,114 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MapPin, Building, Clock } from "lucide-react";
+import { MapPin, Building, Clock, ExternalLink } from "lucide-react";
+
+const courtData: Record<string, {
+  website?: string;
+  lookup?: string;
+  courts: { name: string; code: string }[];
+}> = {
+  "Alameda": {
+    website: "https://www.alameda.courts.ca.gov/",
+    lookup: "https://www.alameda.courts.ca.gov/lookup",
+    courts: [
+      { name: "Alameda", code: "01430" },
+      { name: "Berkeley-Albany", code: "01430" },
+      { name: "Dublin", code: "01430" },
+      { name: "Fremont", code: "01430" },
+      { name: "Hayward", code: "01430" },
+      { name: "Oakland", code: "01440" }
+    ]
+  },
+  "Alpine": {
+    courts: [
+      { name: "Markleeville", code: "02050" }
+    ]
+  },
+  "Amador": {
+    courts: [
+      { name: "Jackson", code: "03050" }
+    ]
+  },
+  "Butte": {
+    courts: [
+      { name: "Chico", code: "04030" },
+      { name: "Oroville", code: "04030" },
+      { name: "Paradise", code: "04030" }
+    ]
+  },
+  "Calaveras": {
+    courts: [
+      { name: "San Andreas", code: "05050" }
+    ]
+  },
+  "Colusa": {
+    courts: [
+      { name: "Colusa", code: "06050" }
+    ]
+  },
+  "Contra Costa": {
+    courts: [
+      { name: "Martinez", code: "07030" },
+      { name: "Pittsburg", code: "07030" },
+      { name: "Richmond", code: "07030" }
+    ]
+  },
+  "Del Norte": {
+    courts: [
+      { name: "Crescent City", code: "08050" }
+    ]
+  },
+  "El Dorado": {
+    courts: [
+      { name: "Placerville", code: "09050" },
+      { name: "South Lake Tahoe", code: "09050" }
+    ]
+  },
+  "Fresno": {
+    courts: [
+      { name: "Fresno", code: "10050" }
+    ]
+  },
+  "Glenn": {
+    courts: [
+      { name: "Willows", code: "11050" }
+    ]
+  },
+  "Humboldt": {
+    courts: [
+      { name: "Eureka", code: "12050" }
+    ]
+  },
+  "Imperial": {
+    courts: [
+      { name: "El Centro", code: "13050" }
+    ]
+  },
+  "Inyo": {
+    courts: [
+      { name: "Independence", code: "14050" }
+    ]
+  },
+  "Kern": {
+    courts: [
+      { name: "Bakersfield", code: "15050" },
+      { name: "Mojave", code: "15060" },
+      { name: "Ridgecrest", code: "15070" },
+      { name: "Delano", code: "15080" }
+    ]
+  }
+};
 
 const Courts = () => {
   const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
 
-  // California counties A-Z
-  const counties = [
-    "Alameda", "Alpine", "Amador", "Butte", "Calaveras", "Colusa", "Contra Costa",
-    "Del Norte", "El Dorado", "Fresno", "Glenn", "Humboldt", "Imperial", "Inyo",
-    "Kern", "Kings", "Lake", "Lassen", "Los Angeles", "Madera", "Marin", "Mariposa",
-    "Mendocino", "Merced", "Modoc", "Mono", "Monterey", "Napa", "Nevada", "Orange",
-    "Placer", "Plumas", "Riverside", "Sacramento", "San Benito", "San Bernardino",
-    "San Diego", "San Francisco", "San Joaquin", "San Luis Obispo", "San Mateo",
-    "Santa Barbara", "Santa Clara", "Santa Cruz", "Shasta", "Sierra", "Siskiyou",
-    "Solano", "Sonoma", "Stanislaus", "Sutter", "Tehama", "Trinity", "Tulare",
-    "Tuolumne", "Ventura", "Yolo", "Yuba"
-  ];
+  const counties = Object.keys(courtData);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -36,7 +122,6 @@ const Courts = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* County List Section */}
           <div className="lg:col-span-2">
             <Card className="border-0 shadow-soft" id="county-list-section">
               <CardContent className="p-6">
@@ -44,7 +129,7 @@ const Courts = () => {
                   <MapPin className="w-6 h-6 text-primary" />
                   <h2 className="text-2xl font-semibold text-primary">Select Your County</h2>
                 </div>
-                
+
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {counties.map((county) => (
                     <Button
@@ -61,7 +146,6 @@ const Courts = () => {
             </Card>
           </div>
 
-          {/* Selected County Info Section */}
           <div className="lg:col-span-1">
             <Card className="border-0 shadow-soft sticky top-6" id="county-info-section">
               <CardContent className="p-6">
@@ -69,7 +153,7 @@ const Courts = () => {
                   <Building className="w-6 h-6 text-primary" />
                   <h2 className="text-xl font-semibold text-primary">Court Information</h2>
                 </div>
-                
+
                 {selectedCounty ? (
                   <div className="space-y-6">
                     <div>
@@ -77,29 +161,41 @@ const Courts = () => {
                         {selectedCounty} County Court
                       </h3>
                     </div>
-                    
-                    <div className="bg-muted/50 p-6 rounded-lg">
-                      <p className="text-muted-foreground italic text-center">
-                        Insert content here
-                      </p>
-                    </div>
-                    
+
                     <div className="space-y-4">
-                      <div className="flex items-start space-x-3">
-                        <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      {courtData[selectedCounty]?.website && (
                         <div>
-                          <h4 className="font-medium text-foreground">Address</h4>
-                          <p className="text-sm text-muted-foreground">Court address will be inserted here</p>
+                          <a
+                            href={courtData[selectedCounty].website}
+                            target="_blank"
+                            className="text-blue-600 hover:underline inline-flex items-center"
+                            rel="noopener noreferrer"
+                          >
+                            Official Website <ExternalLink className="ml-1 w-4 h-4" />
+                          </a>
                         </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <Clock className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      )}
+                      {courtData[selectedCounty]?.lookup && (
                         <div>
-                          <h4 className="font-medium text-foreground">Hours</h4>
-                          <p className="text-sm text-muted-foreground">Court hours will be inserted here</p>
+                          <a
+                            href={courtData[selectedCounty].lookup}
+                            target="_blank"
+                            className="text-blue-600 hover:underline inline-flex items-center"
+                            rel="noopener noreferrer"
+                          >
+                            Traffic Ticket Lookup <ExternalLink className="ml-1 w-4 h-4" />
+                          </a>
                         </div>
-                      </div>
+                      )}
+                    </div>
+
+                    <div>
+                      <h4 className="text-md font-medium text-foreground mb-2">Traffic Courts</h4>
+                      <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                        {courtData[selectedCounty]?.courts.map((court, index) => (
+                          <li key={index}>{court.name} – Court Code {court.code}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 ) : (
