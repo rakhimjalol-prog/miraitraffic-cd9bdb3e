@@ -60,7 +60,9 @@ const Header = () => {
 
           {/* Right Controls */}
           <div className="flex items-center space-x-4">
-            <LanguageToggle />
+            <div className="flex items-center space-x-2">
+              <LanguageToggle />
+            </div>
             <div className="hidden lg:flex items-center space-x-2">
               <Button variant="success" size="sm" className="px-6 font-semibold">
                 {isJP ? '申し込む' : 'Signup'}
