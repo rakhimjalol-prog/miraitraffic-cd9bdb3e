@@ -4,7 +4,7 @@ const CertificateSection = () => {
   const {
     t
   } = useLanguage();
-  return <section className="py-20 bg-white">
+  return <section className="py-20 bg-[#71d4f6]/30">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
