@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HelpCircle, BookOpen, ExternalLink } from "lucide-react";
 
-// Full FAQ definitions grouped by category
 const faqs = [
   {
     category: "About the Course",
@@ -62,118 +61,14 @@ const faqs = [
   }
 ];
 
-// Help topics with DMV and support links
 const helpTopics = [
-  { title: "DMV Requirements", url: "https://www.dmv.ca.gov/portal/dmv/detail/pubs/handouts/ts", icon: "🚗" },
-  { title: "Course Completion", url: "https://www.dmv.ca.gov/portal/dmv/detail/ts/certification", icon: "✅" },
-  { title: "Technical Support", url: "mailto:support@miraitraffic.com", icon: "💻" },
-  { title: "Certificate Delivery", url: "https://www.dmv.ca.gov/portal/dmv/detail/ts/certificate", icon: "📜" }
+  { title: "Create a MyDMV Account", url: "https://www.dmv.ca.gov/portal/mydmv/", icon: "🧾" },
+  { title: "Renew Driver’s License or ID", url: "https://www.dmv.ca.gov/portal/dmv/detail/online/dl_renewal", icon: "🔄" },
+  { title: "Replace a Driver’s License", url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/replace-your-license-id-card/", icon: "📋" },
+  { title: "Vehicle Registration Renewal", url: "https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_top2", icon: "🚘" },
+  { title: "Change Your Address", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/change-of-address/", icon: "🏠" },
+  { title: "Transfer & Liability Notice", url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-title-transfer/notice-of-transfer-and-release-of-liability/", icon: "📑" },
+  { title: "Traffic School Lookup", url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licenses/traffic-violator-school-program/", icon: "🔍" },
+  { title: "Disabled Placard Application", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/disabled-person-placard/", icon: "🅿️" },
+  { title: "Make a DMV Payment", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dmv-payment/", icon: "💳" }
 ];
-
-export const Help = () => {
-  const [activeTab, setActiveTab] = useState<"faq" | "help-topics">("faq");
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-6 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Help Center</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Find answers to common questions and get the support you need
-          </p>
-        </div>
-
-        <Tabs defaultValue="faq" onValueChange={(v) => setActiveTab(v as any)} className="max-w-6xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="faq" className="text-base py-3">
-              <HelpCircle className="w-4 h-4 mr-2" /> FAQ
-            </TabsTrigger>
-            <TabsTrigger value="help-topics" className="text-base py-3">
-              <BookOpen className="w-4 h-4 mr-2" /> Help Topics
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="faq">
-            <Card className="border-0 shadow-soft">
-              <CardContent className="p-8 md:p-12">
-                <div className="flex items-center space-x-3 mb-8">
-                  <HelpCircle className="w-8 h-8 text-primary" />
-                  <h2 className="text-3xl font-semibold text-primary">Frequently Asked Questions</h2>
-                </div>
-                <div className="space-y-8">
-                  {faqs.map((group, idx) => (
-                    <div key={idx}>
-                      <h3 className="text-2xl font-semibold text-foreground mb-4">{group.category}</h3>
-                      <Accordion type="single" collapsible className="space-y-4">
-                        {group.items.map((item, j) => (
-                          <AccordionItem
-                            key={j}
-                            value={`${group.category}-${j}`}
-                            className="bg-white rounded-2xl border-0 shadow-soft"
-                          >
-                            <AccordionTrigger className="px-6 py-4 text-left text-lg font-medium">
-                              {item.question}
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                              {item.answer}
-                            </AccordionContent>
-                          </AccordionItem>
-                        ))}
-                      </Accordion>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="help-topics">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-3 mb-8">
-                <BookOpen className="w-8 h-8 text-primary" />
-                <h2 className="text-3xl font-semibold text-primary">Help Topics</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {helpTopics.map((topic, i) => (
-                  <Card
-                    key={i}
-                    className="border-0 shadow-soft hover:shadow-hover transition-all duration-300 cursor-pointer group"
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="text-3xl">{topic.icon}</div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                            {topic.title}
-                          </h3>
-                          <a
-                            href={topic.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary group-hover:underline flex items-center"
-                          >
-                            <span className="text-sm font-medium">Learn more</span>
-                            <ExternalLink className="w-4 h-4 ml-2" />
-                          </a>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              <div className="mt-8 p-6 bg-gradient-soft rounded-lg text-center">
-                <p className="text-muted-foreground">
-                  DMV links and additional resources are available above.
-                </p>
-              </div>
-            </div>
-          </TabsContent>
-        </Tabs>
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-export default Help;
