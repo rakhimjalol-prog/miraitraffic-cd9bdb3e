@@ -143,13 +143,13 @@ export const Legal = () => {
                   <h2 className="text-3xl font-semibold text-primary">Terms of Use</h2>
                 </div>
 
-                <div className="space-y-6">  {/* Reduced spacing and removed prose */}
+                <div className="space-y-6">
                   {termsSections.map((sec, i) => (
                     <section key={i} className="mb-8">
                       <h3 className="text-2xl font-semibold text-foreground mb-4">{sec.title}</h3>
-                      <div className="space-y-4 text-sm text-muted-foreground whitespace-pre-wrap">
+                      <div className="prose prose-lg text-foreground max-w-none">
                         {sec.body.split("\n\n").map((para, idx) => (
-                          <p key={idx}>{para}</p>
+                          <p key={idx}>{para.trim()}</p>
                         ))}
                       </div>
                     </section>
@@ -167,13 +167,13 @@ export const Legal = () => {
                   <h2 className="text-3xl font-semibold text-primary">Privacy Policy</h2>
                 </div>
 
-                <div className="space-y-6">  {/* Reduced spacing and removed prose */}
+                <div className="space-y-6">
                   {privacySections.map((sec, i) => (
                     <section key={i} className="mb-8">
                       <h3 className="text-2xl font-semibold text-foreground mb-4">{sec.title}</h3>
-                      <div className="space-y-4 text-sm text-muted-foreground whitespace-pre-wrap">
+                      <div className="prose prose-lg text-foreground max-w-none">
                         {sec.body.split("\n\n").map((para, idx) => (
-                          <p key={idx}>{para}</p>
+                          <p key={idx}>{para.trim()}</p>
                         ))}
                       </div>
                     </section>
