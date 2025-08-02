@@ -147,7 +147,7 @@ export const Legal = () => {
                   {termsSections.map((sec, i) => (
                     <section key={i} className="mb-8">
                       <h3 className="text-2xl font-semibold text-foreground mb-4">{sec.title}</h3>
-                      <div className="prose prose-lg text-foreground max-w-none">
+                      <div className="prose prose-lg text-foreground max-w-none space-y-4 leading-relaxed">
                         {sec.body.split("\n\n").map((para, idx) => (
                           <p key={idx}>{para.trim()}</p>
                         ))}
@@ -171,7 +171,7 @@ export const Legal = () => {
                   {privacySections.map((sec, i) => (
                     <section key={i} className="mb-8">
                       <h3 className="text-2xl font-semibold text-foreground mb-4">{sec.title}</h3>
-                      <div className="prose prose-lg text-foreground max-w-none">
+                      <div className="prose prose-lg text-foreground max-w-none space-y-4 leading-relaxed">
                         {sec.body.split("\n\n").map((para, idx) => (
                           <p key={idx}>{para.trim()}</p>
                         ))}
