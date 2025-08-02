@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import LanguageToggle from '@/components/LanguageToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const { t } = useLanguage();
@@ -13,12 +13,13 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-gray-100 shadow-soft bg-[#71d4f6]/[0.96]">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2">
             <img
               src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
               alt="Mirai Traffic School Logo"
-              className="w-28"
+              className="w-32"
             />
           </a>
 
@@ -30,6 +31,7 @@ const Header = () => {
             <a href="#about" className="text-gray-700 hover:text-primary transition-colors">
               {t('header.about')}
             </a>
+
             <div className="relative">
               <button
                 onClick={() => setIsCoursesOpen(!isCoursesOpen)}
@@ -49,19 +51,18 @@ const Header = () => {
                 </div>
               )}
             </div>
+
             <a href="#court-lookup" className="text-gray-700 hover:text-primary transition-colors">
               {t('header.caCourts')}
             </a>
           </nav>
 
-          {/* Right Side */}
+          {/* Right Controls */}
           <div className="flex items-center space-x-4">
-            <div className="hidden lg:block">
-              <LanguageToggle />
-            </div>
+            <LanguageToggle />
             <div className="hidden lg:flex items-center space-x-2">
               <Button variant="success" size="sm" className="px-6 font-semibold">
-                {t('Signup')}
+                {t('header.signup')}
               </Button>
               <Button variant="ghost" size="sm" className="px-6 text-blue-500 font-medium">
                 {t('header.login')}
@@ -94,13 +95,9 @@ const Header = () => {
               <a href="#court-lookup" className="text-gray-700 hover:text-primary transition-colors">
                 {t('header.caCourts')}
               </a>
-              <div className="pt-4">
-                <LanguageToggle />
-              </div>
+
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="success" size="sm">
-                  {t('Signup')}
-                </Button>
+                <Button variant="success" size="sm">{t('header.signup')}</Button>
                 <Button variant="ghost" size="sm" className="text-blue-500">
                   {t('header.login')}
                 </Button>
