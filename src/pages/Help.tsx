@@ -158,7 +158,7 @@ const helpTopics = [
 ];
 
 // Help Center component
-export const Help = () => (
+const Help = () => (
   <div className="min-h-screen bg-background">
     <Header />
     <main className="container mx-auto px-6 py-16">
@@ -213,7 +213,7 @@ export const Help = () => (
                       <a href={topic.url} target="_blank" rel="noopener noreferrer" className="flex items-center text-primary underline">
                         <span className="text-sm font-medium">Learn more</span>
                         <ExternalLink className="w-4 h-4 ml-2" />
-                      </a>
+                      </ExternalLink>
                     </div>
                   </div>
                 </CardContent>
@@ -226,3 +226,5 @@ export const Help = () => (
     <Footer />
   </div>
 );
+
+export default Help;
