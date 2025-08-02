@@ -226,7 +226,7 @@ export const Help = () => {
                 ))}
               </div>
               <div className="mt-8 p-6 bg-gradient-soft rounded-lg text-center">
-                <p className="text-muted-foreground">DMV links and additional resources are available via the cards above.</n                </p>
+                <p className="text-muted-foreground">DMV links and additional resources are available via the cards above.</p>
               </div>
             </div>
           </TabsContent>
