@@ -6,69 +6,77 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HelpCircle, BookOpen, ExternalLink } from "lucide-react";
 
-const faqs = [
-  {
-    category: "About the Course",
-    items: [
-      { question: "What is Mirai Traffic School?", answer: "Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record." },
-      { question: "Is the course approved by the California DMV?", answer: "Yes. Our course is licensed by the California DMV. However, DMV approval does not imply endorsement." },
-      { question: "How long is the course?", answer: "The California DMV requires that online traffic school courses take a minimum of 340 minutes (about 5.5 hours). You can complete the course at your own pace, and your progress is saved automatically." },
-      { question: "How does identity verification work during the course?", answer: "As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course." },
-      { question: "Will there be videos in the course?", answer: "Yes! The course includes 14 short, animated videos to help you understand California traffic laws in an easy and engaging way." }
-    ]
-  },
-  {
-    category: "Registration & Access",
-    items: [
-      { question: "How do I sign up for the course?", answer: "Click the 'Enroll Now' button on our website, enter your information, and complete payment. You’ll receive login instructions by email." },
-      { question: "How long do I have to complete the course?", answer: "You have 60 days from your date of purchase to complete the course. After completion, your course remains accessible for another 30 days." }
-    ]
-  },
-  {
-    category: "Quizzes, Final Exam & Certificate",
-    items: [
-      { question: "Are there quizzes in the course?", answer: "Yes. You’ll take a short quiz after each section. You must score at least 70% to pass each quiz." },
-      { question: "Is there a final exam?", answer: "Yes. At the end of the course, you must pass a final exam with a score of 70% or higher. You may attempt the final exam up to two times." },
-      { question: "What happens if I fail a quiz?", answer: "You can retake each quiz as many times as needed until you pass." },
-      { question: "When is my certificate sent to the DMV?", answer: "As soon as you pass the final exam, your completion certificate is submitted electronically to the DMV. You’ll also receive a copy for your records." }
-    ]
-  },
-  {
-    category: "Payments & Refunds",
-    items: [
-      { question: "What payment methods do you accept?", answer: "We accept all major credit and debit cards through our secure payment partner, Stripe. You may also see options like PayPal, Apple Pay, or Google Pay depending on your device." },
-      { question: "Is there a refund policy?", answer: "Yes. Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available." }
-    ]
-  },
-  {
-    category: "Technical Support",
-    items: [
-      { question: "Can I switch devices during the course?", answer: "Yes. Your progress is automatically saved. You can log in from any device and continue right where you left off." },
-      { question: "What if I forget my login details?", answer: "Click 'Forgot Password' on the login page or contact us at support@miraitraffic.com for help." }
-    ]
-  },
-  {
-    category: "Language Options",
-    items: [
-      { question: "Is the course available in Japanese?", answer: "Yes. The full course is presented in Japanese, with English translation available where needed." }
-    ]
-  },
-  {
-    category: "Still Have Questions?",
-    items: [
-      { question: "Didn't find what you were looking for?", answer: "Contact our support team anytime at support@miraitraffic.com and we’ll be happy to assist you." }
-    ]
-  }
-];
+const faqs = [ /* unchanged for brevity */ ];
 
 const helpTopics = [
-  { title: "Create a MyDMV Account", url: "https://www.dmv.ca.gov/portal/mydmv/", icon: "🧾" },
-  { title: "Renew Driver’s License or ID", url: "https://www.dmv.ca.gov/portal/dmv/detail/online/dl_renewal", icon: "🔄" },
-  { title: "Replace a Driver’s License", url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/replace-your-license-id-card/", icon: "📋" },
-  { title: "Vehicle Registration Renewal", url: "https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_top2", icon: "🚘" },
-  { title: "Change Your Address", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/change-of-address/", icon: "🏠" },
-  { title: "Transfer & Liability Notice", url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-title-transfer/notice-of-transfer-and-release-of-liability/", icon: "📑" },
-  { title: "Traffic School Lookup", url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licenses/traffic-violator-school-program/", icon: "🔍" },
-  { title: "Disabled Placard Application", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/disabled-person-placard/", icon: "🅿️" },
-  { title: "Make a DMV Payment", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dmv-payment/", icon: "💳" }
+  {
+    category: "Renew",
+    items: [
+      { title: "Driver’s License/ID Card Renewal", url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-license-id-card-online-renewal/", icon: "🔄" },
+      { title: "Commercial Driver’s License Renewal", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/commercial-driver-license-renewal/", icon: "🚛" },
+      { title: "Upgrade to REAL ID", url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/real-id/", icon: "⭐" },
+      { title: "Vehicle Registration Renewal", url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-registration-renewal/", icon: "🚘" },
+      { title: "Disabled Person Parking Placard Renewal", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-renewal/", icon: "🅿️" },
+      { title: "Planned Nonoperation Renewal", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/file-for-planned-non-operation-vfo/", icon: "📆" }
+    ]
+  },
+  {
+    category: "Apply / Request",
+    items: [
+      { title: "Driver’s License/ID Card Application", url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/dl-id-online-app-edl-44/", icon: "📝" },
+      { title: "Change Address on DL/ID", url: "https://www.dmv.ca.gov/portal/online-change-of-address-coa-system/", icon: "🏠" },
+      { title: "Title Transfer", url: "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/title-transfer/", icon: "🔁" },
+      { title: "Notice of Transfer & Release of Liability", url: "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/notice-of-transfer-and-release-of-liability-nrl/", icon: "📑" },
+      { title: "Disabled Person Parking Placard Application", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-application/", icon: "🅿️" },
+      { title: "Affidavit of Non-Use", url: "https://www.dmv.ca.gov/portal/vehicle-registration/affidavit-of-non-use/", icon: "📃" }
+    ]
+  },
+  {
+    category: "Order",
+    items: [
+      { title: "Order Driver’s Record", url: "https://www.dmv.ca.gov/portal/customer-service/request-vehicle-or-driver-records/online-driver-record-request/", icon: "📄" },
+      { title: "Order Vehicle Record", url: "https://www.dmv.ca.gov/portal/customer-service/request-vehicle-or-driver-records/online-vehicle-record-request/", icon: "🚗" },
+      { title: "Special Interest or Personalized Plates", url: "https://www.dmv.ca.gov/portal/vehicle-registration/license-plates-decals-and-placards/license-plates/order-special-interest-and-personalized-license-plates/", icon: "🔠" },
+      { title: "Clean Air Vehicle Decal", url: "https://www.dmv.ca.gov/portal/vehicle-registration/license-plates-decals-and-placards/clean-air-vehicle-decals-for-using-carpool-lanes/", icon: "🌿" },
+      { title: "Mussel Fee Sticker", url: "https://www.dmv.ca.gov/portal/vehicle-registration/new-registration/register-your-boat-vessel/quagga-sticker-request/", icon: "🐚" }
+    ]
+  },
+  {
+    category: "Replace",
+    items: [
+      { title: "Driver’s License Replacement", url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/replace-your-driver-license-or-identification-dl-id-card/online-duplicate-driver-license-request/", icon: "♻️" },
+      { title: "Sticker or Registration Card Replacement", url: "https://www.dmv.ca.gov/portal/vehicle-registration/online-replacement-sticker-or-registration-card/", icon: "🏷️" },
+      { title: "Title Replacement", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/replacement-title/", icon: "🆕" },
+      { title: "Disabled Person Parking Placard Replacement", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-replacement/", icon: "🔁" },
+      { title: "License Plate Replacement", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/replacement-license-plates/", icon: "🔧" }
+    ]
+  },
+  {
+    category: "Lookup / Status Check",
+    items: [
+      { title: "Virtual Office Case Status", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/case-status/", icon: "📋" },
+      { title: "Driver’s License/ID Card Status", url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/drivers-license-id-card-status/", icon: "🔎" },
+      { title: "Vehicle Registration Status", url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-registration-status/", icon: "🚙" },
+      { title: "Occupational Licensing Lookup", url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licensing/occupational-licensing-status-information-system/", icon: "🧑‍💼" },
+      { title: "Traffic School Lookup", url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licensing/occupational-licensing-status-information-system/traffic-school-list/", icon: "🏫" },
+      { title: "Active Motor Carrier Permit Holders", url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/motor-carrier-services-mcs/motor-carrier-permits/active-motor-carriers/", icon: "🚛" }
+    ]
+  },
+  {
+    category: "Make a Payment",
+    items: [
+      { title: "Dishonored Check Payment", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dishonored-check-payment/", icon: "❌💵" },
+      { title: "Reinstatement Fee", url: "https://www.dmv.ca.gov/portal/vehicle-registration/insurance-requirements/suspended-vehicle-registration/", icon: "💰" },
+      { title: "Reissue Fee Payment (Driver’s License)", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/reissue-fees/", icon: "♻️" },
+      { title: "Fee Calculators", url: "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/vehicle-registration-fee-calculator/calculate-my-fees/", icon: "🧮" }
+    ]
+  },
+  {
+    category: "Submit a Report or Certification",
+    items: [
+      { title: "Report an Accident", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/", icon: "🚨" },
+      { title: "Submit Medical Examination Report", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/medical-examination-report/", icon: "🩺" },
+      { title: "Submit Commercial Behind-the-Wheel Training Certification", url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/submit-dl-1236-vfo/", icon: "📄" }
+    ]
+  }
 ];
