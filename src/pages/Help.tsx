@@ -103,9 +103,9 @@ const Help = () => {
       
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-foreground mb-4">Help Center</h1>
-            <p className="text-muted-foreground">Find answers to common questions and helpful resources</p>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Help Center</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Find answers to common questions and helpful resources</p>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -123,7 +123,7 @@ const Help = () => {
             <TabsContent value="faq" className="mt-6">
               <Card>
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+                  <h2 className="text-2xl font-semibold text-primary mb-4">Frequently Asked Questions</h2>
                   <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (
                       <AccordionItem key={index} value={`item-${index}`}>
@@ -138,7 +138,7 @@ const Help = () => {
 
             <TabsContent value="topics" className="mt-6">
               <div className="grid gap-6">
-                <h2 className="text-xl font-semibold">DMV Help Topics</h2>
+                <h2 className="text-2xl font-semibold text-primary">DMV Help Topics</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {helpTopics.map((topic, index) => (
                     <Card key={index} className="h-fit">

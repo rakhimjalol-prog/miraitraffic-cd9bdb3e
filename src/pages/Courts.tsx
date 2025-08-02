@@ -208,12 +208,15 @@ const Courts = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-center mb-8">California Traffic Courts</h1>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">California Traffic Courts</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Find your local court information and requirements</p>
+        </div>
         
         <div className="grid lg:grid-cols-2 gap-8">
           {/* County List Section */}
           <div>
-            <h2 className="text-xl font-semibold mb-4">Select Your County</h2>
+            <h2 className="text-2xl font-semibold text-primary mb-4">Select Your County</h2>
             <div className="grid grid-cols-2 gap-2 max-h-96 overflow-y-auto">
               {counties.map((county) => (
                 <Button
@@ -231,7 +234,7 @@ const Courts = () => {
 
           {/* Selected County Info Section */}
           <div>
-            <h2 className="text-xl font-semibold mb-4">Court Information</h2>
+            <h2 className="text-2xl font-semibold text-primary mb-4">Court Information</h2>
             {selectedCounty ? (
               <Card>
                 <CardContent className="p-6">
