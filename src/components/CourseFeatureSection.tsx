@@ -1,9 +1,17 @@
+import React, { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const CourseFeatureSection = () => {
-  const { language } = useLanguage(); // ✅ Pull language from context
+  const [lang, setLang] = useState<'en' | 'jp'>('en');
+
+  // Detect language from localStorage
+  useEffect(() => {
+    const storedLang = localStorage.getItem('lang');
+    if (storedLang === 'jp' || storedLang === 'en') {
+      setLang(storedLang);
+    }
+  }, []);
 
   const syllabus = [
     {
@@ -44,10 +52,10 @@ const CourseFeatureSection = () => {
           <div className="space-y-6 animate-slide-in-left-slow">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               <span className="block text-lg">
-                Mirai Traffic School
+                {lang === 'jp' ? 'Mirai Traffic School' : 'Mirai Traffic School'}
               </span>
               <span className="block text-blue-700 text-2xl animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700 [animation-duration:4s] font-bold md:text-3xl">
-                {language === 'jp'
+                {lang === 'jp'
                   ? '安全運転コースのシラバス'
                   : 'Offensive Driving Course Syllabus'}
               </span>
@@ -65,7 +73,7 @@ const CourseFeatureSection = () => {
                     {index + 1}
                   </div>
                   <span className="text-gray-800 text-sm md:text-base font-medium">
-                    {language === 'jp'
+                    {lang === 'jp'
                       ? `第${index + 1}章: ${item.jp}`
                       : `Chapter ${index + 1}: ${item.en}`}
                   </span>
@@ -80,7 +88,7 @@ const CourseFeatureSection = () => {
                 size="xl"
                 className="group text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 animate-glow-pulse"
               >
-                {language === 'jp' ? 'コースを始める' : 'Start the Course'}
+                {lang === 'jp' ? 'コースを始める' : 'Start the Course'}
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
