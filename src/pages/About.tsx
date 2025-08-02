@@ -21,10 +21,7 @@ const About = () => {
     };
 
     window.addEventListener('storage', handleStorageChange);
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   return (
@@ -62,11 +59,15 @@ const About = () => {
                   <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
                     <span className="text-muted-foreground text-lg">Image/Icon Space</span>
                   </div>
-
                   <div className="prose prose-lg max-w-none">
                     <h2 className="text-2xl font-semibold text-primary mb-4">
-                      {lang === 'jp' ? 'ここにストーリーを追加してください' : 'Insert Our Story content here'}
+                      {lang === 'jp' ? '私たちのストーリー' : 'Our Story'}
                     </h2>
+                    <p>
+                      {lang === 'jp'
+                        ? 'ミライ交通スクールは、日本語話者のためにカリフォルニア州で設立された、完全オンラインの交通スクールです。私たちは文化や言語の壁を超えて、簡単で安心して受講できる学習体験を提供します。'
+                        : 'Mirai Traffic School is a fully online traffic school established in California for Japanese speakers. We provide a simple and reliable learning experience that overcomes cultural and language barriers.'}
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -80,7 +81,6 @@ const About = () => {
                   <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
                     <span className="text-muted-foreground text-lg">Image/Icon Space</span>
                   </div>
-
                   <div className="prose prose-lg max-w-none">
                     <h2 className="text-2xl font-semibold text-primary mb-4">
                       {lang === 'jp' ? '簡単に始められる理由' : 'What Makes It Easy'}
@@ -92,13 +92,13 @@ const About = () => {
                       <li>{lang === 'jp' ? '修了証の迅速な提出 — 裁判所とDMVに自動送信' : 'Fast certificate delivery — automatic court & DMV submission'}</li>
                       <li>{lang === 'jp' ? 'すべてのデバイス対応 — スマホ、タブレット、PC' : 'Works on all devices — phone, tablet, or computer'}</li>
                     </ul>
-
                     <div className="mt-6 bg-muted/50 p-4 rounded-lg border-l-4 border-yellow-400">
                       <p className="text-muted-foreground">
-                        💡 {lang === 'jp' ? '登録前に裁判所の対象資格を確認してください。過去18ヶ月間に交通スクールを受講していなければ、ほとんどの運転者が対象です。' : 'Check your court eligibility before registering. Most drivers are eligible if they haven’t taken traffic school in the last 18 months.'}
+                        💡 {lang === 'jp'
+                          ? '登録前に裁判所の対象資格を確認してください。過去18ヶ月間に交通スクールを受講していなければ、ほとんどの運転者が対象です。'
+                          : 'Check your court eligibility before registering. Most drivers are eligible if they haven’t taken traffic school in the last 18 months.'}
                       </p>
                     </div>
-
                     <div className="mt-6 text-center">
                       <p className="text-muted-foreground">
                         {lang === 'jp' ? 'さらに質問がありますか？' : 'Still Have Questions?'}<br />
