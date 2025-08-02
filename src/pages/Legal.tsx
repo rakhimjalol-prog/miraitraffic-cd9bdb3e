@@ -10,13 +10,13 @@ const termsSections = [
   {
     title: "Terms of Use — Effective Date: [Insert Date]",
     body: `1. Who We Are
-MiraITraffic School (“we,” “us,” “our,” “MiraITraffic™”) operates the websites miraitrafficschool.com and miraitraffic.com (together, the “Site”) to deliver online driver-education courses and related services.
+MiraITraffic School (“we,” “us,” “our,” “MiraITraffic™”) operates the websites miraitrafficschool.com and miraitraffic.com to deliver online driver-education courses and related services.
 
 2. By Using Our Site, You Agree
 When you browse, register, or take any course on our Site, you’re accepting these Terms in full. If anything here doesn’t sit right with you, please don’t use our services.
 
 3. Updates to These Terms
-We may revise these Terms at any time—whether to reflect new features, legal requirements, or improvements. We’ll post the latest version here and update the "Effective Date" above. It’s on you to check back; continuing to use the Site means you agree to the new Terms.
+We may revise these Terms at any time—whether to reflect new features, legal requirements, or improvements. We’ll post the latest version here and update the Effective Date above. It’s on you to check back; continuing to use the Site means you agree to the new Terms.
 
 4. Your Account & Access Requirements
 Eligibility: You must be at least 13 years old. If you’re under 18, get a parent’s or guardian’s OK.
@@ -42,7 +42,7 @@ Use at your own risk: We’re not liable for lost data, downtime, or indirect or
 Maximum liability: If we ever owe you damages, they’re capped at the fees you paid in the last 12 months.
 
 9. Arbitration & Waivers
-IMPORTANT: Any dispute between you and MiraITraffic School will be resolved by individual binding arbitration (not court or class action) under the American Arbitration Association’s rules, in Sacramento, CA. You also waive any right to a jury trial.
+IMPORTANT: Any dispute between you and MiraITraffic School will be resolved by individual binding arbitration under the American Arbitration Association’s rules in Sacramento, CA. You also waive any right to a jury trial.
 
 10. Governing Law
 California law applies, without regard to its conflict-of-law rules.
@@ -56,7 +56,7 @@ Email: info@miraitrafficschool.com or info@miraitraffic.com
 Mail:
 MiraITraffic School
 1024 Iron Point Rd #1043
-Folsom, CA 95630`}
+Folsom, CA 95630`  }
 ];
 
 // Privacy Policy sections
@@ -105,8 +105,7 @@ We keep Order Information until you ask us to delete it or as long as needed to 
 We don’t knowingly collect data from anyone under 13. If we learn we have, we’ll delete it ASAP. Parents can request deletion at the emails above.
 
 8. Policy Updates
-We’ll post changes here with a new “Last Updated” date. Continued use means acceptance.`
-  }
+We’ll post changes here with a new Last Updated date. Continued use means acceptance.`  }
 ];
 
 export const Legal = () => {
@@ -144,12 +143,16 @@ export const Legal = () => {
                   <h2 className="text-3xl font-semibold text-primary">Terms of Use</h2>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-6">  {/* Reduced spacing and removed prose */}
                   {termsSections.map((sec, i) => (
-                    <div key={i}>
-                      <h3 className="text-2xl font-semibold text-foreground mb-2">{sec.title}</h3>
-                      <pre className="white-space-pre-wrap text-muted-foreground leading-relaxed">{sec.body}</pre>
-                    </div>
+                    <section key={i} className="mb-8">
+                      <h3 className="text-2xl font-semibold text-foreground mb-4">{sec.title}</h3>
+                      <div className="space-y-4 text-sm text-muted-foreground whitespace-pre-wrap">
+                        {sec.body.split("\n\n").map((para, idx) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
+                    </section>
                   ))}
                 </div>
               </CardContent>
@@ -164,12 +167,16 @@ export const Legal = () => {
                   <h2 className="text-3xl font-semibold text-primary">Privacy Policy</h2>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-6">  {/* Reduced spacing and removed prose */}
                   {privacySections.map((sec, i) => (
-                    <div key={i}>
-                      <h3 className="text-2xl font-semibold text-foreground mb-2">{sec.title}</h3>
-                      <pre className="white-space-pre-wrap text-muted-foreground leading-relaxed">{sec.body}</pre>
-                    </div>
+                    <section key={i} className="mb-8">
+                      <h3 className="text-2xl font-semibold text-foreground mb-4">{sec.title}</h3>
+                      <div className="space-y-4 text-sm text-muted-foreground whitespace-pre-wrap">
+                        {sec.body.split("\n\n").map((para, idx) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
+                    </section>
                   ))}
                 </div>
               </CardContent>
