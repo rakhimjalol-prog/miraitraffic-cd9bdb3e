@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,10 +32,10 @@ const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-1">
+              <li><Link to="/about" className="hover:underline text-muted-foreground">About Us</Link></li>
+              <li><Link to="/courts" className="hover:underline text-muted-foreground">CA Courts</Link></li>
               <li><a href="/start-course" className="hover:underline text-muted-foreground">Start Course</a></li>
               <li><a href="/sample-lesson" className="hover:underline text-muted-foreground">Sample Lesson</a></li>
-              <li><a href="/course-info" className="hover:underline text-muted-foreground">Course Info</a></li>
-              <li><a href="/court-lookup" className="hover:underline text-muted-foreground">Court Lookup</a></li>
             </ul>
           </div>
 
@@ -42,8 +43,8 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-2">Support</h4>
             <ul className="space-y-1">
-              <li><a href="/help-center" className="hover:underline text-muted-foreground">Help Center</a></li>
-              <li><a href="/contact" className="hover:underline text-muted-foreground">Contact</a></li>
+              <li><Link to="/help" className="hover:underline text-muted-foreground">Help Center</Link></li>
+              <li><Link to="/contact" className="hover:underline text-muted-foreground">Contact</Link></li>
               <li><a href="/support" className="hover:underline text-muted-foreground">Technical Support</a></li>
               <li className="text-muted-foreground">
                 <div>Phone: (555) 123-4567</div>
@@ -56,8 +57,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-2">Legal</h4>
             <ul className="space-y-1">
-              <li><a href="/privacy-policy" className="hover:underline text-muted-foreground">Privacy Policy</a></li>
-              <li><a href="/terms-of-use" className="hover:underline text-muted-foreground">Terms of Use</a></li>
+              <li><Link to="/legal" className="hover:underline text-muted-foreground">Terms & Privacy</Link></li>
               <li><a href="/dmv-info" className="hover:underline text-muted-foreground">DMV Information</a></li>
               <li><a href="/refund-policy" className="hover:underline text-muted-foreground">Refund Policy</a></li>
             </ul>

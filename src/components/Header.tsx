@@ -3,6 +3,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import LanguageToggle from '@/components/LanguageToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { language } = useLanguage();
@@ -16,46 +17,31 @@ const Header = () => {
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <img
               src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
               alt="Mirai Traffic School Logo"
               className="w-32"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-primary transition-colors">
+            <Link to="/" className="text-gray-700 hover:text-primary transition-colors">
               {isJP ? 'ホーム' : 'Home'}
-            </a>
-            <a href="#about" className="text-gray-700 hover:text-primary transition-colors">
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-primary transition-colors">
               {isJP ? '会社概要' : 'About Us'}
-            </a>
-
-            <div className="relative">
-              <button
-                onClick={() => setIsCoursesOpen(!isCoursesOpen)}
-                className="flex items-center text-gray-700 hover:text-primary transition-colors"
-              >
-                {isJP ? 'コース' : 'Courses'}
-                <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
-              {isCoursesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-elegant border border-gray-100 py-2 z-50">
-                  <a
-                    href="#course"
-                    className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
-                  >
-                    {isJP ? '違反運転講習' : 'Offensive Driving'}
-                  </a>
-                </div>
-              )}
-            </div>
-
-            <a href="#court-lookup" className="text-gray-700 hover:text-primary transition-colors">
+            </Link>
+            <Link to="/courts" className="text-gray-700 hover:text-primary transition-colors">
               {isJP ? 'CA 裁判所' : 'CA Courts'}
-            </a>
+            </Link>
+            <Link to="/help" className="text-gray-700 hover:text-primary transition-colors">
+              {isJP ? 'ヘルプ' : 'Help'}
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-primary transition-colors">
+              {isJP ? 'お問い合わせ' : 'Contact'}
+            </Link>
           </nav>
 
           {/* Right Controls */}
@@ -86,18 +72,21 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-100">
             <nav className="flex flex-col space-y-4 pt-4">
-              <a href="#home" className="text-gray-700 hover:text-primary transition-colors">
+              <Link to="/" className="text-gray-700 hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {isJP ? 'ホーム' : 'Home'}
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/about" className="text-gray-700 hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {isJP ? '会社概要' : 'About Us'}
-              </a>
-              <a href="#course" className="text-gray-700 hover:text-primary transition-colors">
-                {isJP ? '違反運転講習' : 'Offensive Driving'}
-              </a>
-              <a href="#court-lookup" className="text-gray-700 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/courts" className="text-gray-700 hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {isJP ? 'CA 裁判所' : 'CA Courts'}
-              </a>
+              </Link>
+              <Link to="/help" className="text-gray-700 hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                {isJP ? 'ヘルプ' : 'Help'}
+              </Link>
+              <Link to="/contact" className="text-gray-700 hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                {isJP ? 'お問い合わせ' : 'Contact'}
+              </Link>
 
               <div className="flex flex-col space-y-2 pt-4">
                 <Button variant="success" size="sm">{isJP ? '申し込む' : 'Signup'}</Button>
