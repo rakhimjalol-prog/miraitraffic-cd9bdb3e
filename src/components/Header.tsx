@@ -53,7 +53,7 @@ const Header = () => {
             </div>
 
             <a href="#court-lookup" className="text-gray-700 hover:text-primary transition-colors">
-              {t('CACourts')}
+              {t('header.caCourts')}
             </a>
           </nav>
 
@@ -62,10 +62,10 @@ const Header = () => {
             <LanguageToggle />
             <div className="hidden lg:flex items-center space-x-2">
               <Button variant="success" size="sm" className="px-6 font-semibold">
-                {t('Signup')}
+                {t('header.signup')}
               </Button>
               <Button variant="ghost" size="sm" className="px-6 text-blue-500 font-medium">
-                {t('Login')}
+                {t('header.login')}
               </Button>
             </div>
 
