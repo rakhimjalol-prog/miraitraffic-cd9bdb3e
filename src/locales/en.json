@@ -1,36 +1,16 @@
 {
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "help": "Help",
-    "courts": "Courts",
-    "contact": "Contact",
-    "login": "Login",
-    "signup": "Sign Up"
-  },
-  "home": {
-    "welcome": "Welcome to Traffic Violations School",
-    "subtitle": "Pass your California traffic course online",
-    "description": "Complete your court-required traffic school from home.",
-    "startCourse": "Start Course Now",
-    "learnMore": "Scroll to learn more"
-  },
   "hero": {
     "titleHighlight": "California's First Japanese",
     "titleMain": "Online Traffic School",
-    "feature1": "DMV-approved",
-    "feature2": "Court-accepted", 
-    "feature3": "Clear your traffic ticket",
-    "feature4": "Learn safer driving",
-    "feature5": "100% online",
-    "feature6": "100% in Japanese",
-    "startCourseButton": "Start Course Now",
-    "scrollToLearnMore": "Scroll to learn more"
+    "subtitle": "Fully DMV-licensed — study in Japanese, anytime, on any device.",
+    "feature1": "100% Online — No classrooms or commutes",
+    "feature2": "Fully in Japanese — All lessons and quizzes",
+    "feature3": "DMV-Approved — Accepted by all courts",
+    "feature4": "Works on All Devices — Phone, tablet, computer",
+    "button": "Start Now"
   },
   "faqSection": {
     "title": "Frequently Asked Questions",
-    "description": "Everything you need to know before starting your online traffic school journey",
-    "viewAllButton": "View All FAQs",
     "faq1": {
       "question": "What is Mirai Traffic School?",
       "answer": "Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record."
@@ -46,144 +26,195 @@
     "faq4": {
       "question": "How does identity verification work during the course?",
       "answer": "As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course."
+    },
+    "faq5": {
+      "question": "Will there be videos in the course?",
+      "answer": "Yes! The course includes 14 short, animated videos to help you understand California traffic laws in an easy and engaging way."
+    },
+    "faq6": {
+      "question": "How do I sign up for the course?",
+      "answer": "Click the “Enroll Now” button on our website, enter your information, and complete payment. You’ll receive login instructions by email."
+    },
+    "faq7": {
+      "question": "How long do I have to complete the course?",
+      "answer": "You have 60 days from your date of purchase to complete the course. If you need more time, contact us and we’ll help extend access within DMV policy. After completion, the course remains accessible for another 30 days."
+    },
+    "faq8": {
+      "question": "Am I eligible to take this course?",
+      "answer": "You’re eligible if you’ve received a traffic ticket in California and the court or DMV has allowed you to attend traffic school. Please confirm eligibility with your court before registering."
+    },
+    "faq9": {
+      "question": "Are there quizzes in the course?",
+      "answer": "Yes. You’ll take a short quiz after each section. You must score at least 70% to pass each quiz."
+    },
+    "faq10": {
+      "question": "Is there a final exam?",
+      "answer": "Yes. At the end of the course, you must pass a final exam with a score of 70% or higher. You may attempt the final exam up to two times."
+    },
+    "faq11": {
+      "question": "What happens if I fail a quiz?",
+      "answer": "You can retake each quiz as many times as needed until you pass."
+    },
+    "faq12": {
+      "question": "When is my certificate sent to the DMV?",
+      "answer": "As soon as you pass the final exam, your completion certificate is submitted electronically to the DMV. You’ll also receive a copy for your records."
+    },
+    "faq13": {
+      "question": "Do I need to send anything to the court myself?",
+      "answer": "In most cases, we submit your certificate directly to the DMV. Some courts may require you to notify them after completion. We recommend keeping a copy of your certificate for your records."
+    },
+    "faq14": {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit and debit cards through our secure payment partner, Stripe. You may also see options like PayPal, Apple Pay, or Google Pay depending on your device."
+    },
+    "faq15": {
+      "question": "Is there a refund policy?",
+      "answer": "Yes. Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available."
+    },
+    "faq16": {
+      "question": "Can I switch devices during the course?",
+      "answer": "Yes. Your progress is automatically saved. You can log in from any device and continue right where you left off."
+    },
+    "faq17": {
+      "question": "Does the course work on mobile phones and tablets?",
+      "answer": "Yes! The course is fully mobile-friendly and works on all modern devices."
+    },
+    "faq18": {
+      "question": "What if I forget my login details?",
+      "answer": "Click “Forgot Password” on the login page or contact us at support@miraitraffic.com for help."
+    },
+    "faq19": {
+      "question": "Is the course available in Japanese?",
+      "answer": "Yes. The full course is presented in Japanese, with English translation available where needed."
+    },
+    "faq20": {
+      "question": "Can I switch languages while using the course?",
+      "answer": "Yes. You can toggle between Japanese and English anytime using the language button at the top of the screen."
+    },
+    "faq21": {
+      "question": "Is my personal information safe?",
+      "answer": "Yes. We use secure technology (Stripe, AWS, encryption) and never share or sell your personal information. See our Privacy Policy for details."
+    },
+    "faq22": {
+      "question": "Still have questions?",
+      "answer": "Didn’t find what you were looking for? Contact our support team anytime at support@miraitraffic.com and we’ll be happy to assist you."
     }
-  },
-  "features": {
-    "title": "Why Choose Us",
-    "feature1": {
-      "title": "100% Online Course",
-      "description": "Complete from anywhere, anytime"
-    },
-    "feature2": {
-      "title": "DMV Approved",
-      "description": "Officially licensed by California DMV"
-    },
-    "feature3": {
-      "title": "Court Accepted",
-      "description": "Accepted by all California courts"
-    },
-    "feature4": {
-      "title": "Instant Certificate",
-      "description": "Automatic submission to court & DMV"
-    },
-    "feature5": {
-      "title": "Mobile Friendly",
-      "description": "Works on any device or browser"
-    },
-    "feature6": {
-      "title": "24/7 Support",
-      "description": "Help available when you need it"
-    }
-  },
-  "pricing": {
-    "title": "Course Pricing",
-    "amount": "$19.95",
-    "description": "One-time payment, no hidden fees",
-    "startCourse": "Start Course"
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "description": "Quick answers to common questions about our traffic school course",
-    "viewAll": "View All FAQs"
-  },
-  "terms": {
-    "title": "Terms & Privacy",
-    "description": "Please review our full Terms of Use and Privacy Policy",
-    "termsOfUse": "Terms of Use",
-    "privacyPolicy": "Privacy Policy"
   },
   "help": {
-    "title": "Help & Support",
-    "description": "Find answers to your questions and get the support you need",
-    "tabs": {
-      "faq": "FAQ",
-      "topics": "Help Topics"
-    },
-    "faqTitle": "Frequently Asked Questions",
-    "dmvTopicsTitle": "DMV Help Topics",
-    "faq1": {
-      "question": "How do I complete the traffic school course?",
-      "answer": "Sign up online, complete all required modules at your own pace, pass the final exam with 70% or higher, and receive your certificate instantly."
-    },
-    "faq2": {
-      "question": "How long does it take to complete?",
-      "answer": "The course takes a minimum of 5.5 hours as required by the DMV. You can take breaks and return anytime to continue where you left off."
-    },
-    "faq3": {
-      "question": "What happens after I finish?",
-      "answer": "Upon completion, your certificate is automatically submitted to the court and DMV. You'll also receive a copy for your records."
-    },
+    "title": "Help Topics",
     "topics": {
-      "renew": "Renew",
-      "applyRequest": "Apply / Request", 
-      "order": "Order",
-      "replace": "Replace",
-      "lookupStatus": "Lookup / Status Check",
-      "makePayment": "Make a Payment",
-      "submitReport": "Submit a Report or Certification",
-      "driverLicenseRenewal": "Driver's License/ID Card Renewal",
-      "commercialLicenseRenewal": "Commercial Driver's License Renewal",
+      "renew": "Renewal Services",
+      "apply": "Apply / Request",
+      "order": "Order Items",
+      "replace": "Replace Documents",
+      "lookup": "Status Lookup",
+      "payment": "Make a Payment",
+      "report": "Submit a Report",
+      "industry": "Industry Customers",
       "realIdUpgrade": "Upgrade to REAL ID",
-      "vehicleRegistrationRenewal": "Vehicle Registration Renewal",
-      "disabledParkingRenewal": "Disabled Person Parking Placard Renewal",
-      "plannedNonoperationRenewal": "Planned Nonoperation Renewal",
-      "driverLicenseApplication": "Driver's License/ID Card Application",
-      "changeAddress": "Change Address on DL/ID",
-      "titleTransfer": "Title Transfer",
-      "noticeOfTransfer": "Notice of Transfer & Release of Liability",
-      "disabledParkingApplication": "Disabled Person Parking Placard Application",
-      "affidavitNonUse": "Affidavit of Non-Use",
-      "orderDriverRecord": "Order Driver's Record",
-      "orderVehicleRecord": "Order Vehicle Record", 
-      "personalizedPlates": "Special Interest or Personalized Plates",
-      "cleanAirDecal": "Clean Air Vehicle Decal",
-      "musselSticker": "Mussel Fee Sticker",
-      "driverLicenseReplacement": "Driver's License Replacement",
-      "stickerReplacement": "Sticker or Registration Card Replacement",
-      "titleReplacement": "Title Replacement",
-      "disabledParkingReplacement": "Disabled Person Parking Placard Replacement",
-      "licensePlateReplacement": "License Plate Replacement",
-      "virtualOfficeCaseStatus": "Virtual Office Case Status",
-      "driverLicenseStatus": "Driver's License/ID Card Status",
-      "vehicleRegistrationStatus": "Vehicle Registration Status",
-      "occupationalLicensing": "Occupational Licensing Lookup",
-      "trafficSchoolLookup": "Traffic School Lookup",
-      "motorCarrierPermit": "Active Motor Carrier Permit Holders",
-      "dishonoredCheckPayment": "Dishonored Check Payment",
-      "reinstatementFee": "Reinstatement Fee",
-      "reissueFeePayment": "Reissue Fee Payment (Driver's License)",
-      "feeCalculators": "Fee Calculators",
-      "reportAccident": "Report an Accident",
-      "medicalExamination": "Submit Medical Examination Report",
-      "commercialTraining": "Submit Commercial Behind-the-Wheel Training Certification"
+      "registrationRenewal": "Vehicle Registration Renewal",
+      "disabledPlacard": "Apply for Disabled Placard",
+      "orderPlates": "Order Special Plates",
+      "replaceTitle": "Replace Lost Title",
+      "checkStatus": "Check Application Status",
+      "submitSmog": "Submit Smog Certification"
     }
   },
-  "contact": {
-    "title": "Contact Us",
-    "description": "Get in touch with our support team for any questions about your traffic school course",
-    "getInTouch": "Get in Touch",
-    "supportHours": "Support Hours",
-    "emailSupport": "Email Support",
-    "phoneSupport": "Phone Support",
-    "followUs": "Follow Us",
-    "sendMessage": "Send us a Message",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "emailAddress": "Email Address",
-    "subject": "Subject",
-    "message": "Message",
-    "sendMessageBtn": "Send Message"
-  },
-  "footer": {
-    "company": "Company",
-    "quickLinks": "Quick Links",
-    "support": "Support",
-    "legal": "Legal"
+  "terms": {
+    "title": "Terms of Use",
+    "effectiveDate": "Effective Date: August 3, 2025",
+    "whoWeAre": "Mirai Traffic School ('we', 'us', 'our') operates miraitrafficschool.com and miraitraffic.com to deliver online driver-education courses and related services.",
+    "agreement": "By using this site, you agree to our terms and policies. If you disagree, please do not use our services.",
+    "privacy": "We value your privacy and adhere to strict data protection practices.",
+    "sections": [
+      {
+        "title": "General Provisions",
+        "content": "This website is operated by Mirai Traffic School LLC (“Mirai Traffic,” “we,” “us,” or “our”) to offer DMV-licensed online traffic education services in California, tailored for Japanese-speaking drivers. By using this website or enrolling in our course, you agree to these Terms of Use. If you do not accept any part of these terms, please do not use our website or services. These terms include mandatory arbitration and a waiver of your right to a jury trial and participation in class actions. We may revise our terms, policies, or notices at any time without prior notice. The latest version always overrides previous versions. Your continued use confirms your agreement to the most current version."
+      },
+      {
+        "title": "Technical Requirements",
+        "content": "To use our course, you must have a device with modern browser support (Chrome, Safari, Firefox, Edge) and a stable internet connection. Some course components include audio, so speakers or headphones are recommended."
+      },
+      {
+        "title": "Course Completion & Certification",
+        "content": "To earn a Certificate of Completion, you must complete all course modules, quizzes, and the final exam. The certificate will be electronically submitted to the court and DMV upon passing. You may request a duplicate certificate for an additional fee."
+      },
+      {
+        "title": "Course Expiration",
+        "content": "Access to the course is valid for up to 2 years from the registration date."
+      },
+      {
+        "title": "Identity Verification & Integrity",
+        "content": "The enrolled student agrees to personally complete all lessons, quizzes, and exams. Attempts to falsify identity, cheat, or use automation will result in termination without refund. Legal action may be pursued in cases of fraud."
+      },
+      {
+        "title": "Privacy Statement",
+        "content": "Mirai Traffic collects limited personal data (name, contact info, device usage) for course access, billing, identity verification, and certificate issuance. Your data is never sold or used outside course-related functions. See our Privacy Policy for full details."
+      },
+      {
+        "title": "Policy Changes",
+        "content": "We may update this policy from time to time. Important changes will be emailed to registered users and reflected on this page."
+      },
+      {
+        "title": "User Notifications",
+        "content": "Official notices may be sent via email or posted on the website. Ensure your contact information is up to date."
+      },
+      {
+        "title": "Account Confidentiality",
+        "content": "You are responsible for keeping your login credentials secure. Do not share your login. If your account is compromised, contact us immediately."
+      },
+      {
+        "title": "Children’s Privacy",
+        "content": "This site is not for users under 13 years of age. We do not knowingly collect information from children. If we discover data from a child under 13, we will delete it promptly."
+      },
+      {
+        "title": "Refund Policy",
+        "content": "Refunds may be requested within 30 days of purchase if the course is not completed and no certificate has been issued. Refunds are processed within 30 business days."
+      },
+      {
+        "title": "Data Handling",
+        "content": "We use best-in-class cloud infrastructure (AWS), Stripe for payments, and Google Analytics for performance tracking. We maintain technical safeguards but cannot guarantee absolute security due to the nature of the internet."
+      },
+      {
+        "title": "Cookies",
+        "content": "We use cookies for performance optimization and secure login functionality. Disabling cookies may affect your ability to use the course."
+      },
+      {
+        "title": "License Restrictions",
+        "content": "You may not copy, redistribute, reverse engineer, or share course content. Course access is for personal use only and non-transferable."
+      },
+      {
+        "title": "Ownership and Feedback",
+        "content": "All course materials, designs, and content are intellectual property of Mirai Traffic. Any user feedback may be used to improve our services without obligation."
+      },
+      {
+        "title": "Class Action Waiver",
+        "content": "You agree to resolve disputes with us only on an individual basis. You may not participate in any class or representative action."
+      },
+      {
+        "title": "Waiver of Jury Trial",
+        "content": "You waive your right to a jury trial in any dispute related to these Terms or your use of our services."
+      },
+      {
+        "title": "Arbitration Agreement",
+        "content": "All disputes will be resolved through binding arbitration under California law. Arbitration will occur in Los Angeles County, CA, unless otherwise agreed."
+      },
+      {
+        "title": "Attorney Fees",
+        "content": "If Mirai Traffic takes legal action to enforce these terms, we may recover all legal costs, including attorney fees, from the user."
+      },
+      {
+        "title": "Contact Us",
+        "content": "Mirai Traffic School LLC\nhttps://miraitrafficschool.com\nEmail: support@miraitrafficschool.com"
+      }
+    ]
   },
   "common": {
-    "pageNotFound": "Page Not Found",
-    "returnHome": "Return to Home",
-    "loading": "Loading...",
-    "error": "An error occurred"
+    "language": "Language",
+    "english": "English",
+    "japanese": "Japanese",
+    "viewMore": "View More",
+    "back": "Back",
+    "submit": "Submit"
   }
 }
