@@ -107,6 +107,29 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    background-color: #71d4f64d;
+  }
+
+  /* Typography System */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold text-foreground leading-snug;
+  }
+  
+  h3 {
+    @apply text-xl font-semibold text-foreground leading-relaxed;
+  }
+  
+  p {
+    @apply text-base text-muted-foreground leading-relaxed;
+  }
+  
+  .page-container {
+    @apply min-h-screen;
+    background-color: #71d4f64d;
   }
 }
 
