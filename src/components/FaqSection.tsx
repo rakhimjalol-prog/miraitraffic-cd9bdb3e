@@ -1,32 +1,40 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "@/hooks/useTranslation";
 const FaqSection = () => {
-  const faqs = [{
-    category: "About the Course",
-    question: "What is Mirai Traffic School?",
-    answer: "Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record."
-  }, {
-    category: "About the Course",
-    question: "Is the course approved by the California DMV?",
-    answer: "Yes. Our course is licensed by the California DMV. However, DMV approval does not imply endorsement."
-  }, {
-    category: "About the Course",
-    question: "How long is the course?",
-    answer: "The California DMV requires that online traffic school courses take a minimum of 340 minutes (about 5.5 hours). You can complete the course at your own pace, and your progress is saved automatically."
-  }, {
-    category: "About the Course",
-    question: "How does identity verification work during the course?",
-    answer: "As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course."
-  }];
+  const { t } = useTranslation();
+  
+  const faqs = [
+    {
+      category: "About the Course",
+      question: t('faqSection.faq1.question'),
+      answer: t('faqSection.faq1.answer')
+    },
+    {
+      category: "About the Course", 
+      question: t('faqSection.faq2.question'),
+      answer: t('faqSection.faq2.answer')
+    },
+    {
+      category: "About the Course",
+      question: t('faqSection.faq3.question'), 
+      answer: t('faqSection.faq3.answer')
+    },
+    {
+      category: "About the Course",
+      question: t('faqSection.faq4.question'),
+      answer: t('faqSection.faq4.answer')
+    }
+  ];
   return <section className="py-20 from-purple-50/30 to-blue-50/30 bg-[transparent#71d4f64d] bg-[#71d4f6]/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Frequently Asked Questions
+            {t('faqSection.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to know before starting your online traffic school journey
+            {t('faqSection.description')}
           </p>
         </div>
 
@@ -46,7 +54,7 @@ const FaqSection = () => {
         <div className="text-center mt-12">
           <Link to="/faq">
             <Button className="text-lg px-6 py-3 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white transition-all">
-              View All FAQs
+              {t('faqSection.viewAllButton')}
             </Button>
           </Link>
         </div>

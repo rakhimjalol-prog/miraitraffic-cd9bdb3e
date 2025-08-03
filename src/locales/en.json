@@ -16,14 +16,37 @@
     "learnMore": "Scroll to learn more"
   },
   "hero": {
-    "title": "Traffic Violations School",
-    "subtitle": "Pass your California traffic course online",
-    "description": "Complete your court-required traffic school from home.",
-    "feature1": "✓ DMV-approved certificate",
-    "feature2": "✓ 100% online, any device",
-    "feature3": "✓ Court & DMV accepted",
-    "startCourseNow": "Start Course Now",
+    "titleHighlight": "California's First Japanese",
+    "titleMain": "Online Traffic School",
+    "feature1": "DMV-approved",
+    "feature2": "Court-accepted", 
+    "feature3": "Clear your traffic ticket",
+    "feature4": "Learn safer driving",
+    "feature5": "100% online",
+    "feature6": "100% in Japanese",
+    "startCourseButton": "Start Course Now",
     "scrollToLearnMore": "Scroll to learn more"
+  },
+  "faqSection": {
+    "title": "Frequently Asked Questions",
+    "description": "Everything you need to know before starting your online traffic school journey",
+    "viewAllButton": "View All FAQs",
+    "faq1": {
+      "question": "What is Mirai Traffic School?",
+      "answer": "Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record."
+    },
+    "faq2": {
+      "question": "Is the course approved by the California DMV?",
+      "answer": "Yes. Our course is licensed by the California DMV. However, DMV approval does not imply endorsement."
+    },
+    "faq3": {
+      "question": "How long is the course?",
+      "answer": "The California DMV requires that online traffic school courses take a minimum of 340 minutes (about 5.5 hours). You can complete the course at your own pace, and your progress is saved automatically."
+    },
+    "faq4": {
+      "question": "How does identity verification work during the course?",
+      "answer": "As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course."
+    }
   },
   "features": {
     "title": "Why Choose Us",
@@ -68,6 +91,72 @@
     "description": "Please review our full Terms of Use and Privacy Policy",
     "termsOfUse": "Terms of Use",
     "privacyPolicy": "Privacy Policy"
+  },
+  "help": {
+    "title": "Help & Support",
+    "description": "Find answers to your questions and get the support you need",
+    "tabs": {
+      "faq": "FAQ",
+      "topics": "Help Topics"
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "dmvTopicsTitle": "DMV Help Topics",
+    "faq1": {
+      "question": "How do I complete the traffic school course?",
+      "answer": "Sign up online, complete all required modules at your own pace, pass the final exam with 70% or higher, and receive your certificate instantly."
+    },
+    "faq2": {
+      "question": "How long does it take to complete?",
+      "answer": "The course takes a minimum of 5.5 hours as required by the DMV. You can take breaks and return anytime to continue where you left off."
+    },
+    "faq3": {
+      "question": "What happens after I finish?",
+      "answer": "Upon completion, your certificate is automatically submitted to the court and DMV. You'll also receive a copy for your records."
+    },
+    "topics": {
+      "renew": "Renew",
+      "applyRequest": "Apply / Request", 
+      "order": "Order",
+      "replace": "Replace",
+      "lookupStatus": "Lookup / Status Check",
+      "makePayment": "Make a Payment",
+      "submitReport": "Submit a Report or Certification",
+      "driverLicenseRenewal": "Driver's License/ID Card Renewal",
+      "commercialLicenseRenewal": "Commercial Driver's License Renewal",
+      "realIdUpgrade": "Upgrade to REAL ID",
+      "vehicleRegistrationRenewal": "Vehicle Registration Renewal",
+      "disabledParkingRenewal": "Disabled Person Parking Placard Renewal",
+      "plannedNonoperationRenewal": "Planned Nonoperation Renewal",
+      "driverLicenseApplication": "Driver's License/ID Card Application",
+      "changeAddress": "Change Address on DL/ID",
+      "titleTransfer": "Title Transfer",
+      "noticeOfTransfer": "Notice of Transfer & Release of Liability",
+      "disabledParkingApplication": "Disabled Person Parking Placard Application",
+      "affidavitNonUse": "Affidavit of Non-Use",
+      "orderDriverRecord": "Order Driver's Record",
+      "orderVehicleRecord": "Order Vehicle Record", 
+      "personalizedPlates": "Special Interest or Personalized Plates",
+      "cleanAirDecal": "Clean Air Vehicle Decal",
+      "musselSticker": "Mussel Fee Sticker",
+      "driverLicenseReplacement": "Driver's License Replacement",
+      "stickerReplacement": "Sticker or Registration Card Replacement",
+      "titleReplacement": "Title Replacement",
+      "disabledParkingReplacement": "Disabled Person Parking Placard Replacement",
+      "licensePlateReplacement": "License Plate Replacement",
+      "virtualOfficeCaseStatus": "Virtual Office Case Status",
+      "driverLicenseStatus": "Driver's License/ID Card Status",
+      "vehicleRegistrationStatus": "Vehicle Registration Status",
+      "occupationalLicensing": "Occupational Licensing Lookup",
+      "trafficSchoolLookup": "Traffic School Lookup",
+      "motorCarrierPermit": "Active Motor Carrier Permit Holders",
+      "dishonoredCheckPayment": "Dishonored Check Payment",
+      "reinstatementFee": "Reinstatement Fee",
+      "reissueFeePayment": "Reissue Fee Payment (Driver's License)",
+      "feeCalculators": "Fee Calculators",
+      "reportAccident": "Report an Accident",
+      "medicalExamination": "Submit Medical Examination Report",
+      "commercialTraining": "Submit Commercial Behind-the-Wheel Training Certification"
+    }
   },
   "contact": {
     "title": "Contact Us",
