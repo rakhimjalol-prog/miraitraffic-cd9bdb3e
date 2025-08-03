@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FileText, Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Full bilingual Terms of Use sections
 const termsSections = [
@@ -82,43 +83,34 @@ const privacySections = [
 ];
 
 const Legal = () => {
-  const [lang, setLang] = useState<'en'|'jp'>('en');
-  useEffect(() => {
-    const stored = localStorage.getItem('lang');
-    if (stored === 'jp' || stored === 'en') setLang(stored);
-    const listener = (e: StorageEvent) => {
-      if (e.key === 'lang' && (e.newValue === 'jp' || e.newValue === 'en')) setLang(e.newValue);
-    };
-    window.addEventListener('storage', listener);
-    return () => window.removeEventListener('storage', listener);
-  }, []);
+  const { t, language } = useLanguage();
   const [active, setActive] = useState<'terms'|'privacy'>('terms');
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="page-container">
       <Header />
       <main className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{lang==='jp'?'利用規約とプライバシーポリシー':'Terms & Privacy'}</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{lang==='jp'?'利用規約およびプライバシーポリシーを必ずご確認ください。':'Please review our full Terms of Use and Privacy Policy'}</p>
+          <h1>{t('legalTitle')}</h1>
+          <p>{t('legalDescription')}</p>
         </div>
 
         <Tabs value={active} onValueChange={setActive as any} className="max-w-4xl mx-auto">
           <TabsList className="grid grid-cols-2 mb-8">
-            <TabsTrigger value="terms" className="py-3"><FileText className="w-5 h-5 mr-2"/>{lang==='jp'?'利用規約':'Terms of Use'}</TabsTrigger>
-            <TabsTrigger value="privacy" className="py-3"><Shield className="w-5 h-5 mr-2"/>{lang==='jp'?'プライバシーポリシー':'Privacy Policy'}</TabsTrigger>
+            <TabsTrigger value="terms" className="py-3"><FileText className="w-5 h-5 mr-2"/>{t('termsOfUse')}</TabsTrigger>
+            <TabsTrigger value="privacy" className="py-3"><Shield className="w-5 h-5 mr-2"/>{t('privacyPolicy')}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="terms">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <article className="prose prose-lg text-foreground max-w-none space-y-8">
-                  <h2 className="flex items-center"><FileText className="inline w-6 h-6 text-primary mr-2"/>{lang==='jp'?'利用規約':'Terms of Use'}</h2>
+                  <h2 className="flex items-center"><FileText className="inline w-6 h-6 text-primary mr-2"/>{t('termsOfUse')}</h2>
                   <ol className="list-decimal list-inside space-y-6">
                     {termsSections.map((sec,idx)=>(
                       <li key={idx}>
-                        <h3 className="font-semibold text-lg">{lang==='jp'?sec.jp.title:sec.en.title}</h3>
-                        <p className="mt-2">{lang==='jp'?sec.jp.content:sec.en.content}</p>
+                        <h3 className="font-semibold text-lg">{language==='jp'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{language==='jp'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>
@@ -131,12 +123,12 @@ const Legal = () => {
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <article className="prose prose-lg text-foreground max-w-none space-y-8">
-                  <h2 className="flex items-center"><Shield className="inline w-6 h-6 text-primary mr-2"/>{lang==='jp'?'プライバシーポリシー':'Privacy Policy'}</h2>
+                  <h2 className="flex items-center"><Shield className="inline w-6 h-6 text-primary mr-2"/>{t('privacyPolicy')}</h2>
                   <ol className="list-decimal list-inside space-y-6">
                     {privacySections.map((sec,idx)=>(
                       <li key={idx}>
-                        <h3 className="font-semibold text-lg">{lang==='jp'?sec.jp.title:sec.en.title}</h3>
-                        <p className="mt-2">{lang==='jp'?sec.jp.content:sec.en.content}</p>
+                        <h3 className="font-semibold text-lg">{language==='jp'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{language==='jp'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>

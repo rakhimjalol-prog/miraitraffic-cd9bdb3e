@@ -1,226 +1,348 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 type Language = 'en' | 'jp';
 
-interface LanguageContextType {
+type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+};
+
+interface LanguageProviderProps {
+  children: ReactNode;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const translations = {
   en: {
-    // Header
-    header: {
-      home: "Home",
-      about: "About Us",
-      courses: "Courses",
-      howItWorks: "How It Works",
-      courtLookup: "Court Lookup",
-      login: "Login",
-      startCourse: "Start Course",
-      offensiveDriving: "Offensive Driving Course"
-    },
+    // Navigation
+    home: "Home",
+    about: "About",
+    help: "Help", 
+    courts: "Courts",
+    contact: "Contact",
+    login: "Login",
+    signup: "Sign Up",
     
     // Hero Section
-    hero: {
-      title: "Fast, Court-Approved Traffic School — Fully in Japanese",
-      subtitle: "Officially licensed by the California DMV. Study online at your own pace.",
-      startCourse: "Start Course Now",
-      dmvApproved: "DMV Approved",
-      fullyOnline: "100% Online", 
-      courtAccepted: "Court Accepted",
-      courseInterface: "Course Interface",
-      progress: "Progress"
-    },
+    heroTitle: "Traffic Violations School",
+    heroSubtitle: "Pass your California traffic course online",
+    heroDescription: "Complete your court-required traffic school from home.",
+    feature1: "✓ DMV-approved certificate",
+    feature2: "✓ 100% online, any device",
+    feature3: "✓ Court & DMV accepted",
+    startCourseNow: "Start Course Now",
+    scrollToLearnMore: "Scroll to learn more",
     
     // How It Works
-    howItWorks: {
-      title: "It's easy to get started",
-      subtitle: "Complete your traffic school in 4 simple steps",
-      step1: "Register Online",
-      step2: "Learn at Your Own Pace", 
-      step3: "Pass Final Exam",
-      step4: "Get Your Certificate"
-    },
+    "howItWorks.title": "How It Works",
+    "howItWorks.step1": "Sign Up & Start",
+    "howItWorks.step2": "Complete Lessons",
+    "howItWorks.step3": "Pass Final Exam",
+    "howItWorks.step4": "Get Certificate",
     
-    // Course Feature
-    courseFeature: {
-      title: "Offensive Driving Course",
-      description: "Dismiss your traffic ticket in Japanese with DMV-approved content.",
-      courseTitle: "Traffic School Course",
-      approved: "DMV Approved",
-      progress: "Progress",
-      module1: "Chapter 1: Basic Traffic Laws",
-      module2: "Chapter 2: Safe Driving",
-      module3: "Chapter 3: Road Signs",
-      module4: "Chapter 4: Final Review",
-      feature1Title: "Complete Course in Japanese",
-      feature1Desc: "All content, quizzes, and exams in Japanese",
-      feature2Title: "Study at Your Own Pace",
-      feature2Desc: "No time limits, pause and resume anytime",
-      feature3Title: "Mobile-Friendly",
-      feature3Desc: "Works on phones, tablets, and computers",
-      startCourse: "Start the Course"
-    },
+    // Features Section
+    whyChooseUs: "Why Choose Us",
+    "features.feature1.title": "100% Online Course",
+    "features.feature1.description": "Complete from anywhere, anytime",
+    "features.feature2.title": "DMV Approved",
+    "features.feature2.description": "Officially licensed by California DMV",
+    "features.feature3.title": "Court Accepted",
+    "features.feature3.description": "Accepted by all California courts",
+    "features.feature4.title": "Instant Certificate",
+    "features.feature4.description": "Automatic submission to court & DMV",
+    "features.feature5.title": "Mobile Friendly",
+    "features.feature5.description": "Works on any device or browser",
+    "features.feature6.title": "24/7 Support",
+    "features.feature6.description": "Help available when you need it",
+    
+    quickFeatures: "Quick Features",
+    "quickFeatures.feature1": "Fast & Easy",
+    "quickFeatures.feature2": "Save Money",
+    "quickFeatures.feature3": "Avoid Points",
+    "quickFeatures.feature4": "Keep Insurance Low",
+    
+    // Course Overview
+    courseOverview: "Course Overview",
+    courseOverviewDescription: "Everything you need to successfully complete your traffic school requirement",
+    chapters: "Chapters",
+    hours: "Hours",
+    graduates: "Graduates",
+    courtAcceptance: "Court Acceptance",
+    interactiveLessons: "Interactive lessons with multimedia content",
+    practiceQuizzes: "Practice quizzes to test your knowledge",
+    identityVerification: "Secure identity verification system",
     
     // Certificate
-    certificate: {
-      title: "DMV Certificate Included",
-      description: "We automatically submit your certificate to the court upon completion.",
-      benefit1Title: "Official DMV Certificate",
-      benefit1Desc: "Meets all California court requirements",
-      benefit2Title: "Automatic Submission",
-      benefit2Desc: "We send it directly to the court for you",
-      benefit3Title: "Instant Download",
-      benefit3Desc: "Get your certificate immediately upon completion",
-      certificateTitle: "Certificate of Completion",
-      certificateSubtitle: "California Traffic Violator School",
-      completedCourse: "has successfully completed the required course",
-      licenseNumber: "License #",
-      completionDate: "Date",
-      officialSeal: "Official DMV Approved School"
-    },
+    certificateTitle: "Get Your DMV-Approved Certificate",
+    certificateDescription: "Upon completion, receive an official certificate that's automatically submitted to the court and DMV",
+    "certificate.benefit1.title": "Instant Delivery",
+    "certificate.benefit1.description": "Certificate delivered immediately after passing",
+    "certificate.benefit2.title": "Auto Submission",
+    "certificate.benefit2.description": "Automatically sent to court and DMV",
+    "certificate.benefit3.title": "Verification",
+    "certificate.benefit3.description": "Secure verification with court reference",
+    
+    // Course Features
+    courseTitle: "Complete Traffic School Course",
+    courseDescription: "Comprehensive curriculum covering California traffic laws and safe driving practices",
+    
+    // Pricing
+    pricing: "Course Pricing",
+    priceAmount: "$19.95",
+    priceDesc: "One-time payment, no hidden fees",
+    startCourse: "Start Course",
     
     // FAQ
-    faq: {
-      title: "Frequently Asked Questions",
-      question1: "Is this course accepted by all California courts?",
-      answer1: "Yes, our course is DMV-approved and accepted by all California courts.",
-      question2: "How long does it take to complete?",
-      answer2: "Most students complete the course in 6-8 hours, but you can go at your own pace.",
-      question3: "What if I fail the final exam?",
-      answer3: "You can retake the final exam as many times as needed at no extra cost."
-    },
+    faqTitle: "Frequently Asked Questions",
+    faqDescription: "Quick answers to common questions about our traffic school course",
+    viewAllFaqs: "View All FAQs",
+    
+    // Final CTA
+    finalCtaTitle: "Ready to Get Started?",
+    finalCtaDescription: "Join thousands who have successfully completed their traffic school with us",
+    finalCtaButton: "Start Course Now",
+    sampleLesson: "View Sample Lesson",
+    onlineSupport: "Online Support",
+    easyToUse: "Easy to Use",
+    trustedByCustomers: "Trusted by Customers",
+    anyDeviceAnyTime: "Any Device, Any Time",
+    dmvApproved: "DMV Approved",
+    courtAccepted: "Court Accepted",
+    "100Online": "100% Online",
     
     // Footer
-    footer: {
-      aboutUs: "About Us",
-      faq: "FAQ", 
-      privacy: "Privacy",
-      terms: "Terms",
-      courtLookup: "Court Lookup",
-      courseInfo: "Course Info",
-      dmvLicense: "DMV License #E2067",
-      copyright: "© 2024 Mirai Traffic School. All rights reserved."
-    }
+    company: "Company",
+    quickLinks: "Quick Links",
+    support: "Support",
+    legal: "Legal",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    
+    // Help & About specific content
+    aboutPageTitle: "About Mirai Traffic School",
+    aboutPageDescription: "Learn more about our mission and how our online traffic school works",
+    helpPageTitle: "Help & Support",
+    helpPageDescription: "Find answers to your questions and get the support you need",
+    
+    // Contact Page
+    contactTitle: "Contact Us",
+    contactDescription: "Get in touch with our support team for any questions about your traffic school course",
+    getInTouch: "Get in Touch",
+    supportHours: "Support Hours",
+    emailSupport: "Email Support",
+    phoneSupport: "Phone Support",
+    followUs: "Follow Us",
+    sendMessage: "Send us a Message",
+    firstName: "First Name",
+    lastName: "Last Name",
+    emailAddress: "Email Address",
+    subject: "Subject",
+    message: "Message",
+    sendMessageBtn: "Send Message",
+    
+    // Courts Page
+    courtsTitle: "California Court Information",
+    courtsDescription: "Find information about your local California court and traffic school requirements",
+    eligibilityTitle: "Eligibility Requirements",
+    eligibilityDesc: "Check if you qualify for online traffic school",
+    eligibleTickets: "Eligible Tickets",
+    eligibleTicketsDesc: "Most moving violations are eligible for traffic school",
+    courtDeadlines: "Court Deadlines",
+    courtDeadlinesDesc: "Important dates and deadlines to remember",
+    submitCertificate: "Certificate Submission",
+    submitCertificateDesc: "How we submit your completion certificate",
+    
+    // Legal Page
+    legalTitle: "Terms & Privacy",
+    legalDescription: "Please review our full Terms of Use and Privacy Policy",
+    termsOfUse: "Terms of Use",
+    privacyPolicy: "Privacy Policy",
+    
+    // 404 Page
+    pageNotFound: "Page Not Found",
+    pageNotFoundDesc: "Oops! The page you're looking for doesn't exist",
+    returnHome: "Return to Home"
   },
   jp: {
-    // Header
-    header: {
-      home: "ホーム",
-      about: "会社概要",
-      courses: "コース",
-      howItWorks: "受講の流れ",
-      courtLookup: "裁判所検索",
-      login: "ログイン",
-      startCourse: "コース開始",
-      offensiveDriving: "オフェンシブドライビングコース"
-    },
+    // Navigation
+    home: "ホーム",
+    about: "概要",
+    help: "ヘルプ",
+    courts: "裁判所",
+    contact: "お問い合わせ",
+    login: "ログイン",
+    signup: "新規登録",
     
     // Hero Section
-    hero: {
-      title: "迅速で裁判所承認済みのトラフィックスクール — 完全日本語対応",
-      subtitle: "カリフォルニア州DMV公式認定。オンラインで自分のペースで学習できます。",
-      startCourse: "コースを開始する",
-      dmvApproved: "DMV認定",
-      fullyOnline: "完全オンライン",
-      courtAccepted: "裁判所承認済み",
-      courseInterface: "コースインターフェース",
-      progress: "進捗"
-    },
+    heroTitle: "交通違反スクール",
+    heroSubtitle: "カリフォルニア州交通コースをオンラインで合格",
+    heroDescription: "裁判所で必要な交通スクールを自宅で完了しましょう。",
+    feature1: "✓ DMV認可証明書",
+    feature2: "✓ 100%オンライン、全デバイス対応",
+    feature3: "✓ 裁判所・DMV受理",
+    startCourseNow: "今すぐコース開始",
+    scrollToLearnMore: "詳しく見る",
     
     // How It Works
-    howItWorks: {
-      title: "簡単に始められます",
-      subtitle: "4つの簡単なステップでトラフィックスクールを修了",
-      step1: "オンライン登録",
-      step2: "自分のペースで学習",
-      step3: "最終試験に合格",
-      step4: "修了証を受け取る"
-    },
+    "howItWorks.title": "仕組み",
+    "howItWorks.step1": "登録と開始",
+    "howItWorks.step2": "レッスン完了",
+    "howItWorks.step3": "最終試験合格",
+    "howItWorks.step4": "証明書取得",
     
-    // Course Feature
-    courseFeature: {
-      title: "オフェンシブドライビングコース",
-      description: "DMV認定コンテンツで日本語で交通違反切符を無効にできます。",
-      courseTitle: "トラフィックスクールコース",
-      approved: "DMV認定",
-      progress: "進捗",
-      module1: "第1章：基本的な交通法規",
-      module2: "第2章：安全運転",
-      module3: "第3章：道路標識",
-      module4: "第4章：最終復習",
-      feature1Title: "完全日本語コース",
-      feature1Desc: "すべての内容、クイズ、試験が日本語",
-      feature2Title: "自分のペースで学習",
-      feature2Desc: "時間制限なし、いつでも一時停止・再開可能",
-      feature3Title: "モバイル対応",
-      feature3Desc: "スマホ、タブレット、パソコンで利用可能",
-      startCourse: "コースを開始する"
-    },
+    // Features Section
+    whyChooseUs: "選ばれる理由",
+    "features.feature1.title": "100%オンラインコース",
+    "features.feature1.description": "いつでもどこでも受講可能",
+    "features.feature2.title": "DMV認可済み",
+    "features.feature2.description": "カリフォルニアDMV正式ライセンス",
+    "features.feature3.title": "裁判所受理",
+    "features.feature3.description": "カリフォルニア州全裁判所で受理",
+    "features.feature4.title": "即座の証明書",
+    "features.feature4.description": "裁判所・DMVへ自動提出",
+    "features.feature5.title": "モバイル対応",
+    "features.feature5.description": "全デバイス・ブラウザ対応",
+    "features.feature6.title": "24時間サポート",
+    "features.feature6.description": "必要な時にサポート利用可能",
+    
+    quickFeatures: "特徴",
+    "quickFeatures.feature1": "迅速・簡単",
+    "quickFeatures.feature2": "費用節約",
+    "quickFeatures.feature3": "点数回避",
+    "quickFeatures.feature4": "保険料維持",
+    
+    // Course Overview
+    courseOverview: "コース概要",
+    courseOverviewDescription: "交通スクール要件を成功裏に完了するために必要なすべて",
+    chapters: "チャプター",
+    hours: "時間",
+    graduates: "卒業者",
+    courtAcceptance: "裁判所受理",
+    interactiveLessons: "マルチメディアコンテンツ付きインタラクティブレッスン",
+    practiceQuizzes: "知識テスト用練習クイズ",
+    identityVerification: "安全な身元確認システム",
     
     // Certificate
-    certificate: {
-      title: "DMV修了証付き",
-      description: "修了時に自動的に裁判所に修了証を提出いたします。",
-      benefit1Title: "公式DMV修了証",
-      benefit1Desc: "カリフォルニア州の全裁判所要件を満たします",
-      benefit2Title: "自動提出",
-      benefit2Desc: "お客様の代わりに直接裁判所に送信します",
-      benefit3Title: "即座にダウンロード",
-      benefit3Desc: "修了と同時に修了証をすぐに取得",
-      certificateTitle: "修了証明書",
-      certificateSubtitle: "カリフォルニア州交通違反者学校",
-      completedCourse: "は必要なコースを正常に修了しました",
-      licenseNumber: "ライセンス番号",
-      completionDate: "修了日",
-      officialSeal: "DMV認定校公式印"
-    },
+    certificateTitle: "DMV認可証明書を取得",
+    certificateDescription: "修了時に裁判所とDMVに自動提出される公式証明書を受領",
+    "certificate.benefit1.title": "即座の配信",
+    "certificate.benefit1.description": "合格後すぐに証明書配信",
+    "certificate.benefit2.title": "自動提出",
+    "certificate.benefit2.description": "裁判所とDMVに自動送信",
+    "certificate.benefit3.title": "検証",
+    "certificate.benefit3.description": "裁判所参照番号付き安全な検証",
+    
+    // Course Features
+    courseTitle: "完全交通スクールコース",
+    courseDescription: "カリフォルニア交通法と安全運転の包括的カリキュラム",
+    
+    // Pricing
+    pricing: "コース料金",
+    priceAmount: "$19.95",
+    priceDesc: "一回払い、隠れた費用なし",
+    startCourse: "コース開始",
     
     // FAQ
-    faq: {
-      title: "よくある質問",
-      question1: "このコースはカリフォルニア州のすべての裁判所で受け入れられますか？",
-      answer1: "はい、私たちのコースはDMV認定で、カリフォルニア州のすべての裁判所で受け入れられます。",
-      question2: "修了までにどのくらい時間がかかりますか？",
-      answer2: "ほとんどの学生は6〜8時間でコースを修了しますが、自分のペースで進めることができます。",
-      question3: "最終試験に不合格になった場合はどうなりますか？",
-      answer3: "追加料金なしで最終試験を必要な回数だけ再受験できます。"
-    },
+    faqTitle: "よくある質問",
+    faqDescription: "交通スクールコースに関する一般的な質問への迅速な回答",
+    viewAllFaqs: "全てのFAQを見る",
+    
+    // Final CTA
+    finalCtaTitle: "始める準備はできましたか？",
+    finalCtaDescription: "当校で交通スクールを成功裏に完了した数千人の仲間入り",
+    finalCtaButton: "今すぐコース開始",
+    sampleLesson: "サンプルレッスンを見る",
+    onlineSupport: "オンラインサポート",
+    easyToUse: "使いやすい",
+    trustedByCustomers: "顧客から信頼",
+    anyDeviceAnyTime: "いつでもどのデバイスでも",
+    dmvApproved: "DMV認可",
+    courtAccepted: "裁判所受理",
+    "100Online": "100%オンライン",
     
     // Footer
-    footer: {
-      aboutUs: "会社概要",
-      faq: "よくある質問",
-      privacy: "プライバシー",
-      terms: "利用規約",
-      courtLookup: "裁判所検索",
-      courseInfo: "コース情報",
-      dmvLicense: "DMVライセンス番号 #E2067",
-      copyright: "© 2024 Mirai Traffic School. 全著作権所有。"
-    }
+    company: "会社",
+    quickLinks: "クイックリンク",
+    support: "サポート",
+    legal: "法的情報",
+    privacyPolicy: "プライバシーポリシー",
+    termsOfService: "利用規約",
+    
+    // Help & About specific content
+    aboutPageTitle: "ミライ交通スクールについて",
+    aboutPageDescription: "当スクールのミッションとオンライン交通スクールの仕組みをご紹介します",
+    helpPageTitle: "ヘルプ・サポート",
+    helpPageDescription: "質問への回答と必要なサポートを見つけてください",
+    
+    // Contact Page
+    contactTitle: "お問い合わせ",
+    contactDescription: "交通スクールコースに関するご質問はサポートチームまでお気軽にお問い合わせください",
+    getInTouch: "お問い合わせ",
+    supportHours: "サポート時間",
+    emailSupport: "メールサポート",
+    phoneSupport: "電話サポート",
+    followUs: "フォローする",
+    sendMessage: "メッセージを送信",
+    firstName: "名",
+    lastName: "姓",
+    emailAddress: "メールアドレス",
+    subject: "件名",
+    message: "メッセージ",
+    sendMessageBtn: "メッセージを送信",
+    
+    // Courts Page
+    courtsTitle: "カリフォルニア州裁判所情報",
+    courtsDescription: "お住まいのカリフォルニア州裁判所と交通スクール要件に関する情報を確認",
+    eligibilityTitle: "受講資格要件",
+    eligibilityDesc: "オンライン交通スクールの受講資格を確認",
+    eligibleTickets: "対象となる違反",
+    eligibleTicketsDesc: "ほとんどの運転違反が交通スクール対象",
+    courtDeadlines: "裁判所期限",
+    courtDeadlinesDesc: "重要な日付と期限をお忘れなく",
+    submitCertificate: "証明書提出",
+    submitCertificateDesc: "修了証明書の提出方法",
+    
+    // Legal Page
+    legalTitle: "利用規約とプライバシーポリシー",
+    legalDescription: "利用規約およびプライバシーポリシーを必ずご確認ください",
+    termsOfUse: "利用規約",
+    privacyPolicy: "プライバシーポリシー",
+    
+    // 404 Page
+    pageNotFound: "ページが見つかりません",
+    pageNotFoundDesc: "申し訳ございません。お探しのページは存在しません",
+    returnHome: "ホームに戻る"
   }
 };
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  const [language, setLanguage] = useState<Language>(() => {
+    const stored = localStorage.getItem('language');
+    return (stored === 'en' || stored === 'jp') ? stored : 'en';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+    
+    // Dispatch custom event for sync across components
+    window.dispatchEvent(new CustomEvent('languageChange', { detail: language }));
+  }, [language]);
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let result: any = translations[language];
+    let value: any = translations[language];
     
     for (const k of keys) {
-      if (result && typeof result === 'object') {
-        result = result[k];
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
       } else {
-        return key;
+        return key; // Return the key if translation not found
       }
     }
     
-    return typeof result === 'string' ? result : key;
+    return typeof value === 'string' ? value : key;
   };
 
   return (
