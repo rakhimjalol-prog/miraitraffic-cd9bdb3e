@@ -1,130 +1,124 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FileText, Shield } from "lucide-react";
 
-// Terms of Use sections
+// Full bilingual Terms of Use sections
 const termsSections = [
-  {
-    title: "Terms of Use",
-    effectiveDate: "08-01-2023",
-    items: [
-      { heading: "Who We Are", content: `MiraITraffic School (“we,” “us,” “our,” “MiraITraffic™”) operates miraitrafficschool.com and miraitraffic.com to deliver online driver-education courses and related services.` },
-      { heading: "By Using Our Site, You Agree", content: `When you browse, register, or take any course on our Site, you’re accepting these Terms in full. If anything here doesn’t sit right with you, please don’t use our services.` },
-      { heading: "Updates to These Terms", content: `We may revise these Terms at any time—whether to reflect new features, legal requirements, or improvements. We’ll post the latest version here and update the Effective Date above. It’s on you to check back; continuing to use the Site means you agree to the new Terms.` },
-      { heading: "Your Account & Access Requirements", content: `Eligibility: You must be at least 13 years old. If you’re under 18, get a parent’s or guardian’s OK.
-
-Tech requirements: A modern desktop or mobile device with Chrome, Firefox, Edge, or Safari; audio-capable for videos.
-
-Credentials: Keep your password secret. You’re responsible for all activity under your login.` },
-      { heading: "Course Completion & Certification", content: `You have two years from enrollment to finish your course. Complete every module, quiz, and the final exam to earn your certificate.
-
-Need a replacement certificate? We can reissue it for a small fee.` },
-      { heading: "Honor Code", content: `No cheating, no account-sharing, no shortcuts. If we catch misuse or misrepresentation, we may terminate your access without refund.` },
-      { heading: "Intellectual Property", content: `All content, designs, logos, and trademarks on the Site are owned by us (or our licensors). You get a personal, non-exclusive license to access them—nothing more. Don’t copy, distribute, reverse-engineer, or otherwise use materials beyond what we explicitly allow.` },
-      { heading: "Disclaimers & Liability Caps", content: `Accuracy: We strive for up-to-date, correct content, but can’t guarantee perfection.
-
-Use at your own risk: We’re not liable for lost data, downtime, or indirect or consequential damages.
-
-Maximum liability: If we ever owe you damages, they’re capped at the fees you paid in the last 12 months.` },
-      { heading: "Arbitration & Waivers", content: `Any dispute between you and MiraITraffic School will be resolved by individual binding arbitration under the American Arbitration Association’s rules in Sacramento, CA. You also waive any right to a jury trial.` },
-      { heading: "Governing Law", content: `California law applies, without regard to its conflict-of-law rules.` },
-      { heading: "Entire Agreement", content: `These Terms (and any linked policies) are the complete agreement between you and us regarding your use of the Site and services.` },
-      { heading: "Contact Us", content: `Questions? Reach out anytime:
-
-Email: info@miraitrafficschool.com or info@miraitraffic.com
-
-Mail:
+  { en: { title: "1. General Provisions", content: `This website is maintained by MiraITraffic School (“we,” “us,” “our,” “MiraITraffic™”) to provide online driver-education courses and related services. By using our Site and services, you agree to these Terms. If you do not agree, please do not use our website or services.` },
+    jp: { title: "1. 一般規定", content: `本ウェブサイトはMiraITraffic School（以下「当社」）によって運営されており、オンライン運転教育コースおよび関連サービスを提供しています。本サイトおよびサービスのご利用により、本規約に同意したものとみなされます。同意されない場合は利用を中止してください。` } },
+  { en: { title: "2. Eligibility & Registration", content: `You must be at least 13 years old to register. If under 18, parental or guardian consent is required. Maintain accurate personal information and secure your credentials.` },
+    jp: { title: "2. 利用資格と登録", content: `登録には13歳以上である必要があります。18歳未満の場合は親権者の同意が必要です。正確な個人情報を提供し、アカウント情報を安全に管理してください。` } },
+  { en: { title: "3. Hardware & Software Requirements", content: `Use a modern desktop or mobile device with Chrome, Firefox, Edge, or Safari and audio capability. A stable internet connection is recommended.` },
+    jp: { title: "3. ハードウェアおよびソフトウェア要件", content: `Chrome、Firefox、Edge、Safariなどの最新ブラウザと音声機能を備えたデスクトップまたはモバイルデバイスを使用してください。安定したインターネット接続を推奨します。` } },
+  { en: { title: "4. Course Access & Duration", content: `You have two years from enrollment to complete all modules, quizzes, and the final exam. Completed courses remain accessible for 30 days after certification.` },
+    jp: { title: "4. コースの利用期間とアクセス", content: `登録日から2年以内にすべてのモジュール、クイズ、最終試験を修了する必要があります。修了後30日間はコースにアクセス可能です。` } },
+  { en: { title: "5. Identity Verification", content: `We verify identity via date of birth and periodic security questions to comply with DMV regulations.` },
+    jp: { title: "5. 本人確認", content: `DMV規定に準拠するため、生年月日と定期的なセキュリティ質問を通じて本人確認を行います。` } },
+  { en: { title: "6. Honor Code", content: `All coursework must be completed personally. Cheating, account sharing, or shortcuts may result in access termination without refund.` },
+    jp: { title: "6. 行動規範", content: `すべての学習は本人が行う必要があります。不正行為、アカウント共有、抜け道の利用が発覚した場合、返金なしでアクセスが停止されることがあります。` } },
+  { en: { title: "7. Quizzes & Final Exam", content: `Short quizzes follow each section (min. 70% to pass). A final exam (70% pass required) may be attempted twice.` },
+    jp: { title: "7. クイズおよび最終試験", content: `各セクション後に短いクイズ（70%以上で合格）があります。最終試験（70%以上で合格）は2回まで受験可能です。` } },
+  { en: { title: "8. Certification & Submission", content: `Upon passing the final exam, your certificate is electronically submitted to the court and DMV. A copy is also provided to you.` },
+    jp: { title: "8. 認定証の発行と提出", content: `最終試験に合格すると、証明書が電子的に裁判所およびDMVに提出されます。ユーザーにもコピーが提供されます。` } },
+  { en: { title: "9. Payment & Refund Policy", content: `Payments via Stripe. Full refunds available within 30 days if the course has not been started. No refunds after any module is accessed.` },
+    jp: { title: "9. 支払いおよび返金ポリシー", content: `支払いはStripeを通じて行います。コース未開始の場合のみ30日以内に全額返金可能です。モジュールを一度でも開始すると返金不可です。` } },
+  { en: { title: "10. Data Security & Privacy", content: `We implement industry-standard security measures. See our Privacy Policy for full details on data collection and use.` },
+    jp: { title: "10. データセキュリティおよびプライバシー", content: `業界標準のセキュリティ対策を実施しています。データ収集と利用の詳細はプライバシーポリシーをご覧ください。` } },
+  { en: { title: "11. Intellectual Property", content: `All content, logos, designs, and trademarks are owned by us or our licensors. Licensed for personal use only.` },
+    jp: { title: "11. 知的財産権", content: `すべてのコンテンツ、ロゴ、デザイン、商標は当社またはライセンサーが所有しています。個人利用のみ許可されています。` } },
+  { en: { title: "12. Third-Party Links", content: `Our Site may contain links to third-party websites. We are not responsible for their content or privacy practices.` },
+    jp: { title: "12. 第三者リンク", content: `本サイトには第三者サイトへのリンクが含まれる場合があります。これらのコンテンツやプライバシー慣行について当社は責任を負いません。` } },
+  { en: { title: "13. Children’s Privacy", content: `Our services are not intended for children under 13. We do not knowingly collect personal data from minors under 13.` },
+    jp: { title: "13. 子供のプライバシー", content: `当社サービスは13歳未満の児童を対象としていません。13歳未満の個人情報を意図的に収集することはありません。` } },
+  { en: { title: "14. Disclaimers & Liability", content: `Services and content are provided “as is.” We disclaim all warranties. Our maximum liability is capped at fees paid in the past 12 months.` },
+    jp: { title: "14. 免責事項および責任の制限", content: `サービスおよびコンテンツは現状のまま提供されます。すべての保証を否認します。当社の最大責任額は過去12か月に支払われた料金を上限とします。` } },
+  { en: { title: "15. Updates to Terms", content: `We may update these Terms at any time. Continued use constitutes acceptance of changes.` },
+    jp: { title: "15. 規約の更新", content: `本規約は随時更新される場合があります。継続利用は変更への同意とみなされます。` } },
+  { en: { title: "16. Governing Law & Venue", content: `These Terms are governed by the laws of California. Any dispute will be resolved in California courts or by arbitration in Sacramento.` },
+    jp: { title: "16. 準拠法および裁判地", content: `本規約はカリフォルニア州法に準拠します。紛争はカリフォルニア州裁判所またはサクラメントでの仲裁で解決されます。` } },
+  { en: { title: "17. Arbitration & Class Action Waiver", content: `All disputes are resolved by individual binding arbitration under AAA rules. Class actions and jury trials are waived.` },
+    jp: { title: "17. 仲裁および集団訴訟放棄", content: `すべての紛争はAAA規則に基づく個別の拘束力ある仲裁で解決されます。集団訴訟および陪審裁判は放棄されます。` } },
+  { en: { title: "18. Attorney’s Fees", content: `The prevailing party in any enforcement action is entitled to recover reasonable attorney’s fees and costs.` },
+    jp: { title: "18. 弁護士費用", content: `当事者は、執行行為において合理的な弁護士費用および費用を回収する権利を有します。` } },
+  { en: { title: "19. Severability", content: `If any provision is found invalid, the remainder of these Terms will continue in full force and effect.` },
+    jp: { title: "19. 分離可能性", content: `条項の一部が無効と判断された場合でも、本規約の残りの部分は引き続き有効とします。` } },
+  { en: { title: "20. Contact Us", content: `For questions or concerns, email info@miraitrafficschool.com or mail to:
 MiraITraffic School
 1024 Iron Point Rd #1043
-Folsom, CA 95630` }
-    ]
-  }
+Folsom, CA 95630` },
+    jp: { title: "20. お問い合わせ", content: `ご質問・ご不明点は以下までご連絡ください：
+Email: info@miraitrafficschool.com
+住所：
+MiraITraffic School
+1024 Iron Point Rd #1043
+Folsom, CA 95630` } }
 ];
 
-// Privacy Policy sections
+// Full bilingual Privacy Policy sections
 const privacySections = [
-  {
-    title: "Privacy Policy",
-    lastUpdated: "[Insert Date]",
-    snapshot: [
-      { purpose: "Advertising", data: "Cookies; Usage Data", service: "Google Ads, Facebook Ads" },
-      { purpose: "Payments", data: "Name, Billing & Shipping Info", service: "Stripe" },
-      { purpose: "Analytics", data: "Cookies; Usage Data", service: "Google Analytics" },
-      { purpose: "Hosting & Infrastructure", data: "IP Address; Usage Data", service: "AWS" },
-      { purpose: "Optimization & Testing", data: "Cookies; Usage Data", service: "Google Optimize" }
-    ],
-    items: [
-      { heading: "What We Collect", bullets: [
-        "Device Information: Browser type, IP address, time zone, cookie data; Pages you visit, referring/exit pages, time spent.",
-        "Order Information: Name, billing/shipping address, email, phone; Payment details (processed by Stripe; we don’t store full card numbers)."
-      ]},
-      { heading: "How We Use It", bullets: [
-        "Fulfill orders: process payments, send confirmations, deliver certificates.",
-        "Improve our Site: analytics, A/B testing, fraud detection.",
-        "Communicate: service updates, promos (only if you opt in)."
-      ]},
-      { heading: "Sharing & Disclosure", content: `We share data only with:
-
-• Service providers (Stripe, Google, AWS) to run our business
-• Legal requests: subpoenas, court orders, or to protect our rights`},
-      { heading: "Cookies & Tracking", content: `We use cookies and similar tools for functionality, analytics, and ads. You can disable cookies in your browser, but parts of the Site may not work.` },
-      { heading: "Your Rights", content: `California (CCPA): Right to know, delete, opt‑out.
-EU (GDPR): Access, correct, port, restrict, erase, withdraw consent, lodge complaint.
-
-To exercise any rights, email info@miraitrafficschool.com or info@miraitraffic.com. We’ll respond within 30 days.` },
-      { heading: "Data Retention", content: `We keep Order Information until you ask us to delete it or as long as needed to provide services and meet legal obligations.` },
-      { heading: "Children’s Privacy", content: `We don’t knowingly collect data from anyone under 13. If we learn we have, we’ll delete it ASAP. Parents can request deletion at the emails above.` },
-      { heading: "Policy Updates", content: `We’ll post changes here with a new Last Updated date. Continued use means acceptance.` }
-    ]
-  }
+  { en: { title: "1. What We Collect", content: `Device Information (browser type, IP address, time zone, cookies); Order Information (name, billing/shipping address, email, phone, payment details).` },
+    jp: { title: "1. 収集する情報", content: `デバイス情報（ブラウザ種類、IPアドレス、タイムゾーン、クッキー）、注文情報（氏名、請求先/配送先住所、メール、電話、支払情報）。` } },
+  { en: { title: "2. How We Use Data", content: `To fulfill orders; improve our Site; communicate updates and promotions (with consent).` },
+    jp: { title: "2. データの利用方法", content: `注文処理、サイト改善、同意に基づく更新・プロモーションの通知。` } },
+  { en: { title: "3. Sharing & Disclosure", content: `We share data only with service providers (Stripe, Google Analytics, AWS) and to comply with legal requests.` },
+    jp: { title: "3. 共有および開示", content: `データはサービスプロバイダー（Stripe、Google Analytics、AWS）のみと共有し、法的要請に応じて開示します。` } },
+  { en: { title: "4. Cookies & Tracking", content: `We use cookies and similar tools for functionality, analytics, and advertising. You may disable cookies, but some features may not work.` },
+    jp: { title: "4. クッキーと追跡", content: `機能、分析、広告のためにクッキーなどを使用しています。無効化すると一部機能が利用できなくなる場合があります。` } },
+  { en: { title: "5. User Rights", content: `California Residents: CCPA rights to know, delete, opt-out; EU Residents: GDPR rights to access, correct, port, restrict, delete, withdraw consent.` },
+    jp: { title: "5. ユーザーの権利", content: `カリフォルニア州住民：知る権利、削除権、オプトアウト権(EU：アクセス、訂正、移転、制限、削除、同意撤回権)。` } },
+  { en: { title: "6. Data Retention", content: `We retain data as long as needed for business and legal purposes or until you request deletion.` },
+    jp: { title: "6. データ保持", content: `ビジネスおよび法的目的に必要な期間保持し、削除要請があれば対応します。` } },
+  { en: { title: "7. Third-Party Tools", content: `We use Stripe (payments), Google Analytics (analytics), AWS (hosting), Google Ads & Facebook Ads (ads), Google Optimize (testing).` },
+    jp: { title: "7. 第三者ツール", content: `Stripe（支払い）、Google Analytics（分析）、AWS（ホスティング）、Google Ads & Facebook Ads（広告）、Google Optimize（テスト）を使用しています。` } },
+  { en: { title: "8. Children’s Privacy", content: `Our services are not directed at children under 13. Any data from minors under 13 will be deleted immediately.` },
+    jp: { title: "8. 子供のプライバシー", content: `当社サービスは13歳未満の児童を対象としていません。13歳未満のデータは速やかに削除します。` } },
+  { en: { title: "9. Do Not Track", content: `We do not alter our practices in response to DNT signals.` },
+    jp: { title: "9. DNTへの対応", content: `Do Not Track信号に応じて当社の慣行を変更しません。` } },
+  { en: { title: "10. Policy Updates", content: `We may update this policy; changes will be posted with the updated date. Continued use implies acceptance.` },
+    jp: { title: "10. ポリシーの更新", content: `本ポリシーは更新される場合があります。変更は更新日とともに掲示され、継続利用は同意とみなされます。` } }
 ];
 
-export const Legal = () => {
+const Legal = () => {
+  const [lang, setLang] = useState<'en'|'jp'>('en');
+  useEffect(() => {
+    const stored = localStorage.getItem('lang');
+    if (stored === 'jp' || stored === 'en') setLang(stored);
+    const listener = (e: StorageEvent) => {
+      if (e.key === 'lang' && (e.newValue === 'jp' || e.newValue === 'en')) setLang(e.newValue);
+    };
+    window.addEventListener('storage', listener);
+    return () => window.removeEventListener('storage', listener);
+  }, []);
   const [active, setActive] = useState<'terms'|'privacy'>('terms');
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
       <main className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Terms & Privacy
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Please review our terms of use and privacy policy
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{lang==='jp'?'利用規約とプライバシーポリシー':'Terms & Privacy'}</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{lang==='jp'?'利用規約およびプライバシーポリシーを必ずご確認ください。':'Please review our full Terms of Use and Privacy Policy'}</p>
         </div>
 
         <Tabs value={active} onValueChange={setActive as any} className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="terms" className="py-3">
-              <FileText className="w-4 h-4 mr-2" /> Terms of Use
-            </TabsTrigger>
-            <TabsTrigger value="privacy" className="py-3">
-              <Shield className="w-4 h-4 mr-2" /> Privacy Policy
-            </TabsTrigger>
+          <TabsList className="grid grid-cols-2 mb-8">
+            <TabsTrigger value="terms" className="py-3"><FileText className="w-5 h-5 mr-2"/>{lang==='jp'?'利用規約':'Terms of Use'}</TabsTrigger>
+            <TabsTrigger value="privacy" className="py-3"><Shield className="w-5 h-5 mr-2"/>{lang==='jp'?'プライバシーポリシー':'Privacy Policy'}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="terms">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
-                <div className="flex items-center space-x-3 mb-6">
-                  <FileText className="w-8 h-8 text-primary" />
-                  <h2 className="text-3xl font-semibold text-primary">
-                    Terms of Use
-                  </h2>
-                </div>
-                <article className="prose prose-lg text-foreground max-w-none">
-                  <p className="font-medium">Effective Date: {termsSections[0].effectiveDate}</p>
-                  <ol className="list-decimal list-inside space-y-4">
-                    {termsSections[0].items.map((item, idx) => (
+                <article className="prose prose-lg text-foreground max-w-none space-y-8">
+                  <h2 className="flex items-center"><FileText className="inline w-6 h-6 text-primary mr-2"/>{lang==='jp'?'利用規約':'Terms of Use'}</h2>
+                  <ol className="list-decimal list-inside space-y-6">
+                    {termsSections.map((sec,idx)=>(
                       <li key={idx}>
-                        <strong>{item.heading}</strong>
-                        <p>{item.content}</p>
+                        <h3 className="font-semibold text-lg">{lang==='jp'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{lang==='jp'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>
@@ -136,45 +130,13 @@ export const Legal = () => {
           <TabsContent value="privacy">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
-                <div className="flex items-center space-x-3 mb-6">
-                  <Shield className="w-8 h-8 text-primary" />
-                  <h2 className="text-3xl font-semibold text-primary">
-                    Privacy Policy
-                  </h2>
-                </div>
-                <article className="prose prose-lg text-foreground max-w-none">
-                  <p className="font-medium">Last Updated: {privacySections[0].lastUpdated}</p>
-                  <h3 className="mt-6 mb-2 text-xl font-semibold">Policy Snapshot</h3>
-                  <table className="w-full text-left border-collapse">
-                    <thead>
-                      <tr>
-                        <th>Purpose</th>
-                        <th>Data Collected</th>
-                        <th>Third-Party Service</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {privacySections[0].snapshot.map((row, idx) => (
-                        <tr key={idx} className={idx % 2 ? 'bg-muted/20' : ''}>
-                          <td>{row.purpose}</td>
-                          <td>{row.data}</td>
-                          <td>{row.service}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <h3 className="mt-8 mb-2 text-xl font-semibold">Details</h3>
-                  <ol className="list-decimal list-inside space-y-4">
-                    {privacySections[0].items.map((item, idx) => (
+                <article className="prose prose-lg text-foreground max-w-none space-y-8">
+                  <h2 className="flex items-center"><Shield className="inline w-6 h-6 text-primary mr-2"/>{lang==='jp'?'プライバシーポリシー':'Privacy Policy'}</h2>
+                  <ol className="list-decimal list-inside space-y-6">
+                    {privacySections.map((sec,idx)=>(
                       <li key={idx}>
-                        <strong>{item.heading}</strong>
-                        {item.bullets ? (
-                          <ul className="list-disc list-inside ml-4 space-y-1 mt-2">
-                            {item.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                          </ul>
-                        ) : (
-                          <p>{item.content}</p>
-                        )}
+                        <h3 className="font-semibold text-lg">{lang==='jp'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{lang==='jp'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>
@@ -184,7 +146,6 @@ export const Legal = () => {
           </TabsContent>
         </Tabs>
       </main>
-
       <Footer />
     </div>
   );
