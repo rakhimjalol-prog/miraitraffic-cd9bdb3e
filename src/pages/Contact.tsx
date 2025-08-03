@@ -6,26 +6,27 @@ import { Label } from "@/components/ui/label";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, Clock, Phone, MessageSquare } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
-  const { t } = useLanguage();
-
   return (
-    <div className="page-container">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h1>{t('contactTitle')}</h1>
-          <p>{t('contactDescription')}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Contact Us
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Get in touch with our support team for any questions about your traffic school course
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <Card className="border-0 shadow-soft h-fit">
             <CardContent className="p-8">
-              <h2>{t('getInTouch')}</h2>
+              <h2 className="text-2xl font-semibold text-primary mb-6">Get in Touch</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -33,7 +34,7 @@ const Contact = () => {
                     <Clock className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3>{t('supportHours')}</h3>
+                    <h3 className="font-semibold text-foreground mb-2">Support Hours</h3>
                     <p className="text-muted-foreground">Insert content here</p>
                   </div>
                 </div>
@@ -43,7 +44,7 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3>{t('emailSupport')}</h3>
+                    <h3 className="font-semibold text-foreground mb-2">Email Support</h3>
                     <p className="text-muted-foreground">Insert content here</p>
                   </div>
                 </div>
@@ -53,13 +54,13 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3>{t('phoneSupport')}</h3>
+                    <h3 className="font-semibold text-foreground mb-2">Phone Support</h3>
                     <p className="text-muted-foreground">Insert content here</p>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-border">
-                  <h3>{t('followUs')}</h3>
+                  <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
                   <div className="flex space-x-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <span className="text-primary font-semibold text-sm">FB</span>
@@ -81,13 +82,13 @@ const Contact = () => {
             <CardContent className="p-8">
               <div className="flex items-center space-x-3 mb-6">
                 <MessageSquare className="w-6 h-6 text-primary" />
-                <h2>{t('sendMessage')}</h2>
+                <h2 className="text-2xl font-semibold text-primary">Send us a Message</h2>
               </div>
               
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">{t('firstName')}</Label>
+                    <Label htmlFor="firstName">First Name</Label>
                     <Input 
                       id="firstName" 
                       placeholder="Enter your first name"
@@ -95,7 +96,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">{t('lastName')}</Label>
+                    <Label htmlFor="lastName">Last Name</Label>
                     <Input 
                       id="lastName" 
                       placeholder="Enter your last name"
@@ -105,7 +106,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t('emailAddress')}</Label>
+                  <Label htmlFor="email">Email Address</Label>
                   <Input 
                     id="email" 
                     type="email" 
@@ -115,7 +116,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">{t('subject')}</Label>
+                  <Label htmlFor="subject">Subject</Label>
                   <Input 
                     id="subject" 
                     placeholder="What is your message about?"
@@ -124,7 +125,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">{t('message')}</Label>
+                  <Label htmlFor="message">Message</Label>
                   <Textarea 
                     id="message" 
                     placeholder="Enter your message here..."
@@ -137,7 +138,7 @@ const Contact = () => {
                   type="submit" 
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3"
                 >
-                  {t('sendMessageBtn')}
+                  Send Message
                 </Button>
               </form>
             </CardContent>
