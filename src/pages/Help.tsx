@@ -5,7 +5,6 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HelpCircle, BookOpen, ExternalLink } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const faqs = [
   {
@@ -96,18 +95,17 @@ const helpTopics = [
 ];
 
 const Help = () => {
-  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("faq");
 
   return (
-    <div className="page-container">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1>{t('helpPageTitle')}</h1>
-            <p>{t('helpPageDescription')}</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Help Center</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Find answers to common questions and helpful resources</p>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
