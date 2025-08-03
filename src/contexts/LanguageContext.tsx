@@ -158,7 +158,6 @@ const translations = {
     legalTitle: "Terms & Privacy",
     legalDescription: "Please review our full Terms of Use and Privacy Policy",
     termsOfUse: "Terms of Use",
-    privacyPolicy: "Privacy Policy",
     
     // 404 Page
     pageNotFound: "Page Not Found",
@@ -308,7 +307,6 @@ const translations = {
     legalTitle: "利用規約とプライバシーポリシー",
     legalDescription: "利用規約およびプライバシーポリシーを必ずご確認ください",
     termsOfUse: "利用規約",
-    privacyPolicy: "プライバシーポリシー",
     
     // 404 Page
     pageNotFound: "ページが見つかりません",
