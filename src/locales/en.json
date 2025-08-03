@@ -1,0 +1,100 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "help": "Help",
+    "courts": "Courts",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "home": {
+    "welcome": "Welcome to Traffic Violations School",
+    "subtitle": "Pass your California traffic course online",
+    "description": "Complete your court-required traffic school from home.",
+    "startCourse": "Start Course Now",
+    "learnMore": "Scroll to learn more"
+  },
+  "hero": {
+    "title": "Traffic Violations School",
+    "subtitle": "Pass your California traffic course online",
+    "description": "Complete your court-required traffic school from home.",
+    "feature1": "✓ DMV-approved certificate",
+    "feature2": "✓ 100% online, any device",
+    "feature3": "✓ Court & DMV accepted",
+    "startCourseNow": "Start Course Now",
+    "scrollToLearnMore": "Scroll to learn more"
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "feature1": {
+      "title": "100% Online Course",
+      "description": "Complete from anywhere, anytime"
+    },
+    "feature2": {
+      "title": "DMV Approved",
+      "description": "Officially licensed by California DMV"
+    },
+    "feature3": {
+      "title": "Court Accepted",
+      "description": "Accepted by all California courts"
+    },
+    "feature4": {
+      "title": "Instant Certificate",
+      "description": "Automatic submission to court & DMV"
+    },
+    "feature5": {
+      "title": "Mobile Friendly",
+      "description": "Works on any device or browser"
+    },
+    "feature6": {
+      "title": "24/7 Support",
+      "description": "Help available when you need it"
+    }
+  },
+  "pricing": {
+    "title": "Course Pricing",
+    "amount": "$19.95",
+    "description": "One-time payment, no hidden fees",
+    "startCourse": "Start Course"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Quick answers to common questions about our traffic school course",
+    "viewAll": "View All FAQs"
+  },
+  "terms": {
+    "title": "Terms & Privacy",
+    "description": "Please review our full Terms of Use and Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our support team for any questions about your traffic school course",
+    "getInTouch": "Get in Touch",
+    "supportHours": "Support Hours",
+    "emailSupport": "Email Support",
+    "phoneSupport": "Phone Support",
+    "followUs": "Follow Us",
+    "sendMessage": "Send us a Message",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "subject": "Subject",
+    "message": "Message",
+    "sendMessageBtn": "Send Message"
+  },
+  "footer": {
+    "company": "Company",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "legal": "Legal"
+  },
+  "common": {
+    "pageNotFound": "Page Not Found",
+    "returnHome": "Return to Home",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+}

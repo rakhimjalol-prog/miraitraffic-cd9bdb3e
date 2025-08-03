@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FileText, Shield } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useTranslation } from "@/hooks/useTranslation";
 
 // Full bilingual Terms of Use sections
 const termsSections = [
@@ -83,7 +83,7 @@ const privacySections = [
 ];
 
 const Legal = () => {
-  const { t, language } = useLanguage();
+  const { t, language } = useTranslation();
   const [active, setActive] = useState<'terms'|'privacy'>('terms');
 
   return (
@@ -91,26 +91,26 @@ const Legal = () => {
       <Header />
       <main className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h1>{t('legalTitle')}</h1>
-          <p>{t('legalDescription')}</p>
+          <h1>{t('terms.title')}</h1>
+          <p>{t('terms.description')}</p>
         </div>
 
         <Tabs value={active} onValueChange={setActive as any} className="max-w-4xl mx-auto">
           <TabsList className="grid grid-cols-2 mb-8">
-            <TabsTrigger value="terms" className="py-3"><FileText className="w-5 h-5 mr-2"/>{t('termsOfUse')}</TabsTrigger>
-            <TabsTrigger value="privacy" className="py-3"><Shield className="w-5 h-5 mr-2"/>{t('privacyPolicy')}</TabsTrigger>
+            <TabsTrigger value="terms" className="py-3"><FileText className="w-5 h-5 mr-2"/>{t('terms.termsOfUse')}</TabsTrigger>
+            <TabsTrigger value="privacy" className="py-3"><Shield className="w-5 h-5 mr-2"/>{t('terms.privacyPolicy')}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="terms">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <article className="prose prose-lg text-foreground max-w-none space-y-8">
-                  <h2 className="flex items-center"><FileText className="inline w-6 h-6 text-primary mr-2"/>{t('termsOfUse')}</h2>
+                  <h2 className="flex items-center"><FileText className="inline w-6 h-6 text-primary mr-2"/>{t('terms.termsOfUse')}</h2>
                   <ol className="list-decimal list-inside space-y-6">
                     {termsSections.map((sec,idx)=>(
                       <li key={idx}>
-                        <h3 className="font-semibold text-lg">{language==='jp'?sec.jp.title:sec.en.title}</h3>
-                        <p className="mt-2">{language==='jp'?sec.jp.content:sec.en.content}</p>
+                        <h3 className="font-semibold text-lg">{language==='ja'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{language==='ja'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>
@@ -123,12 +123,12 @@ const Legal = () => {
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <article className="prose prose-lg text-foreground max-w-none space-y-8">
-                  <h2 className="flex items-center"><Shield className="inline w-6 h-6 text-primary mr-2"/>{t('privacyPolicy')}</h2>
+                  <h2 className="flex items-center"><Shield className="inline w-6 h-6 text-primary mr-2"/>{t('terms.privacyPolicy')}</h2>
                   <ol className="list-decimal list-inside space-y-6">
                     {privacySections.map((sec,idx)=>(
                       <li key={idx}>
-                        <h3 className="font-semibold text-lg">{language==='jp'?sec.jp.title:sec.en.title}</h3>
-                        <p className="mt-2">{language==='jp'?sec.jp.content:sec.en.content}</p>
+                        <h3 className="font-semibold text-lg">{language==='ja'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{language==='ja'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>

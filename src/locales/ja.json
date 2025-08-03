@@ -1,0 +1,100 @@
+{
+  "navigation": {
+    "home": "ホーム",
+    "about": "概要",
+    "help": "ヘルプ",
+    "courts": "裁判所",
+    "contact": "お問い合わせ",
+    "login": "ログイン",
+    "signup": "新規登録"
+  },
+  "home": {
+    "welcome": "交通違反スクールへようこそ",
+    "subtitle": "カリフォルニア州交通コースをオンラインで合格",
+    "description": "裁判所で必要な交通スクールを自宅で完了しましょう。",
+    "startCourse": "今すぐコース開始",
+    "learnMore": "詳しく見る"
+  },
+  "hero": {
+    "title": "交通違反スクール",
+    "subtitle": "カリフォルニア州交通コースをオンラインで合格",
+    "description": "裁判所で必要な交通スクールを自宅で完了しましょう。",
+    "feature1": "✓ DMV認可証明書",
+    "feature2": "✓ 100%オンライン、全デバイス対応",
+    "feature3": "✓ 裁判所・DMV受理",
+    "startCourseNow": "今すぐコース開始",
+    "scrollToLearnMore": "詳しく見る"
+  },
+  "features": {
+    "title": "選ばれる理由",
+    "feature1": {
+      "title": "100%オンラインコース",
+      "description": "いつでもどこでも受講可能"
+    },
+    "feature2": {
+      "title": "DMV認可済み",
+      "description": "カリフォルニアDMV正式ライセンス"
+    },
+    "feature3": {
+      "title": "裁判所受理",
+      "description": "カリフォルニア州全裁判所で受理"
+    },
+    "feature4": {
+      "title": "即座の証明書",
+      "description": "裁判所・DMVへ自動提出"
+    },
+    "feature5": {
+      "title": "モバイル対応",
+      "description": "全デバイス・ブラウザ対応"
+    },
+    "feature6": {
+      "title": "24時間サポート",
+      "description": "必要な時にサポート利用可能"
+    }
+  },
+  "pricing": {
+    "title": "コース料金",
+    "amount": "$19.95",
+    "description": "一回払い、隠れた費用なし",
+    "startCourse": "コース開始"
+  },
+  "faq": {
+    "title": "よくある質問",
+    "description": "交通スクールコースに関する一般的な質問への迅速な回答",
+    "viewAll": "全てのFAQを見る"
+  },
+  "terms": {
+    "title": "利用規約とプライバシーポリシー",
+    "description": "利用規約およびプライバシーポリシーを必ずご確認ください",
+    "termsOfUse": "利用規約",
+    "privacyPolicy": "プライバシーポリシー"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "交通スクールコースに関するご質問はサポートチームまでお気軽にお問い合わせください",
+    "getInTouch": "お問い合わせ",
+    "supportHours": "サポート時間",
+    "emailSupport": "メールサポート",
+    "phoneSupport": "電話サポート",
+    "followUs": "フォローする",
+    "sendMessage": "メッセージを送信",
+    "firstName": "名",
+    "lastName": "姓",
+    "emailAddress": "メールアドレス",
+    "subject": "件名",
+    "message": "メッセージ",
+    "sendMessageBtn": "メッセージを送信"
+  },
+  "footer": {
+    "company": "会社",
+    "quickLinks": "クイックリンク",
+    "support": "サポート",
+    "legal": "法的情報"
+  },
+  "common": {
+    "pageNotFound": "ページが見つかりません",
+    "returnHome": "ホームに戻る",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました"
+  }
+}
