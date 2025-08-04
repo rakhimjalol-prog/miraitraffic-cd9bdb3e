@@ -53,7 +53,7 @@ const Footer = () => {
             <ul className="space-y-1">
               <li><Link to="/legal" className="hover:underline text-muted-foreground">Terms & Privacy</Link></li>
               
-              <li><a href="/refund-policy" className="hover:underline text-muted-foreground">Refund Policy</a></li>
+              
             </ul>
           </div>
         </div>
