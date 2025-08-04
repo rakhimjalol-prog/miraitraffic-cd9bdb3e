@@ -368,17 +368,180 @@ export const courtDataFull = {
   },
 
   "San Joaquin": {
-    website: "https://www.sjcourts.org/divisions/traffic",
-    lookup: "https://www.sjcourts.org/online-services/pay-traffic-fines",
-    courts: [
-      { name: "Stockton", code: "39050" },
-      { name: "Lodi", code: "39060" },
-      { name: "Manteca", code: "39070" },
-      { name: "Tracy", code: "39080" }
-    ]
-  }
+  website: "https://www.sjcourts.org/divisions/traffic",
+  lookup: "https://www.sjcourts.org/online-services/pay-traffic-fines",
+  courts: [
+    { name: "Stockton", code: "39050" },
+    { name: "Lodi", code: "39060" },
+    { name: "Manteca", code: "39070" },
+    { name: "Tracy", code: "39080" }
+  ]
+},
+
+"San Luis Obispo": {
+  website: "https://www.slo.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.slo.courts.ca.gov/online-services/pay-traffic-fines",
+  courts: [
+    { name: "San Luis Obispo", code: "40050" },
+    { name: "Paso Robles", code: "40050" },
+    { name: "Grover Beach", code: "40050" }
+  ]
+},
+
+"San Mateo": {
+  website: "https://www.sanmateocourt.org/online_services/traffic_citations.php",
+  lookup: "https://www.sanmateocourt.org/online_services/traffic_citations.php",
+  courts: [
+    { name: "Redwood City", code: "41050" },
+    { name: "South San Francisco", code: "41050" }
+  ]
+},
+
+"Santa Barbara": {
+  website: "https://www.sbcourts.org/dv/traffic.shtm",
+  lookup: "https://www.sbcourts.org/dv/traffic.shtm",
+  courts: [
+    { name: "Santa Barbara", code: "42050" },
+    { name: "Santa Maria", code: "42050" },
+    { name: "Lompoc", code: "42050" }
+  ]
+},
+
+"Santa Clara": {
+  website: "https://www.scscourt.org/self_help/traffic/traffic.shtml",
+  lookup: "https://portal.scscourt.org/traffic",
+  courts: [
+    { name: "San Jose", code: "43050" },
+    { name: "Palo Alto", code: "43050" },
+    { name: "Morgan Hill", code: "43050" }
+  ]
+},
+
+"Santa Cruz": {
+  website: "https://www.santacruzcourt.org/divisions/traffic",
+  lookup: "https://www.santacruzcourt.org/online-services/pay-fines",
+  courts: [
+    { name: "Santa Cruz", code: "44050" },
+    { name: "Watsonville", code: "44050" }
+  ]
+},
+
+Shasta: {
+  website: "https://www.shasta.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.shasta.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Redding", code: "45050" }
+  ]
+},
+
+Sierra: {
+  website: "https://www.sierra.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.sierra.courts.ca.gov/online-services/pay-fines",
+  courts: [
+    { name: "Downieville", code: "46050" }
+  ]
+},
+
+Siskiyou: {
+  website: "https://www.siskiyou.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.siskiyou.courts.ca.gov/online-services/pay-traffic-fines",
+  courts: [
+    { name: "Yreka", code: "47050" }
+  ]
+},
+
+Solano: {
+  website: "https://www.solano.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.solano.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Vallejo", code: "48050" },
+    { name: "Fairfield", code: "48060" }
+  ]
+},
+
+Sonoma: {
+  website: "https://www.sonoma.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.sonoma.courts.ca.gov/online-services/pay-fines",
+  courts: [
+    { name: "Santa Rosa", code: "49050" }
+  ]
+},
+
+Stanislaus: {
+  website: "https://www.stanislaus.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.stanislaus.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Modesto", code: "50050" }
+  ]
+},
+
+Sutter: {
+  website: "https://www.sutter.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.sutter.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Yuba City", code: "51050" }
+  ]
+},
+
+Tehama: {
+  website: "https://www.tehama.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.tehama.courts.ca.gov/online-services/pay-traffic-fines",
+  courts: [
+    { name: "Red Bluff", code: "52050" }
+  ]
+},
+
+Trinity: {
+  website: "https://www.trinity.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.trinity.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Weaverville", code: "53050" }
+  ]
+},
+
+Tulare: {
+  website: "https://www.tularesuperiorcourt.ca.gov/divisions/traffic",
+  lookup: "https://www.tularesuperiorcourt.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Visalia", code: "54050" },
+    { name: "Porterville", code: "54060" }
+  ]
+},
+
+Tuolumne: {
+  website: "https://www.tuolumne.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.tuolumne.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Sonora", code: "55050" }
+  ]
+},
+
+Ventura: {
+  website: "https://www.ventura.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.ventura.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Ventura", code: "56050" },
+    { name: "Simi Valley", code: "56060" }
+  ]
+},
+
+Yolo: {
+  website: "https://www.yolo.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.yolo.courts.ca.gov/online-services/pay-traffic-ticket",
+  courts: [
+    { name: "Woodland", code: "57050" }
+  ]
+},
+
+Yuba: {
+  website: "https://www.yuba.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.yuba.courts.ca.gov/online-services/pay-traffic-fines",
+  courts: [
+    { name: "Marysville", code: "58050" }
+  ]
+}
 };
-  
+    
 const Courts = () => {
   const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
   const counties = Object.keys(courtDataFull).sort();
