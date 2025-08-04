@@ -2,8 +2,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { choose } from '@/utils/lang';
 import { Award, CheckCircle, Send } from 'lucide-react';
 const CertificateSection = () => {
-  const { language } = useLanguage();
-  return <section className="py-20 bg-gradient-to-br from-cyan-200 to-blue-300">
+  const {
+    language
+  } = useLanguage();
+  return <section className="py-20 from-cyan-200 to-blue-300 bg-[t#71d4f64d] bg-[#71d4f6]/30">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
