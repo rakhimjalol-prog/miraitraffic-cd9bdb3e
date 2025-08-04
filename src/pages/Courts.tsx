@@ -18,15 +18,40 @@ export const courtDataFull = {
       { name: "Oakland", code: "01440" }
     ]
   },
-  "Alpine": { website: "#", lookup: "#", courts: [{ name: "Markleeville", code: "02050" }] },
-  "Amador": { website: "#", lookup: "#", courts: [{ name: "Jackson", code: "03050" }] },
-  "Butte": { website: "#", lookup: "#", courts: [
-      { name: "Chico", code: "04030" },
-      { name: "Oroville", code: "04030" },
-      { name: "Paradise", code: "04030" }
-    ]
-  },
-  "Calaveras": { website: "#", lookup: "#", courts: [{ name: "San Andreas", code: "05050" }] },
+"Alpine": {
+  website: "https://www.alpine.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.alpine.courts.ca.gov/online-services",
+  courts: [
+    { name: "Markleeville", code: "02050" }
+  ]
+},
+
+"Amador": {
+  website: "https://www.amadorcourt.org",
+  lookup: "https://www.amadorcourt.org/divisions/traffic.aspx",
+  courts: [
+    { name: "Jackson", code: "03050" }
+  ]
+},
+
+"Butte": {
+  website: "https://www.butte.courts.ca.gov/divisions/traffic",
+  lookup: "https://www.butte.courts.ca.gov/divisions/traffic-information/traffic-payment-information",
+  courts: [
+    { name: "Chico", code: "04030" },
+    { name: "Oroville", code: "04030" },
+    { name: "Paradise", code: "04030" }
+  ]
+},
+
+"Calaveras": {
+  website: "https://calaveras.courts.ca.gov/divisions/traffic",
+  lookup: "https://calaveras.courts.ca.gov/online-services",
+  courts: [
+    { name: "San Andreas", code: "05050" }
+  ]
+},
+
   "Colusa": { website: "#", lookup: "#", courts: [{ name: "Colusa", code: "06050" }] },
   "Contra Costa": { website: "#", lookup: "#", courts: [
       { name: "Martinez", code: "07030" },
