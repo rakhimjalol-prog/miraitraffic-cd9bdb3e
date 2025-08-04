@@ -110,8 +110,8 @@ const Legal = () => {
                   <ol className="list-decimal list-inside space-y-6">
                     {termsSections.map((sec,idx)=>(
                       <li key={idx}>
-                        <h3 className="font-semibold text-lg">{language==='jp'?sec.jp.title:sec.en.title}</h3>
-                        <p className="mt-2">{language==='jp'?sec.jp.content:sec.en.content}</p>
+                        <h3 className="font-semibold text-lg">{language==='ja'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{language==='ja'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>
@@ -128,8 +128,8 @@ const Legal = () => {
                   <ol className="list-decimal list-inside space-y-6">
                     {privacySections.map((sec,idx)=>(
                       <li key={idx}>
-                        <h3 className="font-semibold text-lg">{language==='jp'?sec.jp.title:sec.en.title}</h3>
-                        <p className="mt-2">{language==='jp'?sec.jp.content:sec.en.content}</p>
+                        <h3 className="font-semibold text-lg">{language==='ja'?sec.jp.title:sec.en.title}</h3>
+                        <p className="mt-2">{language==='ja'?sec.jp.content:sec.en.content}</p>
                       </li>
                     ))}
                   </ol>

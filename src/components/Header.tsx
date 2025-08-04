@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { language } = useLanguage();
-  const isJP = language === 'jp';
+  const isJP = language === 'ja';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
 

@@ -12,59 +12,60 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { choose } from "@/utils/lang";
 
 const FeaturesSection = () => {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
 
   const features = [
     {
       icon: CheckCircle,
-      title: t("feature1Title"),
-      description: t("feature1Desc"),
+      title: choose("100% Online Course", "100%オンラインコース", language),
+      description: choose("Complete from anywhere, anytime", "いつでもどこでも受講可能", language),
     },
     {
       icon: Globe,
-      title: t("feature2Title"),
-      description: t("feature2Desc"),
+      title: choose("DMV Approved", "DMV認可済み", language),
+      description: choose("Officially licensed by California DMV", "カリフォルニアDMV正式ライセンス", language),
     },
     {
       icon: Shield,
-      title: t("feature3Title"),
-      description: t("feature3Desc"),
+      title: choose("Court Accepted", "裁判所受理", language),
+      description: choose("Accepted by all California courts", "カリフォルニア州全裁判所で受理", language),
     },
     {
       icon: Smartphone,
-      title: t("feature4Title"),
-      description: t("feature4Desc"),
+      title: choose("Instant Certificate", "即座の証明書", language),
+      description: choose("Automatic submission to court & DMV", "裁判所・DMVへ自動提出", language),
     },
     {
       icon: Lock,
-      title: t("feature5Title"),
-      description: t("feature5Desc"),
+      title: choose("Mobile Friendly", "モバイル対応", language),
+      description: choose("Works on any device or browser", "全デバイス・ブラウザ対応", language),
     },
     {
       icon: FileText,
-      title: t("feature6Title"),
-      description: t("feature6Desc"),
+      title: choose("24/7 Support", "24時間サポート", language),
+      description: choose("Help available when you need it", "必要な時にサポート利用可能", language),
     },
   ];
 
   const quickIcons = [
     {
       icon: Headphones,
-      text: t("featureQuick1") || "Online Support",
+      text: choose("Online Support", "オンラインサポート", language),
     },
     {
       icon: Mountain,
-      text: t("featureQuick2") || "Easy to Use",
+      text: choose("Easy to Use", "使いやすい", language),
     },
     {
       icon: Star,
-      text: t("featureQuick3") || "Trusted by Customers",
+      text: choose("Trusted by Customers", "顧客から信頼", language),
     },
     {
       icon: MonitorSmartphone,
-      text: t("featureQuick4") || "Any Device, Any Time",
+      text: choose("Any Device, Any Time", "いつでもどのデバイスでも", language),
     },
   ];
 
@@ -75,7 +76,7 @@ const FeaturesSection = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {t("whyChooseUs")}
+              {choose("Why Choose Us", "選ばれる理由", language)}
             </h2>
           </div>
 

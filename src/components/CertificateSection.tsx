@@ -1,9 +1,8 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { choose } from '@/utils/lang';
 import { Award, CheckCircle, Send } from 'lucide-react';
 const CertificateSection = () => {
-  const {
-    t
-  } = useLanguage();
+  const { language } = useLanguage();
   return <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -11,10 +10,10 @@ const CertificateSection = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-                {t('certificate.title')}
+                {choose('Get Your DMV-Approved Certificate', 'DMV認可証明書を取得', language)}
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                {t('certificate.description')}
+                {choose('Upon completion, receive an official certificate that\'s automatically submitted to the court and DMV', '修了時に裁判所とDMVに自動提出される公式証明書を受領', language)}
               </p>
             </div>
 
@@ -25,8 +24,8 @@ const CertificateSection = () => {
                   <CheckCircle className="w-4 h-4 text-success" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{t('certificate.benefit1Title')}</h4>
-                  <p className="text-gray-600 text-sm">{t('certificate.benefit1Desc')}</p>
+                  <h4 className="font-semibold text-gray-900">{choose('Instant Delivery', '即座の配信', language)}</h4>
+                  <p className="text-gray-600 text-sm">{choose('Certificate delivered immediately after passing', '合格後すぐに証明書配信', language)}</p>
                 </div>
               </div>
               
@@ -35,8 +34,8 @@ const CertificateSection = () => {
                   <Send className="w-4 h-4 text-success" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{t('certificate.benefit2Title')}</h4>
-                  <p className="text-gray-600 text-sm">{t('certificate.benefit2Desc')}</p>
+                  <h4 className="font-semibold text-gray-900">{choose('Auto Submission', '自動提出', language)}</h4>
+                  <p className="text-gray-600 text-sm">{choose('Automatically sent to court and DMV', '裁判所とDMVに自動送信', language)}</p>
                 </div>
               </div>
               
@@ -45,8 +44,8 @@ const CertificateSection = () => {
                   <Award className="w-4 h-4 text-success" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{t('certificate.benefit3Title')}</h4>
-                  <p className="text-gray-600 text-sm">{t('certificate.benefit3Desc')}</p>
+                  <h4 className="font-semibold text-gray-900">{choose('Verification', '検証', language)}</h4>
+                  <p className="text-gray-600 text-sm">{choose('Secure verification with court reference', '裁判所参照番号付き安全な検証', language)}</p>
                 </div>
               </div>
             </div>
@@ -60,10 +59,10 @@ const CertificateSection = () => {
                 <img src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png" alt="Sample Certificate of Completion" className="w-full h-auto rounded-lg" />
                 <div className="mt-4 text-center">
                   <p className="text-sm text-gray-600 font-medium">
-                    {t('certificate.certificateTitle')}
+                    {choose('Certificate of Completion', '修了証明書', language)}
                   </p>
                   <p className="text-xs text-gray-500 mt-1">
-                    {t('certificate.certificateSubtitle')}
+                    {choose('Traffic School Completion', '交通スクール修了', language)}
                   </p>
                 </div>
               </div>

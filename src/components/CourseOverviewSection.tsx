@@ -1,9 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Book, Clock, Users, Award } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { choose } from "@/utils/lang";
 
 const CourseOverviewSection = () => {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
 
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50/30 to-purple-50/30">
@@ -15,10 +16,10 @@ const CourseOverviewSection = () => {
             </svg>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {t('courseOverview')}
+            {choose('Course Overview', 'コース概要', language)}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            {t('courseOverviewDesc')}
+            {choose('Everything you need to successfully complete your traffic school requirement', '交通スクール要件を成功裏に完了するために必要なすべて', language)}
           </p>
         </div>
 

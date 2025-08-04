@@ -15,9 +15,9 @@ const LanguageToggle = () => {
         🇺🇸 EN
       </Button>
       <Button
-        variant={language === 'jp' ? 'default' : 'ghost'}
+        variant={language === 'ja' ? 'default' : 'ghost'}
         size="sm"
-        onClick={() => setLanguage('jp')}
+        onClick={() => setLanguage('ja')}
         className="text-xs px-3 py-1 h-8 rounded-full"
       >
         🇯🇵 JP

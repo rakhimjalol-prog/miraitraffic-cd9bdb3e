@@ -7,9 +7,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, Clock, Phone, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { choose } from "@/utils/lang";
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
 
   return (
     <div className="page-container">
@@ -17,15 +18,15 @@ const Contact = () => {
       
       <main className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h1>{t('contactTitle')}</h1>
-          <p>{t('contactDescription')}</p>
+          <h1>{choose('Contact Us', 'お問い合わせ', language)}</h1>
+          <p>{choose('Get in touch with our support team for any questions about your traffic school course', '交通スクールコースに関するご質問はサポートチームまでお気軽にお問い合わせください', language)}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <Card className="border-0 shadow-soft h-fit">
             <CardContent className="p-8">
-              <h2>{t('getInTouch')}</h2>
+              <h2>{choose('Get in Touch', 'お問い合わせ', language)}</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -33,7 +34,7 @@ const Contact = () => {
                     <Clock className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3>{t('supportHours')}</h3>
+                    <h3>{choose('Support Hours', 'サポート時間', language)}</h3>
                     <p className="text-muted-foreground">Insert content here</p>
                   </div>
                 </div>
@@ -43,7 +44,7 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3>{t('emailSupport')}</h3>
+                    <h3>{choose('Email Support', 'メールサポート', language)}</h3>
                     <p className="text-muted-foreground">Insert content here</p>
                   </div>
                 </div>
@@ -53,13 +54,13 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3>{t('phoneSupport')}</h3>
+                    <h3>{choose('Phone Support', '電話サポート', language)}</h3>
                     <p className="text-muted-foreground">Insert content here</p>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-border">
-                  <h3>{t('followUs')}</h3>
+                  <h3>{choose('Follow Us', 'フォローする', language)}</h3>
                   <div className="flex space-x-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <span className="text-primary font-semibold text-sm">FB</span>
@@ -81,13 +82,13 @@ const Contact = () => {
             <CardContent className="p-8">
               <div className="flex items-center space-x-3 mb-6">
                 <MessageSquare className="w-6 h-6 text-primary" />
-                <h2>{t('sendMessage')}</h2>
+                <h2>{choose('Send us a Message', 'メッセージを送信', language)}</h2>
               </div>
               
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">{t('firstName')}</Label>
+                    <Label htmlFor="firstName">{choose('First Name', '名', language)}</Label>
                     <Input 
                       id="firstName" 
                       placeholder="Enter your first name"
@@ -95,7 +96,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">{t('lastName')}</Label>
+                    <Label htmlFor="lastName">{choose('Last Name', '姓', language)}</Label>
                     <Input 
                       id="lastName" 
                       placeholder="Enter your last name"
@@ -105,7 +106,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t('emailAddress')}</Label>
+                  <Label htmlFor="email">{choose('Email Address', 'メールアドレス', language)}</Label>
                   <Input 
                     id="email" 
                     type="email" 
@@ -115,7 +116,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">{t('subject')}</Label>
+                  <Label htmlFor="subject">{choose('Subject', '件名', language)}</Label>
                   <Input 
                     id="subject" 
                     placeholder="What is your message about?"
@@ -124,7 +125,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">{t('message')}</Label>
+                  <Label htmlFor="message">{choose('Message', 'メッセージ', language)}</Label>
                   <Textarea 
                     id="message" 
                     placeholder="Enter your message here..."
@@ -137,7 +138,7 @@ const Contact = () => {
                   type="submit" 
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3"
                 >
-                  {t('sendMessageBtn')}
+                  {choose('Send Message', 'メッセージを送信', language)}
                 </Button>
               </form>
             </CardContent>

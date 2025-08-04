@@ -1,32 +1,31 @@
 import { UserPlus, BookOpen, CheckCircle, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { choose } from "@/utils/lang";
 const HowItWorksSection = () => {
-  const {
-    t
-  } = useLanguage();
+  const { language } = useLanguage();
   const steps = [{
     icon: UserPlus,
     number: "01",
-    title: t('howItWorks.step1')
+    title: choose('Sign Up & Start', '登録と開始', language)
   }, {
     icon: BookOpen,
     number: "02",
-    title: t('howItWorks.step2')
+    title: choose('Complete Lessons', 'レッスン完了', language)
   }, {
     icon: CheckCircle,
     number: "03",
-    title: t('howItWorks.step3')
+    title: choose('Pass Final Exam', '最終試験合格', language)
   }, {
     icon: Award,
     number: "04",
-    title: t('howItWorks.step4')
+    title: choose('Get Certificate', '証明書取得', language)
   }];
   return <section className="py-20 gradient-soft rounded-md bg-slate-400">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {t('howItWorks.title')}
+            {choose('How It Works', '仕組み', language)}
           </h2>
         </div>
 
