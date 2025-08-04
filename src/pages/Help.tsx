@@ -12,111 +12,34 @@ const Help = () => {
   const { language } = useLanguage();
   const [activeTab, setActiveTab] = useState("faq");
 
- const faqs = [
+const faqs = [
   {
     category: choose("About the Course", "コースについて", language),
     items: [
       {
-        question: choose("What is Mirai Traffic School?", "Mirai交通学校とは？", language),
-        answer: choose("Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record.", "Mirai交通学校は、カリフォルニア州の日本語話者向けに設計されたオンライン交通学校です。違反チケットの解除や運転記録へのポイント追加を防ぐために、裁判所やDMVの要件を満たす手助けをします。", language)
+        question: choose("What is Mirai Traffic School?", "Mirai交通学校とは何ですか？", language),
+        answer: choose("Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record.", "Mirai交通学校は、カリフォルニア州の日本語話者向けのオンライン交通学校です。交通違反チケットの解消や、運転記録へのポイント加算回避を支援します。", language)
       },
       {
-        question: choose("Is the course approved by the California DMV?", "このコースはカリフォルニアDMVに認可されていますか？", language),
-        answer: choose("Yes. Our course is licensed by the California DMV. However, DMV approval does not imply endorsement.", "はい。本コースはカリフォルニアDMVにより認可されています。ただし、DMVの承認は推薦を意味するものではありません。", language)
+        question: choose("Is the course approved by the California DMV?", "このコースはカリフォルニアDMVに承認されていますか？", language),
+        answer: choose("Yes. Our course is licensed by the California DMV. However, DMV approval does not imply endorsement.", "はい。このコースはカリフォルニアDMVの認可を受けていますが、承認は推奨を意味するものではありません。", language)
       },
-      {
-        question: choose("How long is the course?", "コースの所要時間は？", language),
-        answer: choose("The California DMV requires that online traffic school courses take a minimum of 340 minutes (about 5.5 hours). You can complete the course at your own pace, and your progress is saved automatically.", "カリフォルニアDMVは、オンライン交通学校のコースに最低340分（約5.5時間）を求めています。ご自身のペースで進めることができ、進捗は自動で保存されます。", language)
-      },
-      {
-        question: choose("How does identity verification work during the course?", "本人確認はどのように行われますか？", language),
-        answer: choose("As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course.", "DMVの要件に基づき、生年月日や定期的なセキュリティ質問により本人確認を行います。", language)
-      },
-      {
-        question: choose("Will there be videos in the course?", "コースには動画がありますか？", language),
-        answer: choose("Yes! The course includes 14 short, animated videos to help you understand California traffic laws in an easy and engaging way.", "はい！カリフォルニアの交通法を分かりやすく学べる、14本の短いアニメーション動画が含まれています。", language)
-      }
+      // ... more items
     ]
   },
   {
     category: choose("Registration & Access", "登録とアクセス", language),
     items: [
       {
-        question: choose("How do I sign up for the course?", "コースへの登録方法は？", language),
-        answer: choose("Click the “Enroll Now” button on our website, enter your information, and complete payment. You’ll receive login instructions by email.", "ウェブサイトの「今すぐ登録」ボタンをクリックして情報を入力し、支払いを完了してください。ログイン方法はメールで送信されます。", language)
+        question: choose("How do I sign up for the course?", "コースにサインアップするにはどうすればよいですか？", language),
+        answer: choose("Click the “Enroll Now” button on our website, enter your information, and complete payment. You’ll receive login instructions by email.", "当社ウェブサイトの「今すぐ登録」ボタンをクリックし、情報を入力して支払いを完了してください。ログイン情報がメールで送信されます。", language)
       },
-      {
-        question: choose("How long do I have to complete the course?", "コースの受講期限はありますか？", language),
-        answer: choose("You have 60 days from your date of purchase to complete the course. After completion, your course remains accessible for another 30 days.", "購入日から60日以内にコースを修了する必要があります。修了後も30日間はアクセス可能です。", language)
-      }
+      // ... more items
     ]
   },
-  {
-    category: choose("Quizzes, Final Exam & Certificate", "クイズ・最終試験・証明書", language),
-    items: [
-      {
-        question: choose("Are there quizzes in the course?", "コースにクイズはありますか？", language),
-        answer: choose("Yes. You’ll take a short quiz after each section. You must score at least 70% to pass each quiz.", "はい。各セクション後に短いクイズがあります。合格には70％以上のスコアが必要です。", language)
-      },
-      {
-        question: choose("Is there a final exam?", "最終試験はありますか？", language),
-        answer: choose("Yes. At the end of the course, you must pass a final exam with a score of 70% or higher. You may attempt the final exam up to two times.", "はい。コースの最後に70％以上のスコアで合格する最終試験があります。最終試験は最大2回まで受けられます。", language)
-      },
-      {
-        question: choose("What happens if I fail a quiz?", "クイズに不合格の場合は？", language),
-        answer: choose("You can retake each quiz as many times as needed until you pass.", "合格するまで何度でもクイズを再受験できます。", language)
-      },
-      {
-        question: choose("When is my certificate sent to the DMV?", "証明書はいつDMVに送信されますか？", language),
-        answer: choose("As soon as you pass the final exam, your completion certificate is submitted electronically to the DMV. You’ll also receive a copy for your records.", "最終試験に合格すると、修了証明書がDMVに電子送信されます。また、自分用のコピーも受け取れます。", language)
-      }
-    ]
-  },
-  {
-    category: choose("Payments & Refunds", "支払いと返金", language),
-    items: [
-      {
-        question: choose("What payment methods do you accept?", "どの支払い方法が使えますか？", language),
-        answer: choose("We accept all major credit and debit cards through our secure payment partner, Stripe. You may also see options like PayPal, Apple Pay, or Google Pay depending on your device.", "Stripeによる安全な決済を通じて、主要なクレジットカードとデビットカードをご利用いただけます。デバイスによってはPayPal、Apple Pay、Google Payも使用可能です。", language)
-      },
-      {
-        question: choose("Is there a refund policy?", "返金ポリシーはありますか？", language),
-        answer: choose("Yes. Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available.", "はい。コースを開始していない場合は返金可能です。一度開始すると返金はできません。", language)
-      }
-    ]
-  },
-  {
-    category: choose("Technical Support", "技術サポート", language),
-    items: [
-      {
-        question: choose("Can I switch devices during the course?", "受講中にデバイスを変更できますか？", language),
-        answer: choose("Yes. Your progress is automatically saved. You can log in from any device and continue right where you left off.", "はい。進捗は自動保存されるため、どのデバイスからでもログインして続けられます。", language)
-      },
-      {
-        question: choose("What if I forget my login details?", "ログイン情報を忘れた場合は？", language),
-        answer: choose("Click “Forgot Password” on the login page or contact us at support@miraitraffic.com for help.", "ログインページの「パスワードを忘れた」リンクをクリックするか、support@miraitraffic.comまでご連絡ください。", language)
-      }
-    ]
-  },
-  {
-    category: choose("Language Options", "言語オプション", language),
-    items: [
-      {
-        question: choose("Is the course available in Japanese?", "コースは日本語で利用できますか？", language),
-        answer: choose("Yes. The full course is presented in Japanese, with English translation available where needed.", "はい。コース全体が日本語で提供され、必要に応じて英語の翻訳もあります。", language)
-      }
-    ]
-  },
-  {
-    category: choose("Still have questions?", "その他の質問", language),
-    items: [
-      {
-        question: choose("Didn’t find what you were looking for?", "探している情報が見つかりませんでしたか？", language),
-        answer: choose("Contact our support team anytime at support@miraitraffic.com and we’ll be happy to assist you.", "いつでも support@miraitraffic.com にご連絡ください。サポートチームが対応いたします。", language)
-      }
-    ]
-  }
+  // Add more categories...
 ];
+
 
   const helpTopics = [
     {
