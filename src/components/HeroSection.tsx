@@ -1,12 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { choose } from '@/utils/lang';
 import { Button } from '@/components/ui/button';
-
 const HeroSection = () => {
-  const { language } = useLanguage();
-
-  return (
-    <section className="min-h-screen bg-[#71d4f64d] flex items-center justify-center pt-20">
+  const {
+    language
+  } = useLanguage();
+  return <section className="min-h-screen bg-[#71d4f64d] flex items-center justify-center pt-20 rounded-md">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -53,11 +52,7 @@ const HeroSection = () => {
 
           {/* Right Illustration */}
           <div className="flex justify-center">
-            <img
-              src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png"
-              alt="Traffic School Illustration"
-              className="max-w-full h-auto"
-            />
+            <img src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png" alt="Traffic School Illustration" className="max-w-full h-auto" />
           </div>
         </div>
 
@@ -73,8 +68,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
