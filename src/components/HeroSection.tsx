@@ -1,92 +1,113 @@
-import { Button } from "@/components/ui/button";
-import { useTranslation } from "@/hooks/useTranslation";
-import LanguageToggle from "@/components/LanguageToggle";
+// src/pages/Home.tsx
+import { useLanguage } from '@/contexts/LanguageContext';
+import { choose } from '@/utils/lang';
 
-const HeroSection = () => {
-  const { t } = useTranslation();
+export default function Home() {
+  const { language } = useLanguage();
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 overflow-hidden">
-      {/* Navigation Header */}
-      <nav className="absolute top-0 left-0 right-0 z-20 p-6">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-soft">
-              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+    <div className="page-container">
+      <header className="py-6 text-center">
+        <h1 className="text-4xl font-bold">
+          {choose('Mirai Traffic School', 'ミライ交通スクール', language)}
+        </h1>
+        <p className="mt-2 text-lg">
+          {choose("California’s First Japanese Online Traffic School", "カリフォルニア初の日本語対応オンライン交通学校", language)}
+        </p>
+        <p>{choose("DMV-approved • Court-accepted", "DMV認定 • 裁判所承認", language)}</p>
+        <p>{choose("Clear your traffic ticket • Learn safer driving", "違反チケットを解除 • 安全運転を学ぶ", language)}</p>
+        <p>{choose("100% online • 100% in Japanese", "完全オンライン • 完全日本語対応", language)}</p>
+        <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+          {choose("Start Course Now", "今すぐコースを始める", language)}
+        </button>
+      </header>
+
+      <section className="py-16 text-center">
+        <img src="/illustrations/driving-school.png" alt="Driving School Illustration" className="mx-auto mb-4" />
+        <p>{choose("Scroll to learn more", "スクロールして詳細を見る", language)}</p>
+      </section>
+
+      <section className="py-12 bg-white text-center">
+        <h2 className="text-2xl font-semibold mb-6">
+          {choose("It's easy to get started", "始めるのは簡単です", language)}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {[
+            ["Register Online", "オンラインで登録"],
+            ["Learn at Your Own Pace", "自分のペースで学習"],
+            ["Pass Final Exam", "最終試験に合格"],
+            ["Get Your Certificate", "修了証を受け取る"]
+          ].map(([en, ja], i) => (
+            <div key={i}>
+              <h3 className="text-xl font-bold">{`0${i + 1}`}</h3>
+              <p>{choose(en, ja, language)}</p>
             </div>
-            <div>
-              <div className="font-bold text-xl text-foreground">MIRAI</div>
-              <div className="text-sm text-muted-foreground -mt-1">Traffic School</div>
-            </div>
-          </div>
-          <LanguageToggle />
+          ))}
         </div>
-      </nav>
+      </section>
 
-      {/* Main Content */}
-      <div className="flex items-center min-h-screen pt-24 pb-16 bg-[#71d4f6]/30">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Section */}
-            <div className="space-y-8 animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
-                <span className="text-purple-600 font-semibold">
-                  {t('hero.titleHighlight')}
-                </span>{' '}
-                <span className="text-foreground font-normal">
-                  {t('hero.titleMain')}
-                </span>
-              </h1>
+      <section className="py-12 text-center bg-gray-50">
+        <h2 className="text-xl font-semibold mb-6">
+          {choose("Offensive Driving Course Syllabus", "交通安全コース シラバス", language)}
+        </h2>
+        <ul className="max-w-3xl mx-auto text-left space-y-2">
+          {[
+            ["Foundations of Traffic Safety and Awareness", "交通安全と意識の基礎"],
+            ["Understanding Traffic Laws and Right-of-Way Protocols", "交通法規と優先権の理解"],
+            ["Mastering Speed Limits and Defensive Driving", "制限速度と防衛運転の習得"],
+            ["Managing Road Rage and Aggressive Driving Behaviors", "怒り運転と攻撃的運転の管理"],
+            ["Collision Avoidance and Safety Techniques", "衝突回避と安全技術"],
+            ["Handling Road Rage and Driving Distractions", "怒り運転と注意散漫の対処"],
+            ["Vehicle and Road Safety", "車両および道路の安全"]
+          ].map(([en, ja], i) => (
+            <li key={i}>
+              <strong>{i + 1}. </strong>{choose(en, ja, language)}
+            </li>
+          ))}
+        </ul>
+        <button className="mt-6 bg-blue-600 text-white px-6 py-2 rounded">
+          {choose("Start the Course", "コースを始める", language)}
+        </button>
+      </section>
 
-              <ul className="text-muted-foreground text-lg space-y-1 list-disc list-inside">
-                <li>{t('hero.feature1')}</li>
-                <li>{t('hero.feature2')}</li>
-                <li>{t('hero.feature3')}</li>
-                <li>{t('hero.feature4')}</li>
-                <li>{t('hero.feature5')}</li>
-                <li>{t('hero.feature6')}</li>
-              </ul>
+      <section className="py-12 bg-white text-center">
+        <img src="/illustrations/certificate.png" alt="Certificate Illustration" className="mx-auto mb-4" />
+        <h2 className="text-xl font-semibold mb-4">
+          {choose("DMV Certificate Included", "DMV修了証付き", language)}
+        </h2>
+        <ul className="space-y-2">
+          <li>
+            <strong>{choose("Official DMV Certificate:", "公式DMV修了証：", language)}</strong>{" "}
+            {choose("Meets all California court requirements", "カリフォルニア州裁判所の全要件を満たします", language)}
+          </li>
+          <li>
+            <strong>{choose("Automatic Submission:", "自動提出：", language)}</strong>{" "}
+            {choose("We send it directly to the court for you", "修了後に裁判所へ直接提出されます", language)}
+          </li>
+          <li>
+            <strong>{choose("Instant Download:", "即時ダウンロード：", language)}</strong>{" "}
+            {choose("Get your certificate immediately upon completion", "修了後すぐにダウンロード可能", language)}
+          </li>
+        </ul>
+      </section>
 
-              <Button variant="default" size="lg" className="group bg-success hover:bg-success/90 text-success-foreground shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105 text-2xl font-bold px-8 py-5">
-                {t('hero.startCourseButton')}
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Button>
-            </div>
-
-            {/* Right Illustration */}
-            <div className="relative animate-fade-in-up">
-              <div className="bg-gradient-soft rounded-2xl p-8 shadow-large bg-[#71d4f6]/0">
-                <div className="aspect-square bg-white/50 rounded-xl flex items-center justify-center">
-                  <div className="rounded-xl flex items-center justify-center p-4 bg-[#71d4f6]/10">
-                    <img src="/lovable-uploads/699eb859-ac44-476c-86bb-f5fcf60421dc.png" alt="Driving school illustration" className="w-[640px] max-w-full h-auto object-contain" />
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-success/20 rounded-full flex items-center justify-center animate-float">
-                <svg className="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-arrow">
-        <div className="flex flex-col items-center text-muted-foreground">
-          <span className="text-sm mb-2">{t('hero.scrollToLearnMore')}</span>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
-      </div>
-    </section>
+      <section className="py-12 bg-gray-100 text-center">
+        <h2 className="text-xl font-semibold mb-4">
+          {choose("Frequently Asked Questions", "よくある質問", language)}
+        </h2>
+        <p className="mb-6">
+          {choose("Everything you need to know before starting your online traffic school journey", "オンライン交通学校を始める前に知っておくべきすべての情報", language)}
+        </p>
+        <ul className="space-y-2">
+          <li>{choose("What is Mirai Traffic School?", "ミライ交通スクールとは？", language)}</li>
+          <li>{choose("Is the course approved by the California DMV?", "このコースはカリフォルニアDMVに承認されていますか？", language)}</li>
+          <li>{choose("How long is the course?", "コースの所要時間は？", language)}</li>
+          <li>{choose("How does identity verification work during the course?", "受講中の本人確認はどのように行われますか？", language)}</li>
+        </ul>
+        <button className="mt-6 underline text-blue-600">
+          {choose("View All FAQs", "すべての質問を見る", language)}
+        </button>
+      </section>
+    </div>
   );
-};
-
-export default HeroSection;
+}
