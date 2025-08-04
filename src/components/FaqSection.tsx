@@ -3,13 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { choose } from "@/utils/lang";
+
 const FaqSection = () => {
   const { language } = useLanguage();
-  
+
   const faqs = [
     {
       category: "About the Course",
-      question: choose("What is Mirai Traffic School?", "ミライ交通スクールとは？", language),
+      question: choose("What is Mirai Traffic School?", "Mirai Traffic Schoolとは？", language),
       answer: choose("Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record.", "ミライ交通スクールは、カリフォルニア州の日本語話者ドライバー向けのオンライン交通学校です。当コースは、交通違反切符の却下とドライビングレコードの点数回避のための裁判所またはDMV要件を満たすお手伝いをします。", language)
     },
     {
@@ -28,7 +29,9 @@ const FaqSection = () => {
       answer: choose("As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course.", "DMVの要求に従い、生年月日とコース中の定期的なセキュリティ質問を使用して本人確認を行います。", language)
     }
   ];
-  return <section className="py-20 bg-gradient-to-br from-cyan-200 to-blue-300">
+
+  return (
+    <section className="py-20" style={{ backgroundColor: "#71d4f64d" }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -40,7 +43,8 @@ const FaqSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {faqs.map((faq, index) => <Accordion type="single" collapsible key={index}>
+          {faqs.map((faq, index) => (
+            <Accordion type="single" collapsible key={index}>
               <AccordionItem value={`item-${index}`} className="bg-white rounded-2xl border-0 shadow-soft hover:shadow-hover transition-all duration-300">
                 <AccordionTrigger className="px-8 py-6 text-left text-lg font-semibold text-foreground hover:no-underline">
                   {faq.question}
@@ -49,7 +53,8 @@ const FaqSection = () => {
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
-            </Accordion>)}
+            </Accordion>
+          ))}
         </div>
 
         <div className="text-center mt-12">
@@ -60,6 +65,8 @@ const FaqSection = () => {
           </Link>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default FaqSection;
