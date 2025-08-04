@@ -264,8 +264,121 @@ export const courtDataFull = {
     courts: [
       { name: "Napa", code: "28050" }
     ]
-  }
-};
+  },
+
+    Nevada: {
+    website: "https://www.nevada.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.nevada.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Nevada City", code: "29050" },
+      { name: "Truckee", code: "29060" }
+    ]
+  },
+
+  Orange: {
+    website: "https://www.occourts.org/directory/traffic",
+    lookup: "https://www.occourts.org/OnlineServices",
+    courts: [
+      { name: "Central Justice Center", code: "30010" },
+      { name: "North Justice Center", code: "30020" },
+      { name: "West Justice Center", code: "30030" },
+      { name: "Harbor Justice Center", code: "30040" }
+    ]
+  },
+
+  Placer: {
+    website: "https://www.placer.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.placer.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Roseville", code: "31050" },
+      { name: "Auburn", code: "31060" },
+      { name: "Tahoe City", code: "31070" }
+    ]
+  },
+
+  Plumas: {
+    website: "https://www.plumas.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.plumas.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Quincy", code: "32050" }
+    ]
+  },
+
+  Riverside: {
+    website: "https://www.riverside.courts.ca.gov/Divisions/Traffic/traffic.php",
+    lookup: "https://www.riverside.courts.ca.gov/OnlineServices/Traffic/TrafficSearch",
+    courts: [
+      { name: "Banning", code: "33010" },
+      { name: "Blythe", code: "33020" },
+      { name: "Hemet", code: "33030" },
+      { name: "Indio", code: "33040" },
+      { name: "Moreno Valley", code: "33050" },
+      { name: "Murrieta", code: "33060" },
+      { name: "Riverside", code: "33070" }
+    ]
+  },
+
+  Sacramento: {
+    website: "https://www.saccourt.ca.gov/traffic/traffic.aspx",
+    lookup: "https://services.saccourt.ca.gov/Traffic",
+    courts: [
+      { name: "Sacramento", code: "34050" }
+    ]
+  },
+
+  San Benito: {
+    website: "https://www.sanbenito.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.sanbenito.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Hollister", code: "35050" }
+    ]
+  },
+
+  "San Bernardino": {
+    website: "https://www.sb-court.org/divisions/traffic",
+    lookup: "https://www.sb-court.org/Divisions/Traffic/TrafficCitations.aspx",
+    courts: [
+      { name: "Barstow", code: "36010" },
+      { name: "Fontana", code: "36020" },
+      { name: "Joshua Tree", code: "36030" },
+      { name: "Needles", code: "36040" },
+      { name: "Rancho Cucamonga", code: "36050" },
+      { name: "San Bernardino", code: "36060" },
+      { name: "Victorville", code: "36070" }
+    ]
+  },
+
+  "San Diego": {
+    website: "https://www.sdcourt.ca.gov/traffic",
+    lookup: "https://www.sdcourt.ca.gov/portal",
+    courts: [
+      { name: "Central Division (Downtown)", code: "37010" },
+      { name: "East County", code: "37020" },
+      { name: "North County", code: "37030" },
+      { name: "South County", code: "37040" }
+    ]
+  },
+
+  "San Francisco": {
+    website: "https://www.sfsuperiorcourt.org/divisions/traffic",
+    lookup: "https://www.sfsuperiorcourt.org/online-services/traffic-payment",
+    courts: [
+      { name: "San Francisco", code: "38050" }
+    ]
+  },
+
+  "San Joaquin": {
+    website: "https://www.sjcourts.org/divisions/traffic",
+    lookup: "https://www.sjcourts.org/online-services/pay-traffic-fines",
+    courts: [
+      { name: "Stockton", code: "39050" },
+      { name: "Lodi", code: "39060" },
+      { name: "Manteca", code: "39070" },
+      { name: "Tracy", code: "39080" }
+    ]
+  },
+
+  
 
 const Courts = () => {
   const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
