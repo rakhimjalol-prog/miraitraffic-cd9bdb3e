@@ -53,6 +53,56 @@ export const courtDataFull = {
     ]
   }
 };
+  Calaveras: {
+    website: "https://calaveras.courts.ca.gov",
+    lookup: "https://calaveras.courts.ca.gov",
+    courts: [
+      { name: "San Andreas", code: "05050" }
+    ]
+  },
+
+  Colusa: {
+    website: "https://www.colusa.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.colusa.courts.ca.gov/online-services/pay-fines-fees",
+    courts: [
+      { name: "Colusa", code: "06050" }
+    ]
+  },
+
+  "Contra Costa": {
+    website: "https://www.cc-courts.org/traffic/traffic.aspx",
+    lookup: "https://www.ncourt.com/x-press/x-onlinepayments.aspx?juris=A14912DF-E8F9-4AED-B0CF-48061B598D09",
+    courts: [
+      { name: "Martinez", code: "07030" },
+      { name: "Pittsburg", code: "07030" },
+      { name: "Richmond", code: "07030" }
+    ]
+  },
+
+  "Del Norte": {
+    website: "https://www.delnorte.courts.ca.gov/divisions/traffic-division",
+    lookup: "https://www.delnorte.courts.ca.gov/online-services/pay-traffic-fines",
+    courts: [
+      { name: "Crescent City", code: "08050" }
+    ]
+  },
+
+  "El Dorado": {
+    website: "https://www.eldorado.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.eldorado.courts.ca.gov/online-services/pay-fines",
+    courts: [
+      { name: "Placerville", code: "09050" },
+      { name: "South Lake Tahoe", code: "09050" }
+    ]
+  },
+
+  Fresno: {
+    website: "https://www.fresno.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.fresno.courts.ca.gov/online-services/pay-traffic-fines",
+    courts: [
+      { name: "Fresno", code: "10050" }
+    ]
+  },
 
 const Courts = () => {
   const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
