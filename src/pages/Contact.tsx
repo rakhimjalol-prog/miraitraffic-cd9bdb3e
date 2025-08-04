@@ -8,12 +8,11 @@ import Footer from "@/components/Footer";
 import { Mail, Clock, Phone, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { choose } from "@/utils/lang";
-
 const Contact = () => {
-  const { language } = useLanguage();
-
-  return (
-    <div className="page-container">
+  const {
+    language
+  } = useLanguage();
+  return <div className="page-container">
       <Header />
       
       <main className="container mx-auto px-6 py-16">
@@ -49,30 +48,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3>{choose('Phone Support', '電話サポート', language)}</h3>
-                    <p className="text-muted-foreground">Insert content here</p>
-                  </div>
-                </div>
+                
 
-                <div className="pt-6 border-t border-border">
-                  <h3>{choose('Follow Us', 'フォローする', language)}</h3>
-                  <div className="flex space-x-4">
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <span className="text-primary font-semibold text-sm">FB</span>
-                    </div>
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <span className="text-primary font-semibold text-sm">TW</span>
-                    </div>
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <span className="text-primary font-semibold text-sm">IN</span>
-                    </div>
-                  </div>
-                </div>
+                
               </div>
             </CardContent>
           </Card>
@@ -89,55 +67,30 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">{choose('First Name', '名', language)}</Label>
-                    <Input 
-                      id="firstName" 
-                      placeholder="Enter your first name"
-                      className="border-border focus:ring-primary"
-                    />
+                    <Input id="firstName" placeholder="Enter your first name" className="border-border focus:ring-primary" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">{choose('Last Name', '姓', language)}</Label>
-                    <Input 
-                      id="lastName" 
-                      placeholder="Enter your last name"
-                      className="border-border focus:ring-primary"
-                    />
+                    <Input id="lastName" placeholder="Enter your last name" className="border-border focus:ring-primary" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="email">{choose('Email Address', 'メールアドレス', language)}</Label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="Enter your email address"
-                    className="border-border focus:ring-primary"
-                  />
+                  <Input id="email" type="email" placeholder="Enter your email address" className="border-border focus:ring-primary" />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="subject">{choose('Subject', '件名', language)}</Label>
-                  <Input 
-                    id="subject" 
-                    placeholder="What is your message about?"
-                    className="border-border focus:ring-primary"
-                  />
+                  <Input id="subject" placeholder="What is your message about?" className="border-border focus:ring-primary" />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="message">{choose('Message', 'メッセージ', language)}</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Enter your message here..."
-                    rows={6}
-                    className="border-border focus:ring-primary resize-none"
-                  />
+                  <Textarea id="message" placeholder="Enter your message here..." rows={6} className="border-border focus:ring-primary resize-none" />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3"
-                >
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3">
                   {choose('Send Message', 'メッセージを送信', language)}
                 </Button>
               </form>
@@ -147,8 +100,6 @@ const Contact = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
