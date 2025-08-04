@@ -1,1 +1,1 @@
-export const choose = (en: string, ja: string, lang: string) => (lang === 'jp' ? ja : en);
+export const choose = (en: string, ja: string, lang: string) => (lang === 'ja' ? ja : en);
