@@ -7,8 +7,8 @@ import { MapPin, Building, Clock, ExternalLink } from "lucide-react";
 
 export const courtDataFull = {
   "Alameda": {
-    website: "https://www.alameda.courts.ca.gov/",
-    lookup: "https://www.alameda.courts.ca.gov/online-services/traffic-ticket",
+    website: "https://www.alameda.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.alameda.courts.ca.gov/online-services/look-or-pay-your-traffic-ticket
     courts: [
       { name: "Alameda", code: "01430" },
       { name: "Berkeley-Albany", code: "01430" },
