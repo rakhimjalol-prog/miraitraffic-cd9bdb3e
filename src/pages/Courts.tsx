@@ -126,9 +126,146 @@ export const courtDataFull = {
     courts: [
       { name: "Independence", code: "14050" }
     ]
+  },
+
+    Kern: {
+    website: "https://www.kern.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.kern.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Bakersfield", code: "15030" },
+      { name: "Delano", code: "15030" },
+      { name: "Lamont", code: "15030" },
+      { name: "Mojave", code: "15030" },
+      { name: "Ridgecrest", code: "15030" },
+      { name: "Shafter", code: "15030" },
+      { name: "Taft", code: "15030" }
+    ]
+  },
+
+  Kings: {
+    website: "https://www.kings.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.kings.courts.ca.gov/online-services/pay-fines",
+    courts: [
+      { name: "Hanford", code: "16050" }
+    ]
+  },
+
+  Lake: {
+    website: "https://www.lake.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.lake.courts.ca.gov/online-services/pay-ticket",
+    courts: [
+      { name: "Lakeport", code: "17050" },
+      { name: "Clearlake", code: "17050" }
+    ]
+  },
+
+  Lassen: {
+    website: "https://www.lassen.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.lassen.courts.ca.gov/online-services/traffic-payments",
+    courts: [
+      { name: "Susanville", code: "18050" }
+    ]
+  },
+
+  "Los Angeles": {
+    website: "https://www.lacourt.org/division/traffic/traffic.aspx",
+    lookup: "https://www.lacourt.org/traffic/ui/",
+    courts: [
+      { name: "Beverly Hills", code: "19010" },
+      { name: "Compton", code: "19020" },
+      { name: "Downey", code: "19030" },
+      { name: "El Monte", code: "19040" },
+      { name: "Glendale", code: "19050" },
+      { name: "Inglewood", code: "19060" },
+      { name: "Long Beach", code: "19070" },
+      { name: "Los Angeles", code: "19080" },
+      { name: "Pasadena", code: "19090" },
+      { name: "Pomona", code: "19100" },
+      { name: "San Fernando", code: "19110" },
+      { name: "Santa Clarita", code: "19120" },
+      { name: "Torrance", code: "19130" },
+      { name: "Van Nuys", code: "19140" },
+      { name: "West Covina", code: "19150" }
+    ]
+  },
+
+  Madera: {
+    website: "https://www.madera.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.madera.courts.ca.gov/online-services/pay-fines",
+    courts: [
+      { name: "Madera", code: "20050" }
+    ]
+  },
+
+  Marin: {
+    website: "https://www.marincourt.org/traffic.htm",
+    lookup: "https://www.marincourt.org/payments.htm",
+    courts: [
+      { name: "San Rafael", code: "21050" }
+    ]
+  },
+
+  Mariposa: {
+    website: "https://www.mariposacourt.org/divisions/traffic",
+    lookup: "https://www.mariposacourt.org/self-help/traffic-tickets",
+    courts: [
+      { name: "Mariposa", code: "22050" }
+    ]
+  },
+
+  Mendocino: {
+    website: "https://www.mendocino.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.mendocino.courts.ca.gov/online-services/pay-traffic-fine",
+    courts: [
+      { name: "Ukiah", code: "23050" },
+      { name: "Fort Bragg", code: "23060" }
+    ]
+  },
+
+  Merced: {
+    website: "https://www.merced.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.merced.courts.ca.gov/online-services/pay-traffic",
+    courts: [
+      { name: "Merced", code: "24050" },
+      { name: "Los Banos", code: "24060" }
+    ]
+  },
+
+  Modoc: {
+    website: "https://www.modoc.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.modoc.courts.ca.gov/online-services/pay-traffic-fines",
+    courts: [
+      { name: "Alturas", code: "25050" }
+    ]
+  },
+
+  Mono: {
+    website: "https://www.mono.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.mono.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Bridgeport", code: "26050" },
+      { name: "Mammoth Lakes", code: "26060" }
+    ]
+  },
+
+  Monterey: {
+    website: "https://www.monterey.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.monterey.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Monterey", code: "27050" },
+      { name: "Salinas", code: "27060" },
+      { name: "King City", code: "27070" }
+    ]
+  },
+
+  Napa: {
+    website: "https://www.napa.courts.ca.gov/divisions/traffic",
+    lookup: "https://www.napa.courts.ca.gov/online-services/pay-traffic-ticket",
+    courts: [
+      { name: "Napa", code: "28050" }
+    ]
   }
 };
-
 
 const Courts = () => {
   const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
