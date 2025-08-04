@@ -116,8 +116,7 @@ const termsSections = [
         "これらの規則に違反した場合、アカウントの即時停止および法的措置が取られる可能性があります。"
       ]
     }
-  }
-];
+  }, 
   {
     en: {
       title: "7. Quizzes and Final Exam",
@@ -221,7 +220,7 @@ const termsSections = [
         "これらの外部サイトは当社の管理下にはなく、その内容、ポリシー、慣行について当社は責任を負いません。"
       ]
     }
-  }
+  },
   {
     en: {
       title: "13. Children’s Privacy",
@@ -354,6 +353,7 @@ const termsSections = [
       ]
     }
   }
+]; 
 // Bilingual Privacy Policy Sections (1–4)
 const privacySections = [
   {
@@ -445,8 +445,7 @@ const privacySections = [
         "ブラウザ設定でクッキーの管理が可能ですが、無効にすると一部機能が制限される場合があります。"
       ]
     }
-  }
-];
+  },
   {
     en: {
       title: "5. Your Rights",
@@ -516,9 +515,9 @@ const privacySections = [
         "- Google Ads および Facebook Ads（マーケティング）",
         "- Google Optimize（A/Bテスト）",
         "これらのサービスは、契約によりデータ保護が義務付けられており、自社目的で使用することはできません。"
-      ]
+     ]
     }
-  }
+  },
   {
     en: {
       title: "8. Children’s Privacy",
