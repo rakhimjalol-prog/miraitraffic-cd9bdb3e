@@ -8,10 +8,10 @@ import { MapPin, Building, Clock, ExternalLink } from "lucide-react";
 export const courtDataFull = {
   Alameda: {
     website: "https://www.alameda.courts.ca.gov/divisions/traffic",
-    lookup: "https://www.alameda.courts.ca.gov/online-services/look-or-pay-your-traffic-ticket",
+    lookup: "https://www.alameda.courts.ca.gov/divisions/traffic",
     courts: [
       { name: "Alameda", code: "01430" },
-      { name: "Berkeley-Albany", code: "01430" },
+      { name: "Berkeley‑Albany", code: "01430" },
       { name: "Dublin", code: "01430" },
       { name: "Fremont", code: "01430" },
       { name: "Hayward", code: "01430" },
@@ -21,7 +21,7 @@ export const courtDataFull = {
 
   Alpine: {
     website: "https://www.alpine.courts.ca.gov/divisions/traffic",
-    lookup: "https://www.alpine.courts.ca.gov/online-services",
+    lookup: "https://www.alpine.courts.ca.gov/divisions/traffic",
     courts: [
       { name: "Markleeville", code: "02050" }
     ]
@@ -29,7 +29,7 @@ export const courtDataFull = {
 
   Amador: {
     website: "https://www.amadorcourt.org",
-    lookup: "https://www.amadorcourt.org/divisions/traffic.aspx",
+    lookup: "https://www.amadorcourt.org/dv-traffic.aspx",
     courts: [
       { name: "Jackson", code: "03050" }
     ]
@@ -45,4 +45,3 @@ export const courtDataFull = {
     ]
   }
 };
-
