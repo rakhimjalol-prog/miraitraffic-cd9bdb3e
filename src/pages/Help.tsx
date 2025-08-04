@@ -12,26 +12,20 @@ const Help = () => {
   const { language } = useLanguage();
   const [activeTab, setActiveTab] = useState("faq");
 
- const faqs = [
-  {
-    category: choose("General Questions", "一般的な質問", language),
-    items: [
-      {
-        question: choose("How do I register for traffic school?", "交通学校への登録方法は？", language),
-        answer: choose("Click the 'Start Now' button on our homepage...", "ホームページの「今すぐ開始」ボタンをクリックし...", language)
-      },
-      {
-        question: choose("What payment methods do you accept?", "どのような支払い方法を受け付けていますか？", language),
-        answer: choose("We accept all major credit and debit cards...", "主要なクレジットカードとデビットカードを受け付けています。", language)
-      },
-      {
-        question: choose("Can I get a refund?", "返金は可能ですか？", language),
-        answer: choose("Refunds are available if you have not yet started...", "コースをまだ開始していない場合は返金可能です。", language)
-      }
-    ]
-  }
-];
-
+  const faqs = [
+    {
+      question: choose("How do I register for traffic school?", "交通学校への登録方法は？", language),
+      answer: choose("Click the 'Start Now' button on our homepage, fill out your information, and complete payment. You'll receive login instructions by email.", "ホームページの「今すぐ開始」ボタンをクリックし、情報を入力して支払いを完了してください。ログイン手順がメールで送信されます。", language)
+    },
+    {
+      question: choose("What payment methods do you accept?", "どのような支払い方法を受け付けていますか？", language),
+      answer: choose("We accept all major credit and debit cards through our secure payment partner, Stripe.", "安全な決済パートナーのStripeを通じて、主要なクレジットカードとデビットカードを受け付けています。", language)
+    },
+    {
+      question: choose("Can I get a refund?", "返金は可能ですか？", language),
+      answer: choose("Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available.", "コースをまだ開始していない場合は返金可能です。コースを開始すると返金はできません。", language)
+    }
+  ];
 
   const helpTopics = [
     {
@@ -129,21 +123,26 @@ const Help = () => {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="faq" className="mt-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-2xl font-semibold text-primary mb-4">{choose("Frequently Asked Questions", "よくある質問", language)}</h2>
-                  <Accordion type="single" collapsible className="w-full">
-                    {faqs.map((faq, index) => (
-                      <AccordionItem key={index} value={`item-${index}`}>
-                        <AccordionTrigger>{faq.question}</AccordionTrigger>
-                        <AccordionContent>{faq.answer}</AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            </TabsContent>
+           <TabsContent value="faq" className="mt-6">
+  <Card>
+    <CardContent className="p-6">
+      <h2 className="text-2xl font-semibold text-primary mb-4">{choose("Frequently Asked Questions", "よくある質問", language)}</h2>
+      <Accordion type="single" collapsible className="w-full">
+        {faqs.length === 0 ? (
+          <p className="text-muted-foreground">No FAQs available.</p>
+        ) : (
+          faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))
+        )}
+      </Accordion>
+    </CardContent>
+  </Card>
+</TabsContent>
+
 
             <TabsContent value="topics" className="mt-6">
               <div className="grid gap-6">
