@@ -47,14 +47,6 @@ export const courtDataFull = {
 
   Calaveras: {
     website: "https://calaveras.courts.ca.gov",
-    lookup: "https://calaveras.courts.ca.gov", 
-    courts: [
-      { name: "San Andreas", code: "05050" }
-    ]
-  }
-};
-  Calaveras: {
-    website: "https://calaveras.courts.ca.gov",
     lookup: "https://calaveras.courts.ca.gov",
     courts: [
       { name: "San Andreas", code: "05050" }
