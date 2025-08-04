@@ -6,7 +6,7 @@ const HeroSection = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-cyan-200 to-blue-300 flex items-center justify-center pt-20">
+    <section className="min-h-screen bg-[#71d4f64d] flex items-center justify-center pt-20">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
