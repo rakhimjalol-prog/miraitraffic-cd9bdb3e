@@ -18,14 +18,16 @@ export const courtDataFull = {
       { name: "Oakland", code: "01440" }
     ]
   },
-"Alpine": {
+
+Alpine: {
   website: "https://www.alpine.courts.ca.gov/divisions/traffic",
   lookup: "https://www.alpine.courts.ca.gov/online-services",
   courts: [
     { name: "Markleeville", code: "02050" }
   ]
 },
-"Amador": {
+
+Amador: {
   website: "https://www.amadorcourt.org",
   lookup: "https://www.amadorcourt.org/divisions/traffic.aspx",
   courts: [
@@ -33,7 +35,7 @@ export const courtDataFull = {
   ]
 },
 
-"Butte": {
+Butte: {
   website: "https://www.butte.courts.ca.gov/divisions/traffic",
   lookup: "https://www.butte.courts.ca.gov/divisions/traffic-information/traffic-payment-information",
   courts: [
