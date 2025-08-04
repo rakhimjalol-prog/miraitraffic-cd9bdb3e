@@ -5,96 +5,97 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HelpCircle, BookOpen, ExternalLink } from "lucide-react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { choose } from "@/utils/lang";
 
 const Help = () => {
-  const { t } = useTranslation();
+  const { language } = useLanguage();
   const [activeTab, setActiveTab] = useState("faq");
 
   const faqs = [
     {
-      question: t('help.faq1.question'),
-      answer: t('help.faq1.answer')
+      question: choose("How do I register for traffic school?", "交通学校への登録方法は？", language),
+      answer: choose("Click the 'Start Now' button on our homepage, fill out your information, and complete payment. You'll receive login instructions by email.", "ホームページの「今すぐ開始」ボタンをクリックし、情報を入力して支払いを完了してください。ログイン手順がメールで送信されます。", language)
     },
     {
-      question: t('help.faq2.question'),
-      answer: t('help.faq2.answer')
+      question: choose("What payment methods do you accept?", "どのような支払い方法を受け付けていますか？", language),
+      answer: choose("We accept all major credit and debit cards through our secure payment partner, Stripe.", "安全な決済パートナーのStripeを通じて、主要なクレジットカードとデビットカードを受け付けています。", language)
     },
     {
-      question: t('help.faq3.question'),
-      answer: t('help.faq3.answer')
+      question: choose("Can I get a refund?", "返金は可能ですか？", language),
+      answer: choose("Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available.", "コースをまだ開始していない場合は返金可能です。コースを開始すると返金はできません。", language)
     }
   ];
 
   const helpTopics = [
     {
-      category: t('help.topics.renew'),
+      category: choose("Renewal Services", "更新サービス", language),
       items: [
-        { title: t('help.topics.driverLicenseRenewal'), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-license-id-card-online-renewal/", icon: "🔄" },
-        { title: t('help.topics.commercialLicenseRenewal'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/commercial-driver-license-renewal/", icon: "🚛" },
-        { title: t('help.topics.realIdUpgrade'), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/real-id/", icon: "⭐" },
-        { title: t('help.topics.vehicleRegistrationRenewal'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-registration-renewal/", icon: "🚘" },
-        { title: t('help.topics.disabledParkingRenewal'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-renewal/", icon: "🅿️" },
-        { title: t('help.topics.plannedNonoperationRenewal'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/file-for-planned-non-operation-vfo/", icon: "📆" }
+        { title: choose("Driver License Renewal", "運転免許証の更新", language), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-license-id-card-online-renewal/", icon: "🔄" },
+        { title: choose("Commercial License Renewal", "商業免許証の更新", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/commercial-driver-license-renewal/", icon: "🚛" },
+        { title: choose("REAL ID Upgrade", "REAL IDへのアップグレード", language), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/real-id/", icon: "⭐" },
+        { title: choose("Vehicle Registration Renewal", "車両登録の更新", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-registration-renewal/", icon: "🚘" },
+        { title: choose("Disabled Parking Renewal", "障害者駐車許可証の更新", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-renewal/", icon: "🅿️" },
+        { title: choose("Planned Non-operation Renewal", "計画的非稼働更新", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/file-for-planned-non-operation-vfo/", icon: "📆" }
       ]
     },
     {
-      category: t('help.topics.applyRequest'),
+      category: choose("Apply / Request", "申請・リクエスト", language),
       items: [
-        { title: t('help.topics.driverLicenseApplication'), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/dl-id-online-app-edl-44/", icon: "📝" },
-        { title: t('help.topics.changeAddress'), url: "https://www.dmv.ca.gov/portal/online-change-of-address-coa-system/", icon: "🏠" },
-        { title: t('help.topics.titleTransfer'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/title-transfer/", icon: "🔁" },
-        { title: t('help.topics.noticeOfTransfer'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/notice-of-transfer-and-release-of-liability-nrl/", icon: "📑" },
-        { title: t('help.topics.disabledParkingApplication'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-application/", icon: "🅿️" },
-        { title: t('help.topics.affidavitNonUse'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/affidavit-of-non-use/", icon: "📃" }
+        { title: choose("Driver License Application", "運転免許証申請", language), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/dl-id-online-app-edl-44/", icon: "📝" },
+        { title: choose("Change Address", "住所変更", language), url: "https://www.dmv.ca.gov/portal/online-change-of-address-coa-system/", icon: "🏠" },
+        { title: choose("Title Transfer", "名義変更", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/title-transfer/", icon: "🔁" },
+        { title: choose("Notice of Transfer", "譲渡通知", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/notice-of-transfer-and-release-of-liability-nrl/", icon: "📑" },
+        { title: choose("Disabled Parking Application", "障害者駐車許可証申請", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-application/", icon: "🅿️" },
+        { title: choose("Affidavit of Non-Use", "非使用宣誓書", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/affidavit-of-non-use/", icon: "📃" }
       ]
     },
     {
-      category: t('help.topics.order'),
+      category: choose("Order Items", "アイテム注文", language),
       items: [
-        { title: t('help.topics.orderDriverRecord'), url: "https://www.dmv.ca.gov/portal/customer-service/request-vehicle-or-driver-records/online-driver-record-request/", icon: "📄" },
-        { title: t('help.topics.orderVehicleRecord'), url: "https://www.dmv.ca.gov/portal/customer-service/request-vehicle-or-driver-records/online-vehicle-record-request/", icon: "🚗" },
-        { title: t('help.topics.personalizedPlates'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/license-plates-decals-and-placards/license-plates/order-special-interest-and-personalized-license-plates/", icon: "🔠" },
-        { title: t('help.topics.cleanAirDecal'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/license-plates-decals-and-placards/clean-air-vehicle-decals-for-using-carpool-lanes/", icon: "🌿" },
-        { title: t('help.topics.musselSticker'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/new-registration/register-your-boat-vessel/quagga-sticker-request/", icon: "🐚" }
+        { title: choose("Order Driver Record", "運転記録の注文", language), url: "https://www.dmv.ca.gov/portal/customer-service/request-vehicle-or-driver-records/online-driver-record-request/", icon: "📄" },
+        { title: choose("Order Vehicle Record", "車両記録の注文", language), url: "https://www.dmv.ca.gov/portal/customer-service/request-vehicle-or-driver-records/online-vehicle-record-request/", icon: "🚗" },
+        { title: choose("Personalized Plates", "パーソナライズドプレート", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/license-plates-decals-and-placards/license-plates/order-special-interest-and-personalized-license-plates/", icon: "🔠" },
+        { title: choose("Clean Air Decal", "クリーンエアデカール", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/license-plates-decals-and-placards/clean-air-vehicle-decals-for-using-carpool-lanes/", icon: "🌿" },
+        { title: choose("Mussel Sticker", "ムール貝ステッカー", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/new-registration/register-your-boat-vessel/quagga-sticker-request/", icon: "🐚" }
       ]
     },
     {
-      category: t('help.topics.replace'),
+      category: choose("Replace Documents", "書類の再発行", language),
       items: [
-        { title: t('help.topics.driverLicenseReplacement'), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/replace-your-driver-license-or-identification-dl-id-card/online-duplicate-driver-license-request/", icon: "♻️" },
-        { title: t('help.topics.stickerReplacement'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/online-replacement-sticker-or-registration-card/", icon: "🏷️" },
-        { title: t('help.topics.titleReplacement'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/replacement-title/", icon: "🆕" },
-        { title: t('help.topics.disabledParkingReplacement'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-replacement/", icon: "🔁" },
-        { title: t('help.topics.licensePlateReplacement'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/replacement-license-plates/", icon: "🔧" }
+        { title: choose("Driver License Replacement", "運転免許証の再発行", language), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/replace-your-driver-license-or-identification-dl-id-card/online-duplicate-driver-license-request/", icon: "♻️" },
+        { title: choose("Sticker Replacement", "ステッカーの再発行", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/online-replacement-sticker-or-registration-card/", icon: "🏷️" },
+        { title: choose("Title Replacement", "タイトルの再発行", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/replacement-title/", icon: "🆕" },
+        { title: choose("Disabled Parking Replacement", "障害者駐車許可証の再発行", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dppp-replacement/", icon: "🔁" },
+        { title: choose("License Plate Replacement", "ナンバープレートの再発行", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/replacement-license-plates/", icon: "🔧" }
       ]
     },
     {
-      category: t('help.topics.lookupStatus'),
+      category: choose("Status Lookup", "ステータス確認", language),
       items: [
-        { title: t('help.topics.virtualOfficeCaseStatus'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/case-status/", icon: "📋" },
-        { title: t('help.topics.driverLicenseStatus'), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/drivers-license-id-card-status/", icon: "🔎" },
-        { title: t('help.topics.vehicleRegistrationStatus'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-registration-status/", icon: "🚙" },
-        { title: t('help.topics.occupationalLicensing'), url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licensing/occupational-licensing-status-information-system/", icon: "🧑‍💼" },
-        { title: t('help.topics.trafficSchoolLookup'), url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licensing/occupational-licensing-status-information-system/traffic-school-list/", icon: "🏫" },
-        { title: t('help.topics.motorCarrierPermit'), url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/motor-carrier-services-mcs/motor-carrier-permits/active-motor-carriers/", icon: "🚛" }
+        { title: choose("Virtual Office Case Status", "バーチャルオフィスケースステータス", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/case-status/", icon: "📋" },
+        { title: choose("Driver License Status", "運転免許証ステータス", language), url: "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/drivers-license-id-card-status/", icon: "🔎" },
+        { title: choose("Vehicle Registration Status", "車両登録ステータス", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/vehicle-registration-status/", icon: "🚙" },
+        { title: choose("Occupational Licensing", "職業免許", language), url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licensing/occupational-licensing-status-information-system/", icon: "🧑‍💼" },
+        { title: choose("Traffic School Lookup", "交通学校検索", language), url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/occupational-licensing/occupational-licensing-status-information-system/traffic-school-list/", icon: "🏫" },
+        { title: choose("Motor Carrier Permit", "自動車運送業許可", language), url: "https://www.dmv.ca.gov/portal/vehicle-industry-services/motor-carrier-services-mcs/motor-carrier-permits/active-motor-carriers/", icon: "🚛" }
       ]
     },
     {
-      category: t('help.topics.makePayment'),
+      category: choose("Make a Payment", "支払いを行う", language),
       items: [
-        { title: t('help.topics.dishonoredCheckPayment'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dishonored-check-payment/", icon: "❌💵" },
-        { title: t('help.topics.reinstatementFee'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/insurance-requirements/suspended-vehicle-registration/", icon: "💰" },
-        { title: t('help.topics.reissueFeePayment'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/reissue-fees/", icon: "♻️" },
-        { title: t('help.topics.feeCalculators'), url: "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/vehicle-registration-fee-calculator/calculate-my-fees/", icon: "🧮" }
+        { title: choose("Dishonored Check Payment", "不渡り小切手の支払い", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/dishonored-check-payment/", icon: "❌💵" },
+        { title: choose("Reinstatement Fee", "復帰手数料", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/insurance-requirements/suspended-vehicle-registration/", icon: "💰" },
+        { title: choose("Reissue Fee Payment", "再発行手数料の支払い", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/reissue-fees/", icon: "♻️" },
+        { title: choose("Fee Calculators", "手数料計算機", language), url: "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/vehicle-registration-fee-calculator/calculate-my-fees/", icon: "🧮" }
       ]
     },
     {
-      category: t('help.topics.submitReport'),
+      category: choose("Submit a Report", "レポートを提出", language),
       items: [
-        { title: t('help.topics.reportAccident'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/", icon: "🚨" },
-        { title: t('help.topics.medicalExamination'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/medical-examination-report/", icon: "🩺" },
-        { title: t('help.topics.commercialTraining'), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/submit-dl-1236-vfo/", icon: "📄" }
+        { title: choose("Report Accident", "事故報告", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/", icon: "🚨" },
+        { title: choose("Medical Examination", "医学的検査", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/medical-examination-report/", icon: "🩺" },
+        { title: choose("Commercial Training", "商業運転訓練", language), url: "https://www.dmv.ca.gov/portal/dmv-virtual-office/submit-dl-1236-vfo/", icon: "📄" }
       ]
     }
   ];
@@ -106,26 +107,26 @@ const Help = () => {
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1>{t('help.title')}</h1>
-            <p>{t('help.description')}</p>
+            <h1>{choose("Help Topics", "ヘルプトピック", language)}</h1>
+            <p>{choose("Find the help you need for DMV services and traffic school questions", "DMVサービスと交通学校に関する質問のサポートを見つけてください", language)}</p>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="faq" className="flex items-center gap-2">
                 <HelpCircle className="w-4 h-4" />
-                {t('help.tabs.faq')}
+                {choose("FAQ", "よくある質問", language)}
               </TabsTrigger>
               <TabsTrigger value="topics" className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4" />
-                {t('help.tabs.topics')}
+                {choose("DMV Topics", "DMVトピック", language)}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="faq" className="mt-6">
               <Card>
                 <CardContent className="p-6">
-                  <h2 className="text-2xl font-semibold text-primary mb-4">{t('help.faqTitle')}</h2>
+                  <h2 className="text-2xl font-semibold text-primary mb-4">{choose("Frequently Asked Questions", "よくある質問", language)}</h2>
                   <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (
                       <AccordionItem key={index} value={`item-${index}`}>
@@ -140,7 +141,7 @@ const Help = () => {
 
             <TabsContent value="topics" className="mt-6">
               <div className="grid gap-6">
-                <h2 className="text-2xl font-semibold text-primary">{t('help.dmvTopicsTitle')}</h2>
+                <h2 className="text-2xl font-semibold text-primary">{choose("DMV Help Topics", "DMVヘルプトピック", language)}</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {helpTopics.map((topic, index) => (
                     <Card key={index} className="h-fit">
