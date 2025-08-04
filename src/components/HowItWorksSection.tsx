@@ -1,66 +1,62 @@
-import { UserPlus, BookOpen, CheckCircle, Award } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { choose } from "@/utils/lang";
-const HowItWorksSection = () => {
-  const { language } = useLanguage();
-  const steps = [{
-    icon: UserPlus,
-    number: "01",
-    title: choose('Sign Up & Start', '登録と開始', language)
-  }, {
-    icon: BookOpen,
-    number: "02",
-    title: choose('Complete Lessons', 'レッスン完了', language)
-  }, {
-    icon: CheckCircle,
-    number: "03",
-    title: choose('Pass Final Exam', '最終試験合格', language)
-  }, {
-    icon: Award,
-    number: "04",
-    title: choose('Get Certificate', '証明書取得', language)
-  }];
-  return <section className="py-20 gradient-soft rounded-md bg-slate-400">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {choose('How It Works', '仕組み', language)}
-          </h2>
-        </div>
+// src/contexts/LanguageSupport.tsx
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => <div key={index} className="relative">
-              <Card className="border-0 shadow-soft hover:shadow-hover transition-all duration-300 h-full animate-scale-in" style={{
-            animationDelay: `${index * 0.2}s`
-          }}>
-                <CardContent className="p-8 text-center relative">
-                  {/* Step Number */}
-                  <div className="absolute -top-4 left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
-                    {step.number}
-                  </div>
-                  
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-success/10 rounded-2xl flex items-center justify-center mx-auto mb-6 mt-4">
-                    <step.icon className="w-8 h-8 text-success" />
-                  </div>
-                  
-                  {/* Content */}
-                  <h3 className="text-xl font-semibold text-primary mb-3">
-                    {step.title}
-                  </h3>
-                </CardContent>
-              </Card>
+// Type
+type Language = 'en' | 'ja';
 
-              {/* Arrow connector */}
-              {index < steps.length - 1 && <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                  <svg className="w-8 h-8 text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>}
-            </div>)}
-        </div>
-      </div>
-    </section>;
+// Context
+const LanguageContext = createContext<{
+  language: Language;
+  setLanguage: (lang: Language) => void;
+}>({
+  language: 'en',
+  setLanguage: () => {},
+});
+
+// Provider
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [language, setLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('mirai-language');
+    return saved === 'ja' || saved === 'en' ? saved : 'en';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('mirai-language', language);
+  }, [language]);
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 };
-export default HowItWorksSection;
+
+// Hook
+export const useLanguage = () => useContext(LanguageContext);
+
+// Utility
+export function choose<T>(en: T, ja: T, lang: string): T {
+  return lang === 'ja' ? ja : en;
+}
+
+// Toggle Component
+export const LanguageToggle = () => {
+  const { language, setLanguage } = useLanguage();
+
+  return (
+    <div className="flex space-x-2">
+      <button
+        onClick={() => setLanguage('en')}
+        className={language === 'en' ? 'font-bold underline' : ''}
+      >
+        🇺🇸 EN
+      </button>
+      <button
+        onClick={() => setLanguage('ja')}
+        className={language === 'ja' ? 'font-bold underline' : ''}
+      >
+        🇯🇵 JP
+      </button>
+    </div>
+  );
+};
