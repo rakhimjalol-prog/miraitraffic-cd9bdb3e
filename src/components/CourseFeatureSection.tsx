@@ -1,46 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { choose } from '@/utils/lang';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const CourseFeatureSection = () => {
-  const [lang, setLang] = useState<'en' | 'jp'>('en');
-
-  // Detect language from localStorage
-  useEffect(() => {
-    const storedLang = localStorage.getItem('lang');
-    if (storedLang === 'jp' || storedLang === 'en') {
-      setLang(storedLang);
-    }
-  }, []);
+  const { language } = useLanguage();
 
   const syllabus = [
     {
       en: 'Foundations of Traffic Safety and Awareness',
-      jp: '交通安全と意識の基礎',
+      ja: '交通安全と意識の基礎',
     },
     {
       en: 'Understanding Traffic Laws and Right-of-Way Protocols',
-      jp: '交通法規と優先権の理解',
+      ja: '交通法規と優先権の理解',
     },
     {
       en: 'Mastering Speed Limits and Defensive Driving',
-      jp: '速度制限と防衛運転の習得',
+      ja: '速度制限と防衛運転の習得',
     },
     {
       en: 'Managing Road Rage and Aggressive Driving Behaviors',
-      jp: 'ロードレイジと攻撃的運転の対処',
+      ja: 'ロードレイジと攻撃的運転の対処',
     },
     {
       en: 'Collision Avoidance and Safety Techniques',
-      jp: '衝突回避と安全運転技術',
+      ja: '衝突回避と安全運転技術',
     },
     {
       en: 'Handling Road Rage and Driving Distractions',
-      jp: '運転中の怒りと注意散漫への対処',
+      ja: '運転中の怒りと注意散漫への対処',
     },
     {
       en: 'Vehicle and Road Safety',
-      jp: '車両と道路の安全性',
+      ja: '車両と道路の安全性',
     },
   ];
 
@@ -52,12 +45,14 @@ const CourseFeatureSection = () => {
           <div className="space-y-6 animate-slide-in-left-slow">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               <span className="block text-lg">
-                {lang === 'jp' ? 'Mirai Traffic School' : 'Mirai Traffic School'}
+                Mirai Traffic School
               </span>
               <span className="block text-blue-700 text-2xl animate-typing overflow-hidden whitespace-nowrap border-r-2 border-blue-700 [animation-duration:4s] font-bold md:text-3xl">
-                {lang === 'jp'
-                  ? '安全運転コースのシラバス'
-                  : 'Offensive Driving Course Syllabus'}
+                {choose(
+                  'Offensive Driving Course Syllabus',
+                  '安全運転コースのシラバス',
+                  language
+                )}
               </span>
             </h2>
             <ul className="space-y-3 mt-6">
@@ -73,9 +68,11 @@ const CourseFeatureSection = () => {
                     {index + 1}
                   </div>
                   <span className="text-gray-800 text-sm md:text-base font-medium">
-                    {lang === 'jp'
-                      ? `第${index + 1}章: ${item.jp}`
-                      : `Chapter ${index + 1}: ${item.en}`}
+                    {choose(
+                      `Chapter ${index + 1}: ${item.en}`,
+                      `第${index + 1}章: ${item.ja}`,
+                      language
+                    )}
                   </span>
                 </li>
               ))}
@@ -88,7 +85,7 @@ const CourseFeatureSection = () => {
                 size="xl"
                 className="group text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 animate-glow-pulse"
               >
-                {lang === 'jp' ? 'コースを始める' : 'Start the Course'}
+                {choose('Start the Course', 'コースを始める', language)}
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
