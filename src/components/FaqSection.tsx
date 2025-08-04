@@ -28,7 +28,7 @@ const FaqSection = () => {
       answer: choose("As required by the DMV, we verify your identity using your date of birth and periodic security questions throughout the course.", "DMVの要求に従い、生年月日とコース中の定期的なセキュリティ質問を使用して本人確認を行います。", language)
     }
   ];
-  return <section className="py-20 from-purple-50/30 to-blue-50/30 bg-[transparent#71d4f64d] bg-[#71d4f6]/30">
+  return <section className="py-20 bg-gradient-to-br from-cyan-200 to-blue-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">

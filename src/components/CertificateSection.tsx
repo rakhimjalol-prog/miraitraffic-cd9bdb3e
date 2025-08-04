@@ -3,17 +3,17 @@ import { choose } from '@/utils/lang';
 import { Award, CheckCircle, Send } from 'lucide-react';
 const CertificateSection = () => {
   const { language } = useLanguage();
-  return <section className="py-20 bg-white">
+  return <section className="py-20 bg-gradient-to-br from-cyan-200 to-blue-300">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
           <div className="space-y-6">
             <div className="space-y-4">
               <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-                {choose('Get Your DMV-Approved Certificate', 'DMV認可証明書を取得', language)}
+                {choose('DMV Certificate Included', 'DMV証明書付属', language)}
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                {choose('Upon completion, receive an official certificate that\'s automatically submitted to the court and DMV', '修了時に裁判所とDMVに自動提出される公式証明書を受領', language)}
+                {choose('We automatically submit your certificate to the court upon completion.', '修了時に裁判所に証明書を自動提出します。', language)}
               </p>
             </div>
 
@@ -24,8 +24,8 @@ const CertificateSection = () => {
                   <CheckCircle className="w-4 h-4 text-success" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{choose('Instant Delivery', '即座の配信', language)}</h4>
-                  <p className="text-gray-600 text-sm">{choose('Certificate delivered immediately after passing', '合格後すぐに証明書配信', language)}</p>
+                  <h4 className="font-semibold text-gray-900">{choose('Official DMV Certificate', '公式DMV証明書', language)}</h4>
+                  <p className="text-gray-600 text-sm">{choose('Meets all California court requirements', 'カリフォルニア裁判所要件をすべて満たす', language)}</p>
                 </div>
               </div>
               
@@ -34,8 +34,8 @@ const CertificateSection = () => {
                   <Send className="w-4 h-4 text-success" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{choose('Auto Submission', '自動提出', language)}</h4>
-                  <p className="text-gray-600 text-sm">{choose('Automatically sent to court and DMV', '裁判所とDMVに自動送信', language)}</p>
+                  <h4 className="font-semibold text-gray-900">{choose('Automatic Submission', '自動提出', language)}</h4>
+                  <p className="text-gray-600 text-sm">{choose('We send it directly to the court for you', '裁判所に直接送信いたします', language)}</p>
                 </div>
               </div>
               
@@ -44,8 +44,8 @@ const CertificateSection = () => {
                   <Award className="w-4 h-4 text-success" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{choose('Verification', '検証', language)}</h4>
-                  <p className="text-gray-600 text-sm">{choose('Secure verification with court reference', '裁判所参照番号付き安全な検証', language)}</p>
+                  <h4 className="font-semibold text-gray-900">{choose('Instant Download', '即座のダウンロード', language)}</h4>
+                  <p className="text-gray-600 text-sm">{choose('Get your certificate immediately upon completion', '修了時に証明書を即座に取得', language)}</p>
                 </div>
               </div>
             </div>
