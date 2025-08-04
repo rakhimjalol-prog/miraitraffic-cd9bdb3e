@@ -94,8 +94,7 @@ export const courtDataFull = {
     courts: [
       { name: "Fresno", code: "10050" }
     ]
-  };
-
+ };
 const Courts = () => {
   const [selectedCounty, setSelectedCounty] = useState<string | null>(null);
   const counties = Object.keys(courtDataFull).sort();
