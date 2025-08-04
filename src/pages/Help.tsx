@@ -12,34 +12,22 @@ const Help = () => {
   const { language } = useLanguage();
   const [activeTab, setActiveTab] = useState("faq");
 
-const faqs = [
-  {
-    category: choose("About the Course", "コースについて", language),
-    items: [
-      {
-        question: choose("What is Mirai Traffic School?", "Mirai交通学校とは何ですか？", language),
-        answer: choose("Mirai Traffic School is an online traffic school designed for Japanese-speaking drivers in California. Our course helps you meet court or DMV requirements to dismiss a traffic ticket and avoid points on your driving record.", "Mirai交通学校は、カリフォルニア州の日本語話者向けのオンライン交通学校です。交通違反チケットの解消や、運転記録へのポイント加算回避を支援します。", language)
-      },
-      {
-        question: choose("Is the course approved by the California DMV?", "このコースはカリフォルニアDMVに承認されていますか？", language),
-        answer: choose("Yes. Our course is licensed by the California DMV. However, DMV approval does not imply endorsement.", "はい。このコースはカリフォルニアDMVの認可を受けていますが、承認は推奨を意味するものではありません。", language)
-      },
-      // ... more items
+  const faqs = [
+    {
+      question: choose("How do I register for traffic school?", "交通学校への登録方法は？", language),
+      answer: choose("Click the 'Start Now' button on our homepage, fill out your information, and complete payment. You'll receive login instructions by email.", "ホームページの「今すぐ開始」ボタンをクリックし、情報を入力して支払いを完了してください。ログイン手順がメールで送信されます。", language)
+    },
+    {
+      question: choose("What payment methods do you accept?", "どのような支払い方法を受け付けていますか？", language),
+      answer: choose("We accept all major credit and debit cards through our secure payment partner, Stripe.", "安全な決済パートナーのStripeを通じて、主要なクレジットカードとデビットカードを受け付けています。", language)
+    },
+    {
+      question: choose("Can I get a refund?", "返金は可能ですか？", language),
+      answer: choose("Refunds are available if you have not yet started the course. Once you begin the course, refunds are no longer available.", "コースをまだ開始していない場合は返金可能です。コースを開始すると返金はできません。", language)
+   }
     ]
-  },
-  {
-    category: choose("Registration & Access", "登録とアクセス", language),
-    items: [
-      {
-        question: choose("How do I sign up for the course?", "コースにサインアップするにはどうすればよいですか？", language),
-        answer: choose("Click the “Enroll Now” button on our website, enter your information, and complete payment. You’ll receive login instructions by email.", "当社ウェブサイトの「今すぐ登録」ボタンをクリックし、情報を入力して支払いを完了してください。ログイン情報がメールで送信されます。", language)
-      },
-      // ... more items
-    ]
-  },
-  // Add more categories...
+  }
 ];
-
 
   const helpTopics = [
     {
