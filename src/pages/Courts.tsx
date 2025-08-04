@@ -25,7 +25,6 @@ export const courtDataFull = {
     { name: "Markleeville", code: "02050" }
   ]
 },
-
 "Amador": {
   website: "https://www.amadorcourt.org",
   lookup: "https://www.amadorcourt.org/divisions/traffic.aspx",
@@ -51,7 +50,6 @@ export const courtDataFull = {
     { name: "San Andreas", code: "05050" }
   ]
 },
-
   "Colusa": { website: "#", lookup: "#", courts: [{ name: "Colusa", code: "06050" }] },
   "Contra Costa": { website: "#", lookup: "#", courts: [
       { name: "Martinez", code: "07030" },
