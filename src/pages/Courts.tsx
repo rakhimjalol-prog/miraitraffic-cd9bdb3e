@@ -326,7 +326,7 @@ export const courtDataFull = {
     ]
   },
 
-  San Benito: {
+  "San Benito": {
     website: "https://www.sanbenito.courts.ca.gov/divisions/traffic",
     lookup: "https://www.sanbenito.courts.ca.gov/online-services/pay-traffic-ticket",
     courts: [
