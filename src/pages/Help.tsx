@@ -173,84 +173,82 @@ const Help = () => {
   return (
     <div className="page-container">
       <Header />
-  <div className="text-center mb-12">
-  <h1 className="text-3xl font-bold">
-    {choose("Help Center", "ヘルプセンター", language)}
-  </h1>
-  <h2 className="text-xl font-semibold mt-2">
-    {choose("Help Topics", "ヘルプトピック", language)}
-  </h2>
-  <p className="text-muted-foreground mt-2">
-    {choose(
-      "Find the help you need for DMV services and traffic school questions",
-      "DMVサービスと交通学校に関する質問のサポートを見つけてください",
-      language
-    )}
-  </p>
-</div>
-
-
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="faq" className="flex items-center gap-2">
-                <HelpCircle className="w-4 h-4" />
-                {choose("FAQ", "よくある質問", language)}
-              </TabsTrigger>
-              <TabsTrigger value="topics" className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4" />
-                {choose("DMV Topics", "DMVトピック", language)}
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="faq" className="mt-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-2xl font-semibold text-primary mb-4">{choose("Frequently Asked Questions", "よくある質問", language)}</h2>
-                  <Accordion type="single" collapsible className="w-full">
-                    {faqs.map((faq, index) => (
-                      <AccordionItem key={index} value={`item-${index}`}>
-                        <AccordionTrigger>{faq.question}</AccordionTrigger>
-                        <AccordionContent>{faq.answer}</AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="topics" className="mt-6">
-              <div className="grid gap-6">
-                <h2 className="text-2xl font-semibold text-primary">{choose("DMV Help Topics", "DMVヘルプトピック", language)}</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {helpTopics.map((topic, index) => (
-                    <Card key={index} className="h-fit">
-                      <CardContent className="p-6">
-                        <h3 className="font-semibold mb-4 text-primary">{topic.category}</h3>
-                        <div className="space-y-2">
-                          {topic.items.map((item, itemIndex) => (
-                            <a
-                              key={itemIndex}
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-muted"
-                            >
-                              <span className="text-base">{item.icon}</span>
-                              <span className="flex-1">{item.title}</span>
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
+      <main className="container mx-auto px-4 py-8">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl font-bold">
+            {choose("Help Center", "ヘルプセンター", language)}
+          </h1>
+          <h2 className="text-xl font-semibold mt-2">
+            {choose("Help Topics", "ヘルプトピック", language)}
+          </h2>
+          <p className="text-muted-foreground mt-2">
+            {choose(
+              "Find the help you need for DMV services and traffic school questions",
+              "DMVサービスと交通学校に関する質問のサポートを見つけてください",
+              language
+            )}
+          </p>
         </div>
-      </main>
 
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="faq" className="flex items-center gap-2">
+              <HelpCircle className="w-4 h-4" />
+              {choose("FAQ", "よくある質問", language)}
+            </TabsTrigger>
+            <TabsTrigger value="topics" className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4" />
+              {choose("DMV Topics", "DMVトピック", language)}
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="faq" className="mt-6">
+            <Card>
+              <CardContent className="p-6">
+                <h2 className="text-2xl font-semibold text-primary mb-4">{choose("Frequently Asked Questions", "よくある質問", language)}</h2>
+                <Accordion type="single" collapsible className="w-full">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                      <AccordionTrigger>{faq.question}</AccordionTrigger>
+                      <AccordionContent>{faq.answer}</AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="topics" className="mt-6">
+            <div className="grid gap-6">
+              <h2 className="text-2xl font-semibold text-primary">{choose("DMV Help Topics", "DMVヘルプトピック", language)}</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {helpTopics.map((topic, index) => (
+                  <Card key={index} className="h-fit">
+                    <CardContent className="p-6">
+                      <h3 className="font-semibold mb-4 text-primary">{topic.category}</h3>
+                      <div className="space-y-2">
+                        {topic.items.map((item, itemIndex) => (
+                          <a
+                            key={itemIndex}
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-muted"
+                          >
+                            <span className="text-base">{item.icon}</span>
+                            <span className="flex-1">{item.title}</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </main>
       <Footer />
     </div>
   );
