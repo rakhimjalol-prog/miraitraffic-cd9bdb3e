@@ -12,21 +12,18 @@ const Index = () => {
       <Header />
       <HeroSection />
 
-      {/* 👉 Add this block to show the video */}
+      {/* ✅ This block shows your video */}
       <section className="w-full bg-white py-12">
         <div className="max-w-5xl mx-auto px-4">
           <video
-            className="w-full h-auto rounded-xl shadow-xl animate-fade-in"
+            src="/driving-girl.mp4"
+            className="w-full rounded-xl shadow-xl"
             controls
             autoPlay
             loop
             muted
             playsInline
-            poster="/driving-thumbnail.jpg" // Optional preview image
-          >
-            <source src="/driving-girl.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          />
         </div>
       </section>
 
