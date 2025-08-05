@@ -1,10 +1,15 @@
+'use client';
+
 import { useLanguage } from '@/contexts/LanguageContext';
 import { choose } from '@/utils/lang';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useRef } from 'react';
 
 const CourseFeatureSection = () => {
   const { language } = useLanguage();
+  const playerRef = useRef<any>(null);
+  const videoWrapperRef = useRef<HTMLDivElement>(null);
 
   const syllabus = [
     { en: 'Foundations of Traffic Safety and Awareness', ja: '交通安全と意識の基礎' },
@@ -15,6 +20,53 @@ const CourseFeatureSection = () => {
     { en: 'Handling Road Rage and Driving Distractions', ja: '運転中の怒りと注意散漫への対処' },
     { en: 'Vehicle and Road Safety', ja: '車両と道路の安全性' }
   ];
+
+  useEffect(() => {
+    // Load YouTube Player API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+
+    // Create the player once API is ready
+    window.onYouTubeIframeAPIReady = () => {
+      playerRef.current = new window.YT.Player('yt-player', {
+        videoId: '_PKFAreG-I8',
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          loop: 1,
+          playlist: '_PKFAreG-I8',
+          controls: 1,
+          modestbranding: 1,
+          rel: 0
+        },
+        events: {
+          onReady: (event) => {
+            event.target.playVideo();
+          }
+        }
+      });
+    };
+
+    // Use IntersectionObserver to toggle mute
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          playerRef.current?.unMute();
+        } else {
+          playerRef.current?.mute();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (videoWrapperRef.current) {
+      observer.observe(videoWrapperRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="py-20 bg-[#71d4f6]/30 overflow-hidden rounded-2xl animate-fade-in">
@@ -60,16 +112,13 @@ const CourseFeatureSection = () => {
             </div>
           </div>
 
-          {/* Right - Certificate Image */}
+          {/* Right - Smart YouTube Player */}
           <div className="animate-slide-in-right-slow delay-500">
-            <div className="bg-white rounded-2xl shadow-elegant p-8 max-w-2xl mx-auto">
-              <iframe
-                src="https://www.youtube.com/embed/_PKFAreG-I8?autoplay=1&loop=1&playlist=_PKFAreG-I8&controls=1&modestbranding=1&rel=0"
-                title="Traffic Safety Course Video"
-                className="w-full h-[300px] md:h-[400px] rounded-lg shadow-lg"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div
+              ref={videoWrapperRef}
+              className="bg-white rounded-2xl shadow-elegant p-8 max-w-2xl mx-auto"
+            >
+              <div id="yt-player" className="w-full h-[300px] md:h-[400px] rounded-lg shadow-lg" />
             </div>
           </div>
 
