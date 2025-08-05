@@ -10,14 +10,25 @@ const About = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="page-container">
+    <div className="page-container flex flex-col min-h-screen">
       <Header />
-      <main className="container mx-auto px-6 py-16">
+
+      <main className="flex-grow container mx-auto px-6 pt-28 pb-16">
+        {/* Page Title */}
         <div className="text-center mb-12">
-          <h1>{choose("About Mirai Traffic School", "Mirai Traffic School について", language)}</h1>
-          <p>{choose("Learn more about our mission and how our online traffic school works", "当スクールのミッションとオンライン交通スクールの仕組みをご紹介します", language)}</p>
+          <h1 className="text-3xl font-bold">
+            {choose("About Mirai Traffic School", "Mirai Traffic School について", language)}
+          </h1>
+          <p className="text-muted-foreground mt-2">
+            {choose(
+              "Learn more about our mission and how our online traffic school works",
+              "当スクールのミッションとオンライン交通スクールの仕組みをご紹介します",
+              language
+            )}
+          </p>
         </div>
 
+        {/* Tabs */}
         <Tabs defaultValue="about-us" className="max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="about-us" className="text-base py-3">
@@ -30,14 +41,19 @@ const About = () => {
             </TabsTrigger>
           </TabsList>
 
+          {/* About Tab */}
           <TabsContent value="about-us">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
-                  <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
-                    <span className="text-muted-foreground text-lg">Image/Icon Space</span>
+                  {/* Image/Icon Placeholder */}
+                  <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-8">
+                    <span className="text-muted-foreground text-lg">
+                      Image/Icon Space
+                    </span>
                   </div>
 
+                  {/* Story Content */}
                   <div className="prose prose-lg max-w-none">
                     <h2 className="text-2xl font-semibold text-primary mb-4">
                       {choose('Our Story', '私たちのストーリー', language)}
@@ -51,40 +67,18 @@ const About = () => {
                     <p className="mt-6">
                       {choose('Mirai Traffic School offers a fully online traffic school course, officially licensed by the California Department of Motor Vehicles (DMV). Our program is designed specifically for Japanese-speaking drivers in California. We make it easy and convenient to meet both court and DMV requirements — all in your native language, from the comfort of your home.', 'ミライ交通スクールは、カリフォルニア州のDMVにより正式に認可された完全オンラインの交通スクールです。日本語を話すドライバーの方々に向けて、母国語で簡単かつ便利に、裁判所とDMVの要件を満たすお手伝いをします。', language)}
                     </p>
-
-                    <h2 className="text-2xl font-semibold text-primary mt-10 mb-4">
-                      {choose('Why Choose Mirai Traffic School', 'ミライ交通スクールを選ぶ理由', language)}
-                    </h2>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li><strong>100% {choose('Online', 'オンライン', language)}:</strong> {choose('Study at your own pace, anytime — no classrooms, no commutes.', '自分のペースでいつでも学習可能 — 通学不要です。', language)}</li>
-                      <li><strong>{choose('Fully in Japanese', '完全日本語対応', language)}:</strong> {choose('All lessons, quizzes, and the final exam are written in native Japanese.', '全てのレッスン、クイズ、最終試験は日本語で提供。', language)}</li>
-                      <li><strong>DMV-{choose('Approved', '認可済み', language)}:</strong> {choose('Officially licensed by the California DMV and accepted by all courts.', 'カリフォルニアDMVに認可され、全ての裁判所で受理されます。', language)}</li>
-                      <li><strong>{choose('Works on All Devices', '全てのデバイス対応', language)}:</strong> {choose('Complete the course on your tablet, or computer — anytime, anywhere.', 'パソコン、タブレット、スマホでいつでも学習可能。', language)}</li>
-                      <li><strong>{choose('Secure & Private', '安全かつプライベート', language)}:</strong> {choose('Your personal data is fully protected with modern security protocols.', '最新のセキュリティ技術で個人情報を保護。', language)}</li>
-                      <li><strong>{choose('Instant Certificate', '即時発行証明書', language)}:</strong> {choose('Your Certificate of Completion is submitted automatically to the court and DMV.', '修了証明書は裁判所およびDMVへ自動送信されます。', language)}</li>
-                    </ul>
-
-                    <h2 className="text-2xl font-semibold text-primary mt-10 mb-4">
-                      {choose("What You'll Receive After Completion", '修了後に得られるもの', language)}
-                    </h2>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li><strong>✓ {choose('DMV-Approved Certificate', 'DMV認可証明書', language)}:</strong> {choose('Submitted electronically to the court and DMV.', '修了証は電子的に裁判所とDMVに提出されます。', language)}</li>
-                      <li><strong>✓ {choose('Keep Points Off Your Record', '違反点数の回避', language)}:</strong> {choose('Helps prevent points from being added to your driving record.', '違反点数が加算されるのを防ぎます。', language)}</li>
-                      <li><strong>✓ {choose('Prevent Insurance Rate Increases', '保険料の増加防止', language)}:</strong> {choose('May help avoid higher insurance premiums by dismissing eligible tickets.', 'チケットを無効にすることで保険料の上昇を抑えます。', language)}</li>
-                      <li><strong>✓ {choose('Dismiss Eligible Traffic Tickets', '交通違反チケットの無効化', language)}:</strong> {choose('Eligible tickets can be dismissed upon successful course completion.', 'コース修了後、対象となるチケットは無効にできます。', language)}</li>
-                      <li><strong>✓ {choose('Peace of Mind', '安心感', language)}:</strong> {choose("You've met court and DMV requirements with confidence.", '裁判所とDMVの要件を安心して満たせます。', language)}</li>
-                    </ul>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </TabsContent>
 
+          {/* How It Works Tab */}
           <TabsContent value="how-it-works">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
-                  <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
+                  <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-8">
                     <span className="text-muted-foreground text-lg">Image/Icon Space</span>
                   </div>
 
@@ -120,6 +114,7 @@ const About = () => {
           </TabsContent>
         </Tabs>
       </main>
+
       <Footer />
     </div>
   );
