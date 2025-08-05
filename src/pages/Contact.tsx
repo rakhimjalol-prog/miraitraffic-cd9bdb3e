@@ -33,11 +33,12 @@ const Contact = () => {
           {/* LEFT COLUMN: Image on top, contact box below */}
           <div className="flex flex-col justify-between h-full">
             {/* Image */}
-            <img
-              src="/images/contact-support.png" // Replace with your actual image path
-              alt="Support"
-              className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-            />
+<img
+  src="/lovable-uploads/contactpage.jpg" // ✅ new image
+  alt="Support"
+  className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+/>
+
 
             {/* Spacer to push Get in Touch to bottom align with form */}
             <div className="flex-grow"></div>
