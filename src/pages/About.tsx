@@ -15,7 +15,7 @@ const About = () => {
     <div className="page-container font-sans text-gray-800">
       <Header />
 
-      {/* ✅ Push content below sticky header */}
+      {/* Spacing below sticky header */}
       <main className="container mx-auto px-6 pt-32 pb-16">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold">
@@ -47,7 +47,7 @@ const About = () => {
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
-                  {/* ✅ LOGO IMAGE REPLACING "Image/Icon Space" */}
+                  {/* LOGO Image */}
                   <div className="w-full h-64 bg-white rounded-lg flex items-center justify-center mb-8 shadow">
                     <img
                       src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
@@ -98,14 +98,18 @@ const About = () => {
             </Card>
           </TabsContent>
 
-          {/* === HOW IT WORKS TAB — UNCHANGED CONTENT === */}
+          {/* === HOW IT WORKS TAB === */}
           <TabsContent value="how-it-works">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
-                  {/* You can replace this with a different image if needed */}
-                  <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
-                    <span className="text-muted-foreground text-lg">Image/Icon Space</span>
+                  {/* ✅ Logo image also shown in this tab */}
+                  <div className="w-full h-64 bg-white rounded-lg flex items-center justify-center mb-8 shadow">
+                    <img
+                      src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
+                      alt="Mirai Traffic School Logo"
+                      className="max-h-48 object-contain"
+                    />
                   </div>
 
                   <div className="prose prose-lg max-w-none text-gray-800">
