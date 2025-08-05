@@ -5,25 +5,15 @@ import CourseFeatureSection from "@/components/CourseFeatureSection";
 import CertificateSection from "@/components/CertificateSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <HeroSection />
 
       {/* ✅ This block shows your video */}
-      <section className="w-full bg-white py-12">
+      <section className="w-full py-12 bg-[#71d4f6]/30">
         <div className="max-w-5xl mx-auto px-4">
-          <video
-            src="/driving-girl.mp4"
-            className="w-full rounded-xl shadow-xl"
-            controls
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+          <video src="/driving-girl.mp4" className="w-full rounded-xl shadow-xl" controls autoPlay loop muted playsInline />
         </div>
       </section>
 
@@ -32,8 +22,6 @@ const Index = () => {
       <CertificateSection />
       <FaqSection />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
