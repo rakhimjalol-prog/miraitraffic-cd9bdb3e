@@ -63,10 +63,12 @@ const CourseFeatureSection = () => {
           {/* Right - Certificate Image */}
           <div className="animate-slide-in-right-slow delay-500">
             <div className="bg-white rounded-2xl shadow-elegant p-8 max-w-2xl mx-auto">
-              <img
-                src="/lovable-uploads/ff32bea8-e760-4d2b-9859-549ffc990c1d.png"
-                alt="Traffic Safety Course Completion Illustration"
-                className="w-full h-auto rounded-lg shadow-lg scale-110"
+              <iframe
+                src="https://www.youtube.com/embed/_PKFAreG-I8?autoplay=1&loop=1&playlist=_PKFAreG-I8&controls=1&modestbranding=1&rel=0"
+                title="Traffic Safety Course Video"
+                className="w-full h-[300px] md:h-[400px] rounded-lg shadow-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             </div>
           </div>
