@@ -173,7 +173,7 @@ const Help = () => {
   return (
     <div className="page-container">
       <Header />
-      <main className="container mx-auto px-4 py-8 mt-16">
+      <main className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl font-bold">
             {choose("Help Center", "ヘルプセンター", language)}
