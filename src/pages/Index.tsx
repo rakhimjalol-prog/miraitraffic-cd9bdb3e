@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import LovableVideoSection from "@/components/LovableVideoSection"; // ✅ Imported video section
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CourseFeatureSection from "@/components/CourseFeatureSection";
 import CertificateSection from "@/components/CertificateSection";
@@ -12,7 +11,25 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
-      <LovableVideoSection /> {/* 🎥 Your driving girl video section */}
+
+      {/* 👉 Add this block to show the video */}
+      <section className="w-full bg-white py-12">
+        <div className="max-w-5xl mx-auto px-4">
+          <video
+            className="w-full h-auto rounded-xl shadow-xl animate-fade-in"
+            controls
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/driving-thumbnail.jpg" // Optional preview image
+          >
+            <source src="/driving-girl.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
       <HowItWorksSection />
       <CourseFeatureSection />
       <CertificateSection />
