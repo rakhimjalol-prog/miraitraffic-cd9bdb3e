@@ -6,6 +6,14 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useRef } from 'react';
 
+// Add custom types to avoid TS errors
+declare global {
+  interface Window {
+    YT?: typeof YT;
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
 const CourseFeatureSection = () => {
   const { language } = useLanguage();
   const playerRef = useRef<any>(null);
@@ -22,14 +30,15 @@ const CourseFeatureSection = () => {
   ];
 
   useEffect(() => {
-    // Load YouTube Player API
+    // 1. Load YouTube IFrame API
     const tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+    document.body.appendChild(tag);
 
-    // Create the player once API is ready
+    // 2. Called when API is ready
     window.onYouTubeIframeAPIReady = () => {
+      if (!window.YT) return;
+
       playerRef.current = new window.YT.Player('yt-player', {
         videoId: '_PKFAreG-I8',
         playerVars: {
@@ -42,20 +51,20 @@ const CourseFeatureSection = () => {
           rel: 0
         },
         events: {
-          onReady: (event) => {
+          onReady: (event: any) => {
             event.target.playVideo();
           }
         }
       });
     };
 
-    // Use IntersectionObserver to toggle mute
+    // 3. Observe scroll visibility
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          playerRef.current?.unMute();
+          playerRef.current?.unMute?.();
         } else {
-          playerRef.current?.mute();
+          playerRef.current?.mute?.();
         }
       },
       { threshold: 0.5 }
@@ -118,7 +127,10 @@ const CourseFeatureSection = () => {
               ref={videoWrapperRef}
               className="bg-white rounded-2xl shadow-elegant p-8 max-w-2xl mx-auto"
             >
-              <div id="yt-player" className="w-full h-[300px] md:h-[400px] rounded-lg shadow-lg" />
+              <div
+                id="yt-player"
+                className="w-full h-[300px] md:h-[400px] rounded-lg shadow-lg"
+              />
             </div>
           </div>
 
