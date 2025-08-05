@@ -174,12 +174,19 @@ const Help = () => {
     <div className="page-container">
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1>{choose("Help Topics", "ヘルプトピック", language)}</h1>
-            <p>{choose("Find the help you need for DMV services and traffic school questions", "DMVサービスと交通学校に関する質問のサポートを見つけてください", language)}</p>
-          </div>
+   <main className="container mx-auto px-4 pt-28 pb-16">
+  <div className="max-w-4xl mx-auto">
+    <div className="text-center mb-6">
+      <h1 className="text-3xl font-bold">
+        {choose("Help Center", "ヘルプセンター", language)}
+      </h1>
+    </div>
+
+    <div className="text-center mb-12">
+      <h2>{choose("Help Topics", "ヘルプトピック", language)}</h2>
+      <p>{choose("Find the help you need for DMV services and traffic school questions", "DMVサービスと交通学校に関する質問のサポートを見つけてください", language)}</p>
+    </div>
+
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-2">
