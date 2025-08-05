@@ -23,7 +23,17 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <Card className="border-0 shadow-soft h-fit">
+          <div className="space-y-6">
+            {/* Customer Service Image */}
+            <div className="rounded-xl overflow-hidden shadow-soft">
+              <img 
+                src="/lovable-uploads/ebc584db-15e6-4623-a21c-20ab7189158a.png" 
+                alt="Customer Service Representative" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            
+            <Card className="border-0 shadow-soft h-fit">
             <CardContent className="p-8">
               <h2>{choose('Get in Touch', 'お問い合わせ', language)}</h2>
               
@@ -54,6 +64,7 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+          </div>
 
           {/* Contact Form */}
           <Card className="border-0 shadow-soft">
