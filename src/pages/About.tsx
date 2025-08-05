@@ -30,12 +30,18 @@ const About = () => {
             </TabsTrigger>
           </TabsList>
 
+          {/* About Section */}
           <TabsContent value="about-us">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
-                  <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
-                    <span className="text-muted-foreground text-lg">Image/Icon Space</span>
+                  {/* LOGO IMAGE */}
+                  <div className="w-full h-64 flex items-center justify-center mb-8">
+                    <img
+                      src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
+                      alt="Mirai Traffic School Logo"
+                      className="h-full object-contain"
+                    />
                   </div>
 
                   <div className="prose prose-lg max-w-none">
@@ -80,12 +86,18 @@ const About = () => {
             </Card>
           </TabsContent>
 
+          {/* How It Works Section */}
           <TabsContent value="how-it-works">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
-                  <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
-                    <span className="text-muted-foreground text-lg">Image/Icon Space</span>
+                  {/* LOGO IMAGE */}
+                  <div className="w-full h-64 flex items-center justify-center mb-8">
+                    <img
+                      src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
+                      alt="Mirai Traffic School Logo"
+                      className="h-full object-contain"
+                    />
                   </div>
 
                   <div className="prose prose-lg max-w-none">
