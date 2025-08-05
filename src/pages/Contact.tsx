@@ -28,20 +28,24 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* LEFT SIDE: Image + Small Contact Box */}
-          <div className="flex flex-col items-center space-y-4">
-            {/* Larger Image */}
+        {/* Main 2-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+          {/* LEFT COLUMN: Image on top, contact box below */}
+          <div className="flex flex-col justify-between h-full">
+            {/* Image */}
             <img
-              src="/images/contact-support.png" // replace with your actual image path
+              src="/images/contact-support.png" // Replace with your actual image path
               alt="Support"
-              className="w-full max-w-md h-[300px] object-cover rounded-lg shadow-lg"
+              className="w-full h-[400px] object-cover rounded-lg shadow-lg"
             />
 
-            {/* Smaller "Get in Touch" Card */}
-            <Card className="w-full max-w-sm border-0 shadow-soft">
-              <CardContent className="p-4">
-                <h2 className="text-lg font-semibold mb-2">
+            {/* Spacer to push Get in Touch to bottom align with form */}
+            <div className="flex-grow"></div>
+
+            {/* Get in Touch Card */}
+            <Card className="mt-6 w-full border-0 shadow-soft">
+              <CardContent className="p-6">
+                <h2 className="text-lg font-semibold mb-4">
                   {choose("Get in Touch", "お問い合わせ", language)}
                 </h2>
 
@@ -54,7 +58,9 @@ const Contact = () => {
                       <h3 className="text-sm font-semibold">
                         {choose("Support Hours", "サポート時間", language)}
                       </h3>
-                      <p className="text-xs text-muted-foreground">Insert content here</p>
+                      <p className="text-xs text-muted-foreground">
+                        Insert content here
+                      </p>
                     </div>
                   </div>
 
@@ -66,7 +72,9 @@ const Contact = () => {
                       <h3 className="text-sm font-semibold">
                         {choose("Email Support", "メールサポート", language)}
                       </h3>
-                      <p className="text-xs text-muted-foreground">Insert content here</p>
+                      <p className="text-xs text-muted-foreground">
+                        Insert content here
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -74,70 +82,82 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* RIGHT SIDE: Contact Form */}
-          <Card className="border-0 shadow-soft">
-            <CardContent className="p-8">
-              <div className="flex items-center space-x-3 mb-6">
-                <MessageSquare className="w-6 h-6 text-primary" />
-                <h2>{choose("Send us a Message", "メッセージを送信", language)}</h2>
+          {/* RIGHT COLUMN: Contact Form */}
+          <Card className="border-0 shadow-soft h-full">
+            <CardContent className="p-8 h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center space-x-3 mb-6">
+                  <MessageSquare className="w-6 h-6 text-primary" />
+                  <h2>{choose("Send us a Message", "メッセージを送信", language)}</h2>
+                </div>
+
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">
+                        {choose("First Name", "名", language)}
+                      </Label>
+                      <Input
+                        id="firstName"
+                        placeholder="Enter your first name"
+                        className="border-border focus:ring-primary"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">
+                        {choose("Last Name", "姓", language)}
+                      </Label>
+                      <Input
+                        id="lastName"
+                        placeholder="Enter your last name"
+                        className="border-border focus:ring-primary"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">
+                      {choose("Email Address", "メールアドレス", language)}
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="border-border focus:ring-primary"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">
+                      {choose("Subject", "件名", language)}
+                    </Label>
+                    <Input
+                      id="subject"
+                      placeholder="What is your message about?"
+                      className="border-border focus:ring-primary"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">
+                      {choose("Message", "メッセージ", language)}
+                    </Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Enter your message here..."
+                      rows={6}
+                      className="border-border focus:ring-primary resize-none"
+                    />
+                  </div>
+                </form>
               </div>
 
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">{choose("First Name", "名", language)}</Label>
-                    <Input
-                      id="firstName"
-                      placeholder="Enter your first name"
-                      className="border-border focus:ring-primary"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">{choose("Last Name", "姓", language)}</Label>
-                    <Input
-                      id="lastName"
-                      placeholder="Enter your last name"
-                      className="border-border focus:ring-primary"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email">{choose("Email Address", "メールアドレス", language)}</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="border-border focus:ring-primary"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="subject">{choose("Subject", "件名", language)}</Label>
-                  <Input
-                    id="subject"
-                    placeholder="What is your message about?"
-                    className="border-border focus:ring-primary"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">{choose("Message", "メッセージ", language)}</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Enter your message here..."
-                    rows={6}
-                    className="border-border focus:ring-primary resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3"
-                >
-                  {choose("Send Message", "メッセージを送信", language)}
-                </Button>
-              </form>
+              <Button
+                type="submit"
+                className="w-full mt-6 bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3"
+              >
+                {choose("Send Message", "メッセージを送信", language)}
+              </Button>
             </CardContent>
           </Card>
         </div>
