@@ -10,11 +10,16 @@ const Index = () => {
       <Header />
       <HeroSection />
 
-      {/* ✅ This block shows your video */}
-      <section className="w-full py-12 bg-[#71d4f6]/30">
-        <div className="max-w-5xl mx-auto px-4">
-          <video src="/driving-girl.mp4" className="w-full rounded-xl shadow-xl" controls autoPlay loop muted playsInline />
-        </div>
+      {/* Video Banner Section */}
+      <section className="w-full overflow-hidden">
+        <video 
+          src="/driving-girl.mp4" 
+          className="w-full h-[60vh] object-cover" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        />
       </section>
 
       <HowItWorksSection />
