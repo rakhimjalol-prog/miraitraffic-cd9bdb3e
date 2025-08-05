@@ -5,50 +5,66 @@ import CourseFeatureSection from "@/components/CourseFeatureSection";
 import CertificateSection from "@/components/CertificateSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
-import { Fade, Slide } from "react-awesome-reveal";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-10%" },
+  transition: { duration: 0.8, ease: "easeOut" as const }
+};
+
+const slideUp = {
+  initial: { opacity: 0, y: 50 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-10%" },
+  transition: { duration: 0.6, ease: "easeOut" as const }
+};
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       
-      <Fade duration={1000} triggerOnce>
+      <motion.div {...fadeInUp}>
         <HeroSection />
-      </Fade>
+      </motion.div>
 
       {/* 🎥 Video Section Between Hero and How It Works */}
-      <Slide direction="up" duration={800} triggerOnce>
-        <section className="w-full overflow-hidden bg-[#C6EEFF]">
-          <video
-            src="/drivinggirl.mp4"
-            className="w-full h-[60vh] object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        </section>
-      </Slide>
+      <motion.section 
+        className="w-full overflow-hidden bg-[#C6EEFF]"
+        {...slideUp}
+        transition={{ ...slideUp.transition, delay: 0.2 }}
+      >
+        <video
+          src="/drivinggirl.mp4"
+          className="w-full h-[60vh] object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </motion.section>
 
-      <Fade duration={1000} delay={200} triggerOnce>
+      <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.3 }}>
         <HowItWorksSection />
-      </Fade>
+      </motion.div>
       
-      <Slide direction="up" duration={800} delay={300} triggerOnce>
+      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.4 }}>
         <CourseFeatureSection />
-      </Slide>
+      </motion.div>
       
-      <Fade duration={1000} delay={400} triggerOnce>
+      <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.5 }}>
         <CertificateSection />
-      </Fade>
+      </motion.div>
       
-      <Slide direction="up" duration={800} delay={500} triggerOnce>
+      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.6 }}>
         <FaqSection />
-      </Slide>
+      </motion.div>
       
-      <Fade duration={1000} triggerOnce>
+      <motion.div {...fadeInUp}>
         <Footer />
-      </Fade>
+      </motion.div>
     </div>
   );
 };
