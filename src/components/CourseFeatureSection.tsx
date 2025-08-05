@@ -1,12 +1,15 @@
 'use client';
 
+// ✅ Fix TypeScript error: declare YT
+declare const YT: any;
+
 import { useLanguage } from '@/contexts/LanguageContext';
 import { choose } from '@/utils/lang';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useRef } from 'react';
 
-// Add custom types to avoid TS errors
+// ✅ Extend window types for safety
 declare global {
   interface Window {
     YT?: typeof YT;
@@ -35,7 +38,7 @@ const CourseFeatureSection = () => {
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
 
-    // 2. Called when API is ready
+    // 2. Create YouTube player when API is ready
     window.onYouTubeIframeAPIReady = () => {
       if (!window.YT) return;
 
@@ -58,7 +61,7 @@ const CourseFeatureSection = () => {
       });
     };
 
-    // 3. Observe scroll visibility
+    // 3. Scroll observer to control mute/unmute
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
