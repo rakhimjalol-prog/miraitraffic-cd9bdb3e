@@ -1,3 +1,5 @@
+'use client';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -10,16 +12,26 @@ const About = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="page-container">
+    <div className="page-container font-sans text-gray-800">
       <Header />
-      <main className="container mx-auto px-6 py-16">
+
+      {/* ✅ Push content below sticky header */}
+      <main className="container mx-auto px-6 pt-32 pb-16">
         <div className="text-center mb-12">
-          <h1>{choose("About Mirai Traffic School", "ミライ交通スクールについて", language)}</h1>
-          <p>{choose("Learn more about our mission and how our online traffic school works", "当スクールのミッションとオンライン交通スクールの仕組みをご紹介します", language)}</p>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            {choose("About Mirai Traffic School", "ミライ交通スクールについて", language)}
+          </h1>
+          <p className="mt-2 text-lg text-muted-foreground">
+            {choose(
+              "Learn more about our mission and how our online traffic school works",
+              "当スクールのミッションとオンライン交通スクールの仕組みをご紹介します",
+              language
+            )}
+          </p>
         </div>
 
         <Tabs defaultValue="about-us" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
+          <TabsList className="grid w-full grid-cols-2 mb-8 bg-muted/30">
             <TabsTrigger value="about-us" className="text-base py-3">
               <Building className="w-4 h-4 mr-2" />
               {choose("About", "概要", language)}
@@ -30,15 +42,21 @@ const About = () => {
             </TabsTrigger>
           </TabsList>
 
+          {/* === ABOUT US TAB === */}
           <TabsContent value="about-us">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
-                  <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
-                    <span className="text-muted-foreground text-lg">Image/Icon Space</span>
+                  {/* ✅ LOGO IMAGE REPLACING "Image/Icon Space" */}
+                  <div className="w-full h-64 bg-white rounded-lg flex items-center justify-center mb-8 shadow">
+                    <img
+                      src="/lovable-uploads/dd4edfff-68f0-492b-8321-3146ba649956.png"
+                      alt="Mirai Traffic School Logo"
+                      className="max-h-48 object-contain"
+                    />
                   </div>
 
-                  <div className="prose prose-lg max-w-none">
+                  <div className="prose prose-lg max-w-none text-gray-800">
                     <h2 className="text-2xl font-semibold text-primary mb-4">
                       {choose('Our Story', '私たちのストーリー', language)}
                     </h2>
@@ -80,15 +98,17 @@ const About = () => {
             </Card>
           </TabsContent>
 
+          {/* === HOW IT WORKS TAB — UNCHANGED CONTENT === */}
           <TabsContent value="how-it-works">
             <Card className="border-0 shadow-soft">
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6">
+                  {/* You can replace this with a different image if needed */}
                   <div className="w-full h-64 bg-gradient-soft rounded-lg flex items-center justify-center mb-8">
                     <span className="text-muted-foreground text-lg">Image/Icon Space</span>
                   </div>
 
-                  <div className="prose prose-lg max-w-none">
+                  <div className="prose prose-lg max-w-none text-gray-800">
                     <h2 className="text-2xl font-semibold text-primary mb-4">
                       {choose('What Makes It Easy', '簡単に始められる理由', language)}
                     </h2>
@@ -109,7 +129,9 @@ const About = () => {
                     <div className="mt-6 text-center">
                       <p className="text-muted-foreground">
                         {choose('Still Have Questions?', 'さらに質問がありますか？', language)}<br />
-                        {choose('Visit our ', 'FAQページをご覧いただくか、', language)}<a href="/help" className="text-primary underline">FAQ Page</a>{choose(' or email us at ', '', language)}
+                        {choose('Visit our ', 'FAQページをご覧いただくか、', language)}
+                        <a href="/help" className="text-primary underline">FAQ Page</a>
+                        {choose(' or email us at ', '', language)}
                         <a href="mailto:support@miraitraffic.com" className="text-blue-600 underline">support@miraitraffic.com</a> — {choose("we're happy to help in both English and Japanese.", '英語と日本語の両方で対応いたします。', language)}
                       </p>
                     </div>
@@ -120,6 +142,7 @@ const About = () => {
           </TabsContent>
         </Tabs>
       </main>
+
       <Footer />
     </div>
   );
