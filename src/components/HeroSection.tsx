@@ -52,7 +52,7 @@ const HeroSection = () => {
 
           {/* Right Illustration */}
           <div className="flex justify-center">
-            <img src="/lovable-uploads/f96f3549-f900-45b8-a46a-bdec488ef260.png" alt="Traffic School Illustration" className="max-w-full h-auto" />
+            <img src="/lovable-uploads/780148a3-70b6-4c3b-87a4-2c2fac347972.png" alt="Traffic School Illustration" className="w-full h-auto max-w-lg" />
           </div>
         </div>
 
